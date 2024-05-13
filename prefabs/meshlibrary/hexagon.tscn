@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5egbn24g40d1"]
+
+[ext_resource type="PackedScene" uid="uid://d1ijtomroco3m" path="res://art/models/hexagon/base/hex_grass.gltf" id="1_skvx1"]
+[ext_resource type="PackedScene" uid="uid://cu2atsq5fn1yp" path="res://art/models/hexagon/base/hex_grass_bottom.gltf" id="2_b6ejp"]
+[ext_resource type="PackedScene" uid="uid://docqqaxa3up2y" path="res://art/models/hexagon/base/hex_grass_sloped_high.gltf" id="3_ed3xo"]
+[ext_resource type="PackedScene" uid="uid://bwb7qqck06pow" path="res://art/models/hexagon/base/hex_grass_sloped_low.gltf" id="4_iy0r2"]
+[ext_resource type="PackedScene" uid="uid://bomov1npspn0n" path="res://art/models/hexagon/base/hex_water.gltf" id="5_4dojk"]
+
+[node name="Hexagon" type="Node3D"]
+
+[node name="hex_grass2" parent="." instance=ExtResource("1_skvx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="hex_grass_bottom2" parent="." instance=ExtResource("2_b6ejp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="hex_grass_sloped_high2" parent="." instance=ExtResource("3_ed3xo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="hex_grass_sloped_low2" parent="." instance=ExtResource("4_iy0r2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="hex_water2" parent="." instance=ExtResource("5_4dojk")]
