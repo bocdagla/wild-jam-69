@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://y4ll7utub3h1"
+path="res://.godot/imported/Roof_Straight_Side_Eave_Edge.obj-ee2371a882f2a644eca9fc2f128ed186.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Roof_Straight_Side_Eave_Edge.obj-ee2371a882f2a644eca9fc2f128ed186.mesh"]
+
+source_file="res://art/models/modular village/Roof_Straight_Side_Eave_Edge.obj"
+dest_files=["res://.godot/imported/Roof_Straight_Side_Eave_Edge.obj-ee2371a882f2a644eca9fc2f128ed186.mesh", "res://.godot/imported/Roof_Straight_Side_Eave_Edge.obj-ee2371a882f2a644eca9fc2f128ed186.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

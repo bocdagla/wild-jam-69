@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://deth4xbynxedc"
+path="res://.godot/imported/Prop_Crate_1_Open.obj-828d41bc2aa63275ed59863ee6894d7d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Crate_1_Open.obj-828d41bc2aa63275ed59863ee6894d7d.mesh"]
+
+source_file="res://art/models/modular village/Prop_Crate_1_Open.obj"
+dest_files=["res://.godot/imported/Prop_Crate_1_Open.obj-828d41bc2aa63275ed59863ee6894d7d.mesh", "res://.godot/imported/Prop_Crate_1_Open.obj-828d41bc2aa63275ed59863ee6894d7d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

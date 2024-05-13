@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://f7q57lofedcx"
+path="res://.godot/imported/Waterwheel_Flume_Ramp.obj-31eb907868d4450c57b1c1d8c1a57c9d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Waterwheel_Flume_Ramp.obj-31eb907868d4450c57b1c1d8c1a57c9d.mesh"]
+
+source_file="res://art/models/modular village/Waterwheel_Flume_Ramp.obj"
+dest_files=["res://.godot/imported/Waterwheel_Flume_Ramp.obj-31eb907868d4450c57b1c1d8c1a57c9d.mesh", "res://.godot/imported/Waterwheel_Flume_Ramp.obj-31eb907868d4450c57b1c1d8c1a57c9d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctmqmmibpygpl"
+path="res://.godot/imported/Stucco_Window_Single_Wide_Tall.obj-b942718dedbd571db8193f9ff6e3d95e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stucco_Window_Single_Wide_Tall.obj-b942718dedbd571db8193f9ff6e3d95e.mesh"]
+
+source_file="res://art/models/modular village/Stucco_Window_Single_Wide_Tall.obj"
+dest_files=["res://.godot/imported/Stucco_Window_Single_Wide_Tall.obj-b942718dedbd571db8193f9ff6e3d95e.mesh", "res://.godot/imported/Stucco_Window_Single_Wide_Tall.obj-b942718dedbd571db8193f9ff6e3d95e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

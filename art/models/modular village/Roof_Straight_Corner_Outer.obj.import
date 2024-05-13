@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b7tbwwn4ytif"
+path="res://.godot/imported/Roof_Straight_Corner_Outer.obj-6b3ac96c59db4cecaf4bca4e7f9b6ab6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Roof_Straight_Corner_Outer.obj-6b3ac96c59db4cecaf4bca4e7f9b6ab6.mesh"]
+
+source_file="res://art/models/modular village/Roof_Straight_Corner_Outer.obj"
+dest_files=["res://.godot/imported/Roof_Straight_Corner_Outer.obj-6b3ac96c59db4cecaf4bca4e7f9b6ab6.mesh", "res://.godot/imported/Roof_Straight_Corner_Outer.obj-6b3ac96c59db4cecaf4bca4e7f9b6ab6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

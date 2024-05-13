@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c7jht5irjrmfj"
+path="res://.godot/imported/Prop_Barrel_1.obj-fbcb2916b1acce5d8d21c741f541962f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Barrel_1.obj-fbcb2916b1acce5d8d21c741f541962f.mesh"]
+
+source_file="res://art/models/modular village/Prop_Barrel_1.obj"
+dest_files=["res://.godot/imported/Prop_Barrel_1.obj-fbcb2916b1acce5d8d21c741f541962f.mesh", "res://.godot/imported/Prop_Barrel_1.obj-fbcb2916b1acce5d8d21c741f541962f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

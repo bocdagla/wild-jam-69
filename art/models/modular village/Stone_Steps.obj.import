@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://t8j6r1l5k20v"
+path="res://.godot/imported/Stone_Steps.obj-afd3138958ab6e0bb7926ac4b3de80ad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stone_Steps.obj-afd3138958ab6e0bb7926ac4b3de80ad.mesh"]
+
+source_file="res://art/models/modular village/Stone_Steps.obj"
+dest_files=["res://.godot/imported/Stone_Steps.obj-afd3138958ab6e0bb7926ac4b3de80ad.mesh", "res://.godot/imported/Stone_Steps.obj-afd3138958ab6e0bb7926ac4b3de80ad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dm3yfv3060wy5"
+path="res://.godot/imported/Wood_Floor_Straight_1.obj-dcc9728b45ef262eb91375cacb93939c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Floor_Straight_1.obj-dcc9728b45ef262eb91375cacb93939c.mesh"]
+
+source_file="res://art/models/modular village/Wood_Floor_Straight_1.obj"
+dest_files=["res://.godot/imported/Wood_Floor_Straight_1.obj-dcc9728b45ef262eb91375cacb93939c.mesh", "res://.godot/imported/Wood_Floor_Straight_1.obj-dcc9728b45ef262eb91375cacb93939c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

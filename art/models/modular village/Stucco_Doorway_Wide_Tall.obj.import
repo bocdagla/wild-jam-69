@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bumf23ik2i764"
+path="res://.godot/imported/Stucco_Doorway_Wide_Tall.obj-30fac6d5be9fe3abd93bc993aa7bd625.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stucco_Doorway_Wide_Tall.obj-30fac6d5be9fe3abd93bc993aa7bd625.mesh"]
+
+source_file="res://art/models/modular village/Stucco_Doorway_Wide_Tall.obj"
+dest_files=["res://.godot/imported/Stucco_Doorway_Wide_Tall.obj-30fac6d5be9fe3abd93bc993aa7bd625.mesh", "res://.godot/imported/Stucco_Doorway_Wide_Tall.obj-30fac6d5be9fe3abd93bc993aa7bd625.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cf20y3ipa846j"
+path="res://.godot/imported/Wall_Prop_Door_Ornate.obj-7644c7ef09a33fe9619abb04b54e973d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wall_Prop_Door_Ornate.obj-7644c7ef09a33fe9619abb04b54e973d.mesh"]
+
+source_file="res://art/models/modular village/Wall_Prop_Door_Ornate.obj"
+dest_files=["res://.godot/imported/Wall_Prop_Door_Ornate.obj-7644c7ef09a33fe9619abb04b54e973d.mesh", "res://.godot/imported/Wall_Prop_Door_Ornate.obj-7644c7ef09a33fe9619abb04b54e973d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://t1gpad46stvh"
+path="res://.godot/imported/Stone_Wall_4.obj-3c0ff2fa4490bc2d36ebf7fbf6477cf4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stone_Wall_4.obj-3c0ff2fa4490bc2d36ebf7fbf6477cf4.mesh"]
+
+source_file="res://art/models/modular village/Stone_Wall_4.obj"
+dest_files=["res://.godot/imported/Stone_Wall_4.obj-3c0ff2fa4490bc2d36ebf7fbf6477cf4.mesh", "res://.godot/imported/Stone_Wall_4.obj-3c0ff2fa4490bc2d36ebf7fbf6477cf4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

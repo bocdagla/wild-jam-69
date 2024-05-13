@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dkxxf0nbfmvxm"
+path="res://.godot/imported/Stucco_Prop_Support_Pillar_1.obj-8de62874d0553c432f7367165b23da9a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stucco_Prop_Support_Pillar_1.obj-8de62874d0553c432f7367165b23da9a.mesh"]
+
+source_file="res://art/models/modular village/Stucco_Prop_Support_Pillar_1.obj"
+dest_files=["res://.godot/imported/Stucco_Prop_Support_Pillar_1.obj-8de62874d0553c432f7367165b23da9a.mesh", "res://.godot/imported/Stucco_Prop_Support_Pillar_1.obj-8de62874d0553c432f7367165b23da9a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

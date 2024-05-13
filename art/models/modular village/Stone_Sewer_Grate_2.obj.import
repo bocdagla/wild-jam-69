@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bboxxih6gn41b"
+path="res://.godot/imported/Stone_Sewer_Grate_2.obj-633b82264aa4693bf83f47806e1a697a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stone_Sewer_Grate_2.obj-633b82264aa4693bf83f47806e1a697a.mesh"]
+
+source_file="res://art/models/modular village/Stone_Sewer_Grate_2.obj"
+dest_files=["res://.godot/imported/Stone_Sewer_Grate_2.obj-633b82264aa4693bf83f47806e1a697a.mesh", "res://.godot/imported/Stone_Sewer_Grate_2.obj-633b82264aa4693bf83f47806e1a697a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
