@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b874y7ad2ojq3"
+path="res://.godot/imported/banner_blue.obj-1bc14dd6f5e2a71b302b7e1a2d19f737.mesh"
+
+[deps]
+
+files=["res://.godot/imported/banner_blue.obj-1bc14dd6f5e2a71b302b7e1a2d19f737.mesh"]
+
+source_file="res://art/models/dungeon/banner_blue.obj"
+dest_files=["res://.godot/imported/banner_blue.obj-1bc14dd6f5e2a71b302b7e1a2d19f737.mesh", "res://.godot/imported/banner_blue.obj-1bc14dd6f5e2a71b302b7e1a2d19f737.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

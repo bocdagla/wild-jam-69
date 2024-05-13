@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bsouv6df0itni"
+path="res://.godot/imported/trunk_large_A.obj-6a4a77b88b1c2af440c3ea6375773203.mesh"
+
+[deps]
+
+files=["res://.godot/imported/trunk_large_A.obj-6a4a77b88b1c2af440c3ea6375773203.mesh"]
+
+source_file="res://art/models/dungeon/trunk_large_A.obj"
+dest_files=["res://.godot/imported/trunk_large_A.obj-6a4a77b88b1c2af440c3ea6375773203.mesh", "res://.godot/imported/trunk_large_A.obj-6a4a77b88b1c2af440c3ea6375773203.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

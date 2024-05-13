@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://djg4s6y8py3os"
+path="res://.godot/imported/coin_stack_small.obj-1e23a904cc72d5674e3170ad5055e2c5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/coin_stack_small.obj-1e23a904cc72d5674e3170ad5055e2c5.mesh"]
+
+source_file="res://art/models/dungeon/coin_stack_small.obj"
+dest_files=["res://.godot/imported/coin_stack_small.obj-1e23a904cc72d5674e3170ad5055e2c5.mesh", "res://.godot/imported/coin_stack_small.obj-1e23a904cc72d5674e3170ad5055e2c5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

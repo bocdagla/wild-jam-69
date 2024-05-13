@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://g0e5mhn0ux5d"
+path="res://.godot/imported/sword_shield_broken.obj-8e6af5f1ea80eed21146ec939ac8843c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sword_shield_broken.obj-8e6af5f1ea80eed21146ec939ac8843c.mesh"]
+
+source_file="res://art/models/dungeon/sword_shield_broken.obj"
+dest_files=["res://.godot/imported/sword_shield_broken.obj-8e6af5f1ea80eed21146ec939ac8843c.mesh", "res://.godot/imported/sword_shield_broken.obj-8e6af5f1ea80eed21146ec939ac8843c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

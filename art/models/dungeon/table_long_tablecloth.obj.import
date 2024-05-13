@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://m6dyiom0s4kn"
+path="res://.godot/imported/table_long_tablecloth.obj-221fc882d5f7b2cf5954b83a205c2db8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/table_long_tablecloth.obj-221fc882d5f7b2cf5954b83a205c2db8.mesh"]
+
+source_file="res://art/models/dungeon/table_long_tablecloth.obj"
+dest_files=["res://.godot/imported/table_long_tablecloth.obj-221fc882d5f7b2cf5954b83a205c2db8.mesh", "res://.godot/imported/table_long_tablecloth.obj-221fc882d5f7b2cf5954b83a205c2db8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

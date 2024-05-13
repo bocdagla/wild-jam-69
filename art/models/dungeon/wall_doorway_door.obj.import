@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5ay5e6um1npj"
+path="res://.godot/imported/wall_doorway_door.obj-181e36c781aa459e3b8923a8afd87656.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_doorway_door.obj-181e36c781aa459e3b8923a8afd87656.mesh"]
+
+source_file="res://art/models/dungeon/wall_doorway_door.obj"
+dest_files=["res://.godot/imported/wall_doorway_door.obj-181e36c781aa459e3b8923a8afd87656.mesh", "res://.godot/imported/wall_doorway_door.obj-181e36c781aa459e3b8923a8afd87656.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b2ybs05qmch3i"
+path="res://.godot/imported/chest.obj-f4c38f2de0e72860f59cb69ff513ef73.mesh"
+
+[deps]
+
+files=["res://.godot/imported/chest.obj-f4c38f2de0e72860f59cb69ff513ef73.mesh"]
+
+source_file="res://art/models/dungeon/chest.obj"
+dest_files=["res://.godot/imported/chest.obj-f4c38f2de0e72860f59cb69ff513ef73.mesh", "res://.godot/imported/chest.obj-f4c38f2de0e72860f59cb69ff513ef73.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

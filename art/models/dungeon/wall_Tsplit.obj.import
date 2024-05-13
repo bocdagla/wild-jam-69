@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bdmg6547v7mn3"
+path="res://.godot/imported/wall_Tsplit.obj-ee4ef68995597ee2a8b3d1f0e7eed59d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_Tsplit.obj-ee4ef68995597ee2a8b3d1f0e7eed59d.mesh"]
+
+source_file="res://art/models/dungeon/wall_Tsplit.obj"
+dest_files=["res://.godot/imported/wall_Tsplit.obj-ee4ef68995597ee2a8b3d1f0e7eed59d.mesh", "res://.godot/imported/wall_Tsplit.obj-ee4ef68995597ee2a8b3d1f0e7eed59d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

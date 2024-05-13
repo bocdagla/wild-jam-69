@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bosg2l7y78r0l"
+path="res://.godot/imported/table_medium.obj-a1cf2e1005de59aeb1ef599e1ff52f5c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/table_medium.obj-a1cf2e1005de59aeb1ef599e1ff52f5c.mesh"]
+
+source_file="res://art/models/dungeon/table_medium.obj"
+dest_files=["res://.godot/imported/table_medium.obj-a1cf2e1005de59aeb1ef599e1ff52f5c.mesh", "res://.godot/imported/table_medium.obj-a1cf2e1005de59aeb1ef599e1ff52f5c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

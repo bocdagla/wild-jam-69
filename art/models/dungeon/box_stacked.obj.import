@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cie87vq7s54ly"
+path="res://.godot/imported/box_stacked.obj-242c8ac1feffd249f2bf8619325a739e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/box_stacked.obj-242c8ac1feffd249f2bf8619325a739e.mesh"]
+
+source_file="res://art/models/dungeon/box_stacked.obj"
+dest_files=["res://.godot/imported/box_stacked.obj-242c8ac1feffd249f2bf8619325a739e.mesh", "res://.godot/imported/box_stacked.obj-242c8ac1feffd249f2bf8619325a739e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

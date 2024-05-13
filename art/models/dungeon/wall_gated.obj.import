@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://boc6kiwynfqol"
+path="res://.godot/imported/wall_gated.obj-84be2d0951ccc012b25c07108c0d7afd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_gated.obj-84be2d0951ccc012b25c07108c0d7afd.mesh"]
+
+source_file="res://art/models/dungeon/wall_gated.obj"
+dest_files=["res://.godot/imported/wall_gated.obj-84be2d0951ccc012b25c07108c0d7afd.mesh", "res://.godot/imported/wall_gated.obj-84be2d0951ccc012b25c07108c0d7afd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
