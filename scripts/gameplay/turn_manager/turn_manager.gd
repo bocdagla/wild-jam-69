@@ -1,10 +1,16 @@
+extends Label
+
 var current_turn := 1
+
+func _ready():
+	text = str(current_turn);
 
 # Función para avanzar al siguiente turno
 func next_turn():
 	current_turn += 1
 	update_game_state()
 	print("Turno actual: %s" % current_turn)
+	text = str(current_turn);
 
 # Actualiza el estado del juego al cambiar de turno
 func update_game_state():

@@ -1,3 +1,34 @@
-[gd_scene format=3 uid="uid://cy05p6fxifmaq"]
+[gd_scene load_steps=2 format=3 uid="uid://5krc1ug3cjim"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/turn_manager/turn_manager.gd" id="1_w2psw"]
 
 [node name="Exeon" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CurrentTurn" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_right = 0.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "0"
+script = ExtResource("1_w2psw")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "End Turn"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/CurrentTurn" method="_on_TurnButton_pressed"]
