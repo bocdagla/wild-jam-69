@@ -1,67 +1,29 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1ig3hxgelsi1"]
+[gd_scene load_steps=5 format=3 uid="uid://c1ig3hxgelsi1"]
 
-[ext_resource type="PackedScene" uid="uid://vd7b6xbqif25" path="res://art/models/blue/building_home_A_blue.gltf" id="7_b56id"]
-[ext_resource type="MeshLibrary" uid="uid://cy733txr82e1g" path="res://art/models/meshlibrary/hexagons.tres" id="8_tp4jk"]
-[ext_resource type="PackedScene" uid="uid://b8w5w33nq6s44" path="res://art/models/neutral/building_grain.gltf" id="9_alurc"]
-[ext_resource type="PackedScene" uid="uid://buq36ck3qduaw" path="res://art/models/nature/cloud_big.gltf" id="10_irgna"]
-[ext_resource type="PackedScene" uid="uid://b2lhq6lbiffpi" path="res://art/models/nature/cloud_small.gltf" id="11_v1eci"]
-[ext_resource type="PackedScene" uid="uid://dgujisbtvu5me" path="res://art/models/nature/hills_B_trees.gltf" id="12_n7d6i"]
-[ext_resource type="PackedScene" uid="uid://dx2wluk8aw5m2" path="res://art/models/nature/hills_C_trees.gltf" id="13_47s1s"]
-[ext_resource type="PackedScene" uid="uid://dhw3gwl1nj2vr" path="res://art/models/nature/hill_single_B.gltf" id="14_4kpme"]
-[ext_resource type="PackedScene" uid="uid://d0vujv4s4eoon" path="res://art/models/nature/mountain_A.gltf" id="15_ugr1a"]
+[ext_resource type="Script" path="res://scripts/gameplay/building_creation/building_manager.gd" id="3_3auqd"]
 [ext_resource type="PackedScene" uid="uid://b217m2gh7rwaf" path="res://prefabs/gameplay/building_creation/grid.tscn" id="16_gvmon"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4cuk"]
+albedo_color = Color(0.733333, 1, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m803d"]
+material = SubResource("StandardMaterial3D_x4cuk")
+size = Vector2(300, 100)
+
 [node name="Bocdagla" type="Node3D"]
-
-[node name="UserUI" type="CanvasLayer" parent="."]
-
-[node name="building_church_blue2" type="Node3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.288462, 0.56288, -8.26565)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.999915, 0.0130547, 0, -0.0130547, 0.999915, 0, 2.25617, 5.85439)
 
-[node name="building_home_A_blue2" parent="." instance=ExtResource("7_b56id")]
-transform = Transform3D(0.882579, 0, -0.470165, 0, 1, 0, 0.470165, 0, 0.882579, 1.48789, 0.550647, 2.6627)
-
-[node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("8_tp4jk")
-cell_size = Vector3(1, 1, 0.75)
-cell_octant_size = 6
-data = {
-"cells": PackedInt32Array(65535, 65526, 0, 1, 65526, 0, 0, 65524, 0, 0, 65528, 0, 65534, 65528, 0, 2, 65528, 0, 4, 65528, 0, 65532, 65528, 0, 65533, 65526, 0, 65534, 65524, 0, 3, 65526, 0, 2, 65524, 0, 5, 65526, 0, 4, 65524, 0, 6, 65528, 0, 6, 65524, 0, 7, 65526, 0, 65531, 65526, 0, 65532, 65524, 0, 65534, 65532, 0, 65533, 65530, 0, 65534, 65530, 0, 65535, 65530, 0, 0, 65530, 0, 1, 65530, 0, 2, 65530, 0, 3, 65531, 0, 4, 65531, 0, 5, 65531, 0, 6, 65531, 0, 7, 65531, 0, 8, 65531, 0, 5, 65530, 0, 4, 65530, 0, 3, 65530, 0, 65532, 65530, 0, 65531, 65530, 0, 65531, 65531, 0, 65532, 65532, 0, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65533, 0, 1, 65533, 0, 2, 65533, 0, 3, 65533, 0, 4, 65533, 0, 5, 65533, 0, 6, 65533, 0, 65535, 65534, 0, 65533, 65534, 0, 65533, 65535, 0, 65534, 65535, 0, 65535, 65535, 0, 0, 65535, 0, 2, 65534, 0, 3, 65534, 0, 4, 65534, 0, 6, 65532, 0, 5, 65532, 0, 4, 65532, 0, 3, 65532, 0, 0, 65532, 0, 1, 65532, 0, 2, 65531, 0, 3, 65529, 0, 4, 65529, 0, 2, 65529, 0, 65535, 65531, 0, 1, 65535, 0, 1, 65531, 0, 0, 65531, 0, 65535, 65532, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 65534, 0, 1, 65534, 0, 8, 65524, 0, 9, 65522, 0, 9, 65520, 0, 9, 65518, 0, 8, 65517, 0, 6, 65516, 0, 5, 65516, 0, 3, 65517, 0, 1, 65519, 0, 65535, 65520, 0, 65533, 65522, 0, 65530, 65528, 0, 65530, 65530, 0, 65530, 65533, 0, 65531, 65534, 0, 65531, 65535, 0, 65532, 0, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 0, 0, 2, 0, 0, 3, 65535, 0, 7, 65530, 0, 7, 65528, 0, 8, 65525, 0, 8, 65523, 0, 8, 65520, 0, 7, 65517, 0, 6, 65515, 0, 4, 65514, 0, 2, 65513, 0, 0, 65514, 0, 65534, 65516, 0, 65532, 65518, 0, 65531, 65520, 0, 65530, 65523, 0, 65530, 65525, 0, 65530, 65527, 0, 65531, 65529, 0, 65532, 65531, 0, 65533, 65532, 0, 5, 65529, 0, 6, 65526, 0, 7, 65525, 0, 7, 65523, 0, 6, 65521, 0, 6, 65520, 0, 4, 65519, 0, 2, 65519, 0, 0, 65519, 0, 65531, 65525, 0, 65530, 65529, 0, 65533, 65531, 0, 0, 65529, 0, 1, 65528, 0, 2, 65527, 0, 2, 65526, 0, 2, 65525, 0, 2, 65523, 0, 1, 65523, 0, 0, 65523, 0, 65535, 65523, 0, 65533, 65524, 0, 65532, 65525, 0, 65532, 65526, 0, 65531, 65527, 0, 65531, 65528, 0, 65535, 65529, 0, 1, 65527, 0, 3, 65524, 0, 4, 65523, 0, 4, 65521, 0, 4, 65520, 0, 3, 65520, 0, 65535, 65519, 0, 65534, 65520, 0, 65533, 65521, 0, 65531, 65522, 0, 65530, 65524, 0, 65530, 65526, 0, 65532, 65529, 0, 65533, 65529, 0, 65534, 65529, 0, 65535, 65528, 0, 0, 65527, 0, 1, 65525, 0, 3, 65522, 0, 3, 65521, 0, 4, 65518, 0, 2, 65516, 0, 0, 65515, 0, 65535, 65514, 0, 65533, 65514, 0, 65531, 65515, 0, 65529, 65516, 0, 65528, 65518, 0, 65527, 65520, 0, 65527, 65523, 0, 65527, 65525, 0, 65527, 65526, 0, 65528, 65528, 0, 65528, 65529, 0, 65529, 65530, 0, 1, 65529, 0, 4, 65526, 0, 5, 65525, 0, 6, 65522, 0, 6, 65519, 0, 5, 65518, 0, 3, 65518, 0, 1, 65518, 0, 65532, 65522, 0, 65531, 65523, 0, 65529, 65527, 0, 65529, 65528, 0, 65532, 65527, 0, 65534, 65526, 0, 65535, 65525, 0, 5, 65517, 0, 6, 65517, 0, 4, 65517, 0, 2, 65518, 0, 65535, 65521, 0, 65533, 65527, 0, 1, 65524, 0, 3, 65519, 0, 65532, 65523, 0, 65529, 65526, 0, 65528, 65527, 0, 65527, 65529, 0, 65533, 65523, 0, 65534, 65521, 0, 0, 65518, 0, 0, 65517, 0, 1, 65516, 0, 0, 65516, 0, 65535, 65518, 0, 65534, 65519, 0, 65534, 65518, 0, 65535, 65515, 0, 65534, 65514, 0, 65534, 65513, 0, 65534, 65512, 0, 65533, 65512, 0, 65531, 65512, 0, 65530, 65512, 0, 65528, 65513, 0, 65527, 65514, 0, 65526, 65515, 0, 65525, 65517, 0, 65524, 65518, 0, 65524, 65520, 0, 65524, 65521, 0, 65524, 65522, 0, 65524, 65523, 0, 65525, 65524, 0, 65525, 65525, 0, 65526, 65526, 0, 65527, 65527, 0, 65527, 65528, 0, 65533, 65525, 0, 65534, 65522, 0, 65535, 65516, 0, 65533, 65513, 0, 65533, 65515, 0, 65532, 65517, 0, 65531, 65519, 0, 65531, 65521, 0, 65529, 65529, 0, 65531, 65524, 0, 65532, 65519, 0, 65531, 65518, 0, 65530, 65518, 0, 65529, 65520, 0, 65528, 65521, 0, 65527, 65522, 0, 65526, 65524, 0, 65526, 65523, 0, 65527, 65521, 0, 65528, 65519, 0, 65529, 65518, 0, 65529, 65517, 0, 65530, 65515, 0, 65530, 65514, 0, 65531, 65514, 0, 65529, 65515, 0, 65526, 65525, 0, 65526, 65527, 0, 65528, 65526, 0, 65529, 65524, 0, 65533, 65517, 0, 65534, 65515, 0, 65533, 65516, 0, 65530, 65521, 0, 65529, 65522, 0, 65528, 65523, 0, 65527, 65524, 0, 65528, 65516, 0, 65529, 65514, 0, 65529, 65512, 0, 65529, 65511, 0, 65529, 65510, 0, 65528, 65515, 0, 65527, 65517, 0, 65527, 65519, 0, 65526, 65520, 0, 65525, 65522, 0, 65525, 65523, 0, 65525, 65520, 0, 65525, 65519, 0, 65526, 65517, 0, 65526, 65513, 0, 65527, 65511, 0, 65527, 65509, 0, 65526, 65510, 0, 65526, 65512, 0, 65525, 65514, 0, 65525, 65515, 0, 65524, 65517, 0, 65524, 65519, 0, 65523, 65520, 0, 65523, 65521, 0, 65525, 65516, 0, 65526, 65514, 0, 65527, 65513, 0, 65528, 65514, 0, 65528, 65525, 0, 65528, 65530, 0, 65529, 65532, 0, 65529, 65533, 0, 65529, 65534, 0, 65529, 65535, 0, 65530, 65535, 0, 65530, 65534, 0, 65530, 65532, 0, 65527, 65530, 0, 65526, 65531, 0, 65529, 0, 0, 65529, 1, 0, 65530, 1, 0, 65530, 2, 0, 65531, 2, 0, 65532, 2, 0, 65532, 1, 0, 65533, 1, 0, 65531, 3, 0, 65532, 3, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 1, 1, 0, 2, 1, 0, 0, 2, 0, 65535, 3, 0, 65534, 3, 0, 0, 3, 0, 1, 3, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 4, 1, 0, 3, 1, 0, 5, 0, 0, 7, 65535, 0, 8, 65535, 0, 8, 65534, 0, 7, 65534, 0, 6, 65534, 0, 5, 65535, 0, 4, 65535, 0, 4, 0, 0, 3, 0, 0, 7, 65533, 0, 8, 65532, 0, 10, 65532, 0, 10, 65530, 0, 9, 65531, 0, 7, 65532, 0, 5, 65534, 0, 5, 1, 0, 6, 0, 0, 9, 65534, 0, 9, 65533, 0, 10, 65531, 0, 10, 65529, 0, 10, 65528, 0, 10, 65527, 0, 9, 65527, 0, 8, 65527, 0, 7, 65529, 0, 6, 65530, 0, 8, 65530, 0, 9, 65528, 0, 11, 65527, 0, 12, 65525, 0, 13, 65524, 0, 14, 65523, 0, 14, 65522, 0, 14, 65521, 0, 13, 65521, 0, 12, 65522, 0, 10, 65523, 0, 9, 65524, 0, 6, 65527, 0, 5, 65528, 0, 6, 65529, 0, 8, 65528, 0, 11, 65526, 0, 11, 65525, 0, 12, 65524, 0, 12, 65523, 0, 11, 65523, 0, 7, 65524, 0, 6, 65525, 0, 4, 65525, 0, 5, 65524, 0, 6, 65523, 0, 7, 65522, 0, 8, 65521, 0, 11, 65518, 0, 12, 65517, 0, 13, 65516, 0, 9, 65519, 0, 4, 65527, 0, 5, 65527, 0, 10, 65521, 0, 11, 65520, 0, 11, 65519, 0, 12, 65519, 0, 10, 65519, 0, 8, 65519, 0, 5, 65520, 0, 2, 65522, 0, 1, 65522, 0, 2, 65521, 0, 2, 65520, 0, 7, 65516, 0, 8, 65515, 0, 9, 65514, 0, 11, 65513, 0, 11, 65512, 0, 12, 65511, 0, 10, 65514, 0, 9, 65516, 0, 5, 65521, 0, 5, 65523, 0, 7, 65527, 0, 8, 65526, 0, 9, 65525, 0, 10, 65525, 0, 11, 65524, 0, 13, 65523, 0, 13, 65522, 0, 10, 65524, 0, 12, 65518, 0, 15, 65513, 0, 16, 65510, 0, 17, 65508, 0, 18, 65505, 0, 19, 65504, 0, 19, 65503, 0, 18, 65503, 0, 17, 65503, 0, 15, 65504, 0, 13, 65506, 0, 11, 65508, 0, 10, 65510, 0, 8, 65512, 0, 6, 65514, 0, 8, 65513, 0, 9, 65512, 0, 11, 65509, 0, 12, 65508, 0, 14, 65507, 0, 14, 65506, 0, 13, 65509, 0, 13, 65510, 0, 12, 65512, 0, 12, 65513, 0, 11, 65514, 0, 12, 65514, 0, 13, 65513, 0, 14, 65511, 0, 16, 65509, 0, 19, 65507, 0, 21, 65505, 0, 23, 65503, 0, 24, 65502, 0, 18, 65507, 0, 15, 65509, 0, 13, 65511, 0, 9, 65515, 0, 8, 65516, 0, 13, 65512, 0, 14, 65510, 0, 19, 65508, 0, 18, 65509, 0, 17, 65510, 0, 16, 65511, 0, 14, 65514, 0, 13, 65515, 0, 12, 65516, 0, 13, 65517, 0, 14, 65515, 0, 15, 65514, 0, 16, 65513, 0, 17, 65511, 0, 19, 65509, 0, 20, 65508, 0, 18, 65508, 0, 11, 65515, 0, 7, 65518, 0, 6, 65518, 0, 10, 65512, 0, 11, 65510, 0, 13, 65508, 0, 16, 65504, 0, 17, 65502, 0, 13, 65507, 0, 12, 65509, 0, 11, 65511, 0, 10, 65513, 0, 14, 65509, 0, 15, 65508, 0, 16, 65508, 0, 17, 65507, 0, 17, 65506, 0, 16, 65507, 0, 15, 65510, 0, 10, 65517, 0, 7, 65521, 0, 10, 65520, 0, 14, 65513, 0, 14, 65512, 0, 15, 65507, 0, 14, 65508, 0, 12, 65510, 0, 17, 65505, 0, 21, 65500, 0, 23, 65497, 0, 24, 65494, 0, 22, 65496, 0, 20, 65498, 0, 17, 65500, 0, 15, 65502, 0, 13, 65504, 0, 11, 65506, 0, 9, 65507, 0, 8, 65508, 0, 7, 65509, 0, 6, 65510, 0, 5, 65511, 0, 5, 65512, 0, 7, 65508, 0, 10, 65505, 0, 12, 65503, 0, 14, 65500, 0, 17, 65498, 0, 19, 65496, 0, 21, 65494, 0, 21, 65495, 0, 18, 65498, 0, 16, 65500, 0, 13, 65503, 0, 9, 65508, 0, 7, 65510, 0, 6, 65511, 0, 5, 65513, 0, 5, 65514, 0, 6, 65513, 0, 7, 65511, 0, 9, 65510, 0, 15, 65503, 0, 16, 65502, 0, 18, 65501, 0, 7, 65512, 0, 4, 65515, 0, 3, 65516, 0, 3, 65515, 0, 10, 65509, 0, 11, 65507, 0, 13, 65505, 0, 12, 65506, 0, 10, 65507, 0, 4, 65513, 0, 3, 65514, 0, 2, 65515, 0, 3, 65513, 0, 4, 65512, 0)
-}
-metadata/_editor_floor_ = Vector3(0, 0, -10)
-
-[node name="building_grain2" parent="." instance=ExtResource("9_alurc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.930251, 0.45223, 3.86208)
-
-[node name="building_grain4" parent="." instance=ExtResource("9_alurc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6501, 0.452231, 2.43345)
-
-[node name="building_grain3" parent="." instance=ExtResource("9_alurc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.423179, 0.45223, 1.92367)
-
-[node name="cloud_big2" parent="." instance=ExtResource("10_irgna")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64832, 5.66825, -9.88686)
-
-[node name="cloud_small2" parent="." instance=ExtResource("11_v1eci")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39786, 5.16199, -3.16019)
-
-[node name="hills_B_trees2" parent="." instance=ExtResource("12_n7d6i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.722, 0.556394, -7.66745)
-
-[node name="hills_C_trees2" parent="." instance=ExtResource("13_47s1s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987522, 0.603566, -6.59157)
-
-[node name="hill_single_B2" parent="." instance=ExtResource("14_4kpme")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60353, 0.665101, -7.71241)
-
-[node name="mountain_A2" parent="." instance=ExtResource("15_ugr1a")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.11214, 0, -14.5231)
-
 [node name="GridLast" parent="." instance=ExtResource("16_gvmon")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, -8.49739)
+cell_size = 6.0
+
+[node name="GridMiddle" parent="." instance=ExtResource("16_gvmon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, -2.49739)
+
+[node name="GridFront" parent="." instance=ExtResource("16_gvmon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, 3.50261)
 cell_size = 6.0
 
 [node name="BuidingButtons" type="CanvasLayer" parent="."]
@@ -77,28 +39,91 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BuidingButtons/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+[node name="ScrollContainer" type="ScrollContainer" parent="BuidingButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="BuidingButtons/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-
-[node name="Control" type="Control" parent="BuidingButtons/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button2" type="Button" parent="BuidingButtons/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-
-[node name="Control2" type="Control" parent="BuidingButtons/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BuidingButtons/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Townhall" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Townhall"
+
+[node name="Farm" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Farm"
+
+[node name="Button3" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button9" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button10" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button11" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button12" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button13" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.509612, 0.860404, 0, -0.860404, 0.509612, 0, 1.7615, -0.16854)
 
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/HBoxContainer/Button" to="GridLast" method="add_building_left"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/HBoxContainer/Button2" to="GridLast" method="add_building_right"]
+[node name="BuildingManager" type="Node" parent="." node_paths=PackedStringArray("last_grid", "mid_grid", "front_grid")]
+script = ExtResource("3_3auqd")
+last_grid = NodePath("../GridLast")
+mid_grid = NodePath("../GridMiddle")
+front_grid = NodePath("../GridFront")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_m803d")
+
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Townhall" to="BuildingManager" method="build_townhall"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Farm" to="BuildingManager" method="build_farm"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button3" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button4" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button5" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button6" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button7" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button8" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button9" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button10" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button11" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button12" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button13" to="GridLast" method="add_building_left"]
