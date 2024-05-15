@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BuildingRecord" load_steps=2 format=3 uid="uid://881ixbkvvik1"]
+
+[ext_resource type="Script" path="res://scripts/resources/Building.gd" id="1_jyg7y"]
+
+[resource]
+script = ExtResource("1_jyg7y")
+name = "Farm"
+gold_cost = 100
+defense_cost = 10
+build_turns = 1
+gold_gain = 300
+defense_gain = 300
+turn_gold_gain = 100
+turn_defense_gain = 100

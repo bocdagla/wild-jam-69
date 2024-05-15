@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1ig3hxgelsi1"]
+[gd_scene load_steps=12 format=3 uid="uid://c1ig3hxgelsi1"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/building_manager.gd" id="3_3auqd"]
 [ext_resource type="Script" path="res://prefabs/gameplay/resource_manager/resource_manager.gd" id="3_8yfc5"]
@@ -6,7 +6,8 @@
 [ext_resource type="Resource" uid="uid://cgu15mlsrt7cw" path="res://resources/buildings/town_hall.tres" id="4_ox2nw"]
 [ext_resource type="Texture2D" uid="uid://dqpn44sihm61b" path="res://art/textures/icons/64/Coin.png" id="4_vyr5u"]
 [ext_resource type="Texture2D" uid="uid://bl1stv7uc6qrf" path="res://art/textures/icons/64/ShieldLargeT2.png" id="5_2fuwc"]
-[ext_resource type="PackedScene" uid="uid://ecqohh4ya31d" path="res://art/models/neutral/building_scaffolding.gltf" id="7_k4644"]
+[ext_resource type="Resource" uid="uid://881ixbkvvik1" path="res://resources/buildings/farm.tres" id="7_2a5bu"]
+[ext_resource type="Script" path="res://scripts/gameplay/turn_manager/turn_manager.gd" id="8_ey73k"]
 [ext_resource type="PackedScene" uid="uid://b217m2gh7rwaf" path="res://prefabs/gameplay/building_creation/grid.tscn" id="16_gvmon"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4cuk"]
@@ -42,7 +43,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TopBar" type="HBoxContainer" parent="BuildUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="BuildUI/VBoxContainer/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Turns" type="Label" parent="BuildUI/VBoxContainer/TopBar"]
+layout_mode = 2
+text = "0"
+
+[node name="Control2" type="Control" parent="BuildUI/VBoxContainer/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NextTurn" type="Button" parent="BuildUI/VBoxContainer/TopBar"]
+layout_mode = 2
+text = "Next turn"
+
 [node name="Control" type="Control" parent="BuildUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Endgame" type="Label" parent="BuildUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="BuildUI/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -130,7 +157,7 @@ text = "Farm
 
 "
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("7_2a5bu")
 
 [node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Farm"]
 layout_mode = 1
@@ -827,6 +854,11 @@ _defense = 100
 _gold_label = NodePath("../BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer/GoldUI")
 _defense_label = NodePath("../BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer/DefenseUI")
 
+[node name="TurnManager" type="Node" parent="." node_paths=PackedStringArray("turn_label", "end_game_message")]
+script = ExtResource("8_ey73k")
+turn_label = NodePath("../BuildUI/VBoxContainer/TopBar/Turns")
+end_game_message = NodePath("../BuildUI/VBoxContainer/Endgame")
+
 [node name="DevUI" type="CanvasLayer" parent="."]
 
 [node name="GridContainer" type="GridContainer" parent="DevUI"]
@@ -846,9 +878,7 @@ text = "+ Gold"
 layout_mode = 2
 text = "+ Defense"
 
-[node name="building_scaffolding2" parent="." instance=ExtResource("7_k4644")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24866, 0, 2.2914)
-
+[connection signal="pressed" from="BuildUI/VBoxContainer/TopBar/NextTurn" to="TurnManager" method="next_turn"]
 [connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Townhall" to="BuildingManager" method="build_townhall"]
 [connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Farm" to="BuildingManager" method="build_farm"]
 [connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Castle" to="BuildingManager" method="build_castle"]
@@ -862,5 +892,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24866, 0, 2.2914)
 [connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button11" to="GridLast" method="add_building_left"]
 [connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button12" to="GridLast" method="add_building_left"]
 [connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button13" to="GridLast" method="add_building_left"]
+[connection signal="building_created" from="BuildingManager" to="ResourceManager" method="register_building_for_tax_collection"]
+[connection signal="building_created" from="BuildingManager" to="TurnManager" method="_on_building_created"]
 [connection signal="pressed" from="DevUI/GridContainer/AddGold" to="ResourceManager" method="add_gold" binds= [10]]
 [connection signal="pressed" from="DevUI/GridContainer/AddDefense" to="ResourceManager" method="add_defense" binds= [10]]

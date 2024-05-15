@@ -43,3 +43,12 @@ func add_gold(ammount: int) -> void:
 
 func add_defense(ammount: int) -> void:
 	_defense += ammount;
+
+func register_building_for_tax_collection(building: Building):
+	building.send_resources.connect(collect_taxes);
+
+func collect_taxes(p_gold: int, p_defense: int):
+	if p_gold != 0:
+		add_gold(p_gold);
+	if p_defense != 0:
+		add_defense(p_defense);

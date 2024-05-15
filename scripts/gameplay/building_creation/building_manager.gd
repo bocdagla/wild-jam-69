@@ -22,12 +22,13 @@ const WATCHTOWER = preload("res://prefabs/gameplay/buildings/watchtower.tscn");
 const SIEGE_TOWER = preload("res://prefabs/gameplay/buildings/siege_tower.tscn")
 #endregion
 
+var bulding_registry: Dictionary;
+
 @export var last_grid: GridRow;
-var _left_last: bool = false;
 @export var mid_grid: GridRow;
-var _left_mid: bool = false;
 @export var front_grid: GridRow;
-var _left_front: bool = false;
+
+signal building_created(building: Building);
 
 #region Building functions
 
@@ -88,26 +89,24 @@ func build_watchtower():
 #endregion
 
 func _build_last(building: PackedScene) -> void:
-	if _left_last:
-		last_grid.add_building_left(building);
-	else:
-		last_grid.add_building_right(building);
-	_left_last = !_left_last;
+	_build(building, last_grid);
 
 func _build_mid(building: PackedScene) -> void:
-	if _left_mid:
-		mid_grid.add_building_left(building);
-	else:
-		mid_grid.add_building_right(building);
-	_left_mid = !_left_mid;
+	_build(building, mid_grid);
 
 func _build_front(building: PackedScene) -> void:
-	if _left_front:
-		front_grid.add_building_left(building);
+	_build(building, front_grid);
+
+func _build(building: PackedScene, row: GridRow):
+	var inst: Building;
+	if randf() > 0.5:
+		inst = row.add_building_left(building);
 	else:
-		front_grid.add_building_right(building);
-	_left_front = !_left_front;
+		inst = row.add_building_right(building);
 
+	if bulding_registry.has(inst.building_record.name):
+		bulding_registry[inst.building_record.name] += 1;
+	else:
+		bulding_registry[inst.building_record.name] = 1;
 
-func add_building_left():
-	pass # Replace with function body.
+	building_created.emit(inst);

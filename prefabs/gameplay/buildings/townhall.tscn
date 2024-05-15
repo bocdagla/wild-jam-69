@@ -1,8 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnvtatport8s7"]
+[gd_scene load_steps=13 format=3 uid="uid://cnvtatport8s7"]
 
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_rhv0o"]
 [ext_resource type="Texture2D" uid="uid://k245hj4x0q82" path="res://art/models/blue/hexagons_medieval.png" id="1_y5tu0"]
 [ext_resource type="Texture2D" uid="uid://bx6wwovjkttgs" path="res://art/models/dungeon/texture/dungeon_texture.png" id="2_3jmks"]
+[ext_resource type="Resource" uid="uid://cgu15mlsrt7cw" path="res://resources/buildings/town_hall.tres" id="2_x5wbq"]
 [ext_resource type="ArrayMesh" uid="uid://c2lny6mfeax8x" path="res://art/models/dungeon/bottle_A_brown.obj" id="3_knhxk"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="6_ney24"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="7_v35qo"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="8_53yrt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyusq"]
 resource_name = "hexagons_medieval"
@@ -44,10 +49,13 @@ shadow_mesh = SubResource("ArrayMesh_s3hfa")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ll8tr"]
 albedo_texture = ExtResource("2_3jmks")
 
-[node name="Townhall" type="Node3D"]
+[node name="Townhall" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_rhv0o")
+building_record = ExtResource("2_x5wbq")
+_main_structure = NodePath("building_church_blue2")
 
 [node name="building_church_blue2" type="Node3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="building_church_blue" type="MeshInstance3D" parent="building_church_blue2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.119021)
@@ -59,3 +67,9 @@ transform = Transform3D(0.51, 0, 0, 0, 0.51, 0, 0, 0, 0.51, 0.00265163, 1.35077,
 material_override = SubResource("StandardMaterial3D_ll8tr")
 mesh = ExtResource("3_knhxk")
 skeleton = NodePath("../..")
+
+[node name="building_stage_A2" parent="." instance=ExtResource("6_ney24")]
+
+[node name="building_stage_B2" parent="." instance=ExtResource("7_v35qo")]
+
+[node name="building_stage_C2" parent="." instance=ExtResource("8_53yrt")]
