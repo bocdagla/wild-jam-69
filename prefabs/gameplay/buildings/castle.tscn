@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://dgr0c4e7pmgq4"]
+[gd_scene load_steps=2 format=3 uid="uid://dgr0c4e7pmgq4"]
+
+[ext_resource type="PackedScene" uid="uid://cet4dkk1vr7qq" path="res://art/models/blue/building_castle_blue.gltf" id="1_34jfv"]
 
 [node name="Castle" type="Node3D"]
+
+[node name="building_castle_blue2" parent="." instance=ExtResource("1_34jfv")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)

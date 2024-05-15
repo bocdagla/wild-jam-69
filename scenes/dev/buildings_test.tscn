@@ -1,0 +1,175 @@
+[gd_scene load_steps=5 format=3 uid="uid://pi5wn32dkb5g"]
+
+[ext_resource type="PackedScene" uid="uid://b217m2gh7rwaf" path="res://prefabs/gameplay/building_creation/grid.tscn" id="1_qlrft"]
+[ext_resource type="Script" path="res://scripts/gameplay/building_creation/building_manager.gd" id="2_l0oon"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4cuk"]
+albedo_color = Color(0.733333, 1, 0.215686, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m803d"]
+material = SubResource("StandardMaterial3D_x4cuk")
+size = Vector2(300, 100)
+
+[node name="Bocdagla" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999915, 0.0130547, 0, -0.0130547, 0.999915, 0, 2.25617, 5.85439)
+
+[node name="GridLast" parent="." instance=ExtResource("1_qlrft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, -8.49739)
+cell_size = 6.0
+
+[node name="GridMiddle" parent="." instance=ExtResource("1_qlrft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, -2.49739)
+
+[node name="GridFront" parent="." instance=ExtResource("1_qlrft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, 3.50261)
+cell_size = 6.0
+
+[node name="BuidingButtons" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuidingButtons"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="BuidingButtons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BuidingButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BuidingButtons/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Townhall" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Townhall"
+
+[node name="Farm" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Farm"
+
+[node name="Castle" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Castle"
+
+[node name="Archery" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Archery"
+
+[node name="Archer_tower" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Archery Tower"
+
+[node name="Barracks" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Barracks"
+
+[node name="Forge" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Forge"
+
+[node name="House" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "House"
+
+[node name="Big_house" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Big House"
+
+[node name="Lumbremill" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Lumbremill"
+
+[node name="Mage_tower" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Mage Tower"
+
+[node name="Market" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Market"
+
+[node name="Mill" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Mill"
+
+[node name="Mine" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Mine"
+
+[node name="Siege_tower" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Siege Tower"
+
+[node name="Quarry" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Quarry"
+
+[node name="Tavern" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Tavern"
+
+[node name="Watchtower" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Watchtower"
+
+[node name="Button19" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.509612, 0.860404, 0, -0.860404, 0.509612, 0, 1.7615, -0.16854)
+
+[node name="BuildingManager" type="Node" parent="." node_paths=PackedStringArray("last_grid", "mid_grid", "front_grid")]
+script = ExtResource("2_l0oon")
+last_grid = NodePath("../GridLast")
+mid_grid = NodePath("../GridMiddle")
+front_grid = NodePath("../GridFront")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_m803d")
+
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Townhall" to="BuildingManager" method="build_townhall"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Farm" to="BuildingManager" method="build_farm"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Castle" to="BuildingManager" method="build_castle"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Archery" to="BuildingManager" method="build_archery"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Archer_tower" to="BuildingManager" method="build_archer_tower"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Barracks" to="BuildingManager" method="build_barracs"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Forge" to="BuildingManager" method="build_forge"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/House" to="BuildingManager" method="build_house"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Big_house" to="BuildingManager" method="build_house_big"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Lumbremill" to="BuildingManager" method="build_lumbermill"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Mage_tower" to="BuildingManager" method="build_mage_tower"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Market" to="BuildingManager" method="build_market"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Mill" to="BuildingManager" method="build_mill"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Mine" to="BuildingManager" method="build_mine"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Siege_tower" to="BuildingManager" method="build_siege_tower"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Quarry" to="BuildingManager" method="build_quarry"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Tavern" to="BuildingManager" method="build_tavern"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Watchtower" to="BuildingManager" method="build_watchtower"]
+[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button19" to="GridLast" method="add_building_left"]

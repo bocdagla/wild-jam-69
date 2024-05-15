@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://lkvugvqkgxvu"]
+[gd_scene load_steps=2 format=3 uid="uid://lkvugvqkgxvu"]
+
+[ext_resource type="PackedScene" uid="uid://clt8yf3odxs66" path="res://art/models/blue/building_archeryrange_blue.gltf" id="1_e32k3"]
 
 [node name="Archery" type="Node3D"]
+
+[node name="building_archeryrange_blue2" parent="." instance=ExtResource("1_e32k3")]

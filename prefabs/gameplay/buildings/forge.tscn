@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://2uw3ncicgy7w"]
+[gd_scene load_steps=2 format=3 uid="uid://2uw3ncicgy7w"]
+
+[ext_resource type="PackedScene" uid="uid://846adv5wqtyd" path="res://art/models/blue/building_blacksmith_blue.gltf" id="1_mkdkx"]
 
 [node name="Forge" type="Node3D"]
+
+[node name="building_blacksmith_blue2" parent="." instance=ExtResource("1_mkdkx")]
