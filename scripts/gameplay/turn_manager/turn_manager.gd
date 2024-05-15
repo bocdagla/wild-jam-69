@@ -1,9 +1,13 @@
 extends Label
 
+@export var last_turn := 30
+@export var end_game_message : Label
 var current_turn := 1
+
 
 func _ready():
 	text = str(current_turn);
+	end_game_message.visible = false
 
 # Función para avanzar al siguiente turno
 func next_turn():
@@ -14,6 +18,9 @@ func next_turn():
 
 # Actualiza el estado del juego al cambiar de turno
 func update_game_state():
+	if current_turn >= last_turn:
+		end_game_message.visible = true
+	
 	# Aquí iría la lógica para actualizar los recursos del jugador, construcciones, etc.
 	pass
 
