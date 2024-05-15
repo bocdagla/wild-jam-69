@@ -24,6 +24,7 @@ SceneLoader="*res://scripts/autoloads/scene_loader.gd"
 folder_colors={
 "res://art/": "green",
 "res://prefabs/": "yellow",
+"res://resources/": "purple",
 "res://scenes/": "red",
 "res://scripts/": "blue"
 }

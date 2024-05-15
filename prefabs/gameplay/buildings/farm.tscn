@@ -1,17 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://8sjb2dxxtaqc"]
+[gd_scene load_steps=8 format=3 uid="uid://8sjb2dxxtaqc"]
 
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_kmn0m"]
 [ext_resource type="PackedScene" uid="uid://vd7b6xbqif25" path="res://art/models/blue/building_home_A_blue.gltf" id="1_y4b5n"]
 [ext_resource type="PackedScene" uid="uid://b8w5w33nq6s44" path="res://art/models/neutral/building_grain.gltf" id="2_lboq7"]
+[ext_resource type="Resource" uid="uid://881ixbkvvik1" path="res://resources/buildings/farm.tres" id="2_w1rdb"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="5_l0kt8"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="6_o4jlp"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="7_sw0cy"]
 
-[node name="Farm" type="Node3D"]
+[node name="Farm" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_kmn0m")
+building_record = ExtResource("2_w1rdb")
+_main_structure = NodePath("Node3D")
 
-[node name="building_home_A_blue2" parent="." instance=ExtResource("1_y4b5n")]
+[node name="Node3D" type="Node3D" parent="."]
 
-[node name="building_grain2" parent="." instance=ExtResource("2_lboq7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08825, -1.19209e-07, 1.0339)
+[node name="building_grain4" parent="Node3D" instance=ExtResource("2_lboq7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0170192, -1.19209e-07, -1.39159)
 
-[node name="building_grain3" parent="." instance=ExtResource("2_lboq7")]
+[node name="building_grain3" parent="Node3D" instance=ExtResource("2_lboq7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00586, 0, 1.0926)
 
-[node name="building_grain4" parent="." instance=ExtResource("2_lboq7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0170192, -1.19209e-07, -1.39159)
+[node name="building_grain2" parent="Node3D" instance=ExtResource("2_lboq7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08825, -1.19209e-07, 1.0339)
+
+[node name="building_home_A_blue2" parent="Node3D" instance=ExtResource("1_y4b5n")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("5_l0kt8")]
+
+[node name="building_stage_B2" parent="." instance=ExtResource("6_o4jlp")]
+
+[node name="building_stage_C2" parent="." instance=ExtResource("7_sw0cy")]

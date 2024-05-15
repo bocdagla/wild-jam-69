@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_gxkwo")
-name = "Townhall"
-gold_cost = 100
-defense_cost = 10
-build_turns = 0
-gold_gain = 0
-defense_gain = 0
-turn_gold_gain = 0
+name = "Town hall"
+gold_cost = 25
+defense_cost = 0
+build_turns = 3
+gold_gain = 100
+defense_gain = 25
+turn_gold_gain = 50
 turn_defense_gain = 0
