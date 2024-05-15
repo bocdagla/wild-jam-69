@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://pi5wn32dkb5g"]
+[gd_scene load_steps=6 format=3 uid="uid://pi5wn32dkb5g"]
 
 [ext_resource type="PackedScene" uid="uid://b217m2gh7rwaf" path="res://prefabs/gameplay/building_creation/grid.tscn" id="1_qlrft"]
+[ext_resource type="Script" path="res://scripts/gameplay/camera/Camera3D.gd" id="1_u3a57"]
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/building_manager.gd" id="2_l0oon"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4cuk"]
@@ -14,6 +15,7 @@ size = Vector2(300, 100)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.999915, 0.0130547, 0, -0.0130547, 0.999915, 0, 2.25617, 5.85439)
+script = ExtResource("1_u3a57")
 
 [node name="GridLast" parent="." instance=ExtResource("1_qlrft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, -8.49739)
