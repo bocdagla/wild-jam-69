@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1ig3hxgelsi1"]
+[gd_scene load_steps=9 format=3 uid="uid://c1ig3hxgelsi1"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/building_manager.gd" id="3_3auqd"]
+[ext_resource type="Script" path="res://prefabs/gameplay/resource_manager/resource_manager.gd" id="3_8yfc5"]
+[ext_resource type="Script" path="res://prefabs/gameplay/building_creation/buy_building_button.gd" id="3_n7gp6"]
+[ext_resource type="Texture2D" uid="uid://dqpn44sihm61b" path="res://art/textures/icons/64/Coin.png" id="4_vyr5u"]
+[ext_resource type="Texture2D" uid="uid://bl1stv7uc6qrf" path="res://art/textures/icons/64/ShieldLargeT2.png" id="5_2fuwc"]
 [ext_resource type="PackedScene" uid="uid://b217m2gh7rwaf" path="res://prefabs/gameplay/building_creation/grid.tscn" id="16_gvmon"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4cuk"]
@@ -26,84 +30,775 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, -2.49739)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, 3.50261)
 cell_size = 6.0
 
-[node name="BuidingButtons" type="CanvasLayer" parent="."]
+[node name="BuildUI" type="CanvasLayer" parent="."]
+script = ExtResource("3_8yfc5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BuidingButtons"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="BuidingButtons/VBoxContainer"]
+[node name="Control" type="Control" parent="BuildUI/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="BuidingButtons/VBoxContainer"]
-custom_minimum_size = Vector2(0, 200)
+[node name="PanelContainer" type="PanelContainer" parent="BuildUI/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BuidingButtons/VBoxContainer/ScrollContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="Townhall" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+[node name="Townhall" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+text = "Townhall
+
+
+
+
+
+
+"
+script = ExtResource("3_n7gp6")
+gold_cost = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Townhall"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Townhall/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Townhall/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Townhall/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Townhall/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Townhall/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Townhall/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Farm" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Farm
+
+
+
+
+
+
+"
+script = ExtResource("3_n7gp6")
+gold_cost = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Farm"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Farm/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Farm/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Farm/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Farm/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Farm/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Farm/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Castle" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Castle
+
+
+
+
+
+
+"
+script = ExtResource("3_n7gp6")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Castle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Castle/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Castle/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Castle/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Castle/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Castle/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Castle/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Button4" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+script = ExtResource("3_n7gp6")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button4/MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 text = "Townhall"
+horizontal_alignment = 1
 
-[node name="Farm" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button4/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button4/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button4/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button4/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Button5" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-text = "Farm"
+script = ExtResource("3_n7gp6")
 
-[node name="Button3" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button5/MarginContainer"]
 layout_mode = 2
 
-[node name="Button4" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+[node name="Control" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Townhall"
+horizontal_alignment = 1
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button5/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button5/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button5/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button5/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Button6" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+script = ExtResource("3_n7gp6")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button6/MarginContainer"]
 layout_mode = 2
 
-[node name="Button5" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+[node name="Control" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button6/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Townhall"
+horizontal_alignment = 1
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button6/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button6/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button6/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button6/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button6/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Button7" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+script = ExtResource("3_n7gp6")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button7/MarginContainer"]
 layout_mode = 2
 
-[node name="Button6" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+[node name="Control" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button7/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Townhall"
+horizontal_alignment = 1
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button7/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button7/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button7/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button7/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button7/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Button8" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+script = ExtResource("3_n7gp6")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button8/MarginContainer"]
 layout_mode = 2
 
-[node name="Button7" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+[node name="Control" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button8/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Townhall"
+horizontal_alignment = 1
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button8/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button8/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button8/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button8/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button8/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Button9" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+script = ExtResource("3_n7gp6")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button9/MarginContainer"]
 layout_mode = 2
 
-[node name="Button8" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+[node name="Control" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button9/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Townhall"
+horizontal_alignment = 1
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button9/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button9/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button9/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button9/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button9/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Button10" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+script = ExtResource("3_n7gp6")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button10"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button10/MarginContainer"]
 layout_mode = 2
 
-[node name="Button9" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+[node name="Control" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button10/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Townhall"
+horizontal_alignment = 1
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button10/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button10/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button10/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button10/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button10/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Button11" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+script = ExtResource("3_n7gp6")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button11"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button11/MarginContainer"]
 layout_mode = 2
 
-[node name="Button10" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+[node name="Control" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button11/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Townhall"
+horizontal_alignment = 1
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button11/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button11/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button11/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button11/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button11/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Button12" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+script = ExtResource("3_n7gp6")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button12"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button12/MarginContainer"]
 layout_mode = 2
 
-[node name="Button11" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
+[node name="Control" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button12/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Townhall"
+horizontal_alignment = 1
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button12/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button12/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button12/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button12/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button12/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="Button13" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+script = ExtResource("3_n7gp6")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button13"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button13/MarginContainer"]
 layout_mode = 2
 
-[node name="Button12" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+[node name="Control" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button13/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Townhall"
+horizontal_alignment = 1
+
+[node name="Label" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button13/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button13/MarginContainer/VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+expand_mode = 4
+
+[node name="GoldLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button13/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="DefenseIcon" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button13/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+expand_mode = 4
+
+[node name="DefenseLabel" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button13/MarginContainer/VBoxContainer/Label"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Button13" type="Button" parent="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="GridContainer" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vyr5u")
+
+[node name="GoldUI" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="TextureRect2" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("5_2fuwc")
+
+[node name="DefenseUI" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.509612, 0.860404, 0, -0.860404, 0.509612, 0, 1.7615, -0.16854)
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_m803d")
 
 [node name="BuildingManager" type="Node" parent="." node_paths=PackedStringArray("last_grid", "mid_grid", "front_grid")]
 script = ExtResource("3_3auqd")
@@ -111,19 +806,45 @@ last_grid = NodePath("../GridLast")
 mid_grid = NodePath("../GridMiddle")
 front_grid = NodePath("../GridFront")
 
-[node name="Ground" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_m803d")
+[node name="ResourceManager" type="Node" parent="." node_paths=PackedStringArray("_gold_label", "_defense_label")]
+unique_name_in_owner = true
+script = ExtResource("3_8yfc5")
+_gold = 100
+_defense = 100
+_gold_label = NodePath("../BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer/GoldUI")
+_defense_label = NodePath("../BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer/DefenseUI")
 
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Townhall" to="BuildingManager" method="build_townhall"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Farm" to="BuildingManager" method="build_farm"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button3" to="GridLast" method="add_building_left"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button4" to="GridLast" method="add_building_left"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button5" to="GridLast" method="add_building_left"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button6" to="GridLast" method="add_building_left"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button7" to="GridLast" method="add_building_left"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button8" to="GridLast" method="add_building_left"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button9" to="GridLast" method="add_building_left"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button10" to="GridLast" method="add_building_left"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button11" to="GridLast" method="add_building_left"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button12" to="GridLast" method="add_building_left"]
-[connection signal="pressed" from="BuidingButtons/VBoxContainer/ScrollContainer/HBoxContainer/Button13" to="GridLast" method="add_building_left"]
+[node name="DevUI" type="CanvasLayer" parent="."]
+
+[node name="GridContainer" type="GridContainer" parent="DevUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+columns = 16
+
+[node name="AddGold" type="Button" parent="DevUI/GridContainer"]
+layout_mode = 2
+text = "+ Gold"
+
+[node name="AddDefense" type="Button" parent="DevUI/GridContainer"]
+layout_mode = 2
+text = "+ Defense"
+
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Townhall" to="BuildingManager" method="build_townhall"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Farm" to="BuildingManager" method="build_farm"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Castle" to="BuildingManager" method="build_castle"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button4" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button5" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button6" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button7" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button8" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button9" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button10" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button11" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button12" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Button13" to="GridLast" method="add_building_left"]
+[connection signal="pressed" from="DevUI/GridContainer/AddGold" to="ResourceManager" method="add_gold" binds= [10]]
+[connection signal="pressed" from="DevUI/GridContainer/AddDefense" to="ResourceManager" method="add_defense" binds= [10]]
