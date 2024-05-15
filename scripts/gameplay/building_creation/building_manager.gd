@@ -107,3 +107,7 @@ func _build_front(building: PackedScene) -> void:
 	else:
 		front_grid.add_building_right(building);
 	_left_front = !_left_front;
+
+
+func add_building_left():
+	pass # Replace with function body.

@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://cmupv25faxlh4"]
+[gd_scene load_steps=2 format=3 uid="uid://cmupv25faxlh4"]
+
+[ext_resource type="PackedScene" uid="uid://bdw87mbts2bc8" path="res://art/models/blue/building_mine_blue.gltf" id="1_me8n6"]
 
 [node name="Mine" type="Node3D"]
+
+[node name="building_mine_blue2" parent="." instance=ExtResource("1_me8n6")]

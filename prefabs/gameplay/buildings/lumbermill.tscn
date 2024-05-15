@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bua1n323sehg5"]
+[gd_scene load_steps=2 format=3 uid="uid://bua1n323sehg5"]
+
+[ext_resource type="PackedScene" uid="uid://dpc77cad2qsif" path="res://art/models/blue/building_lumbermill_blue.gltf" id="1_jrmkq"]
 
 [node name="Lumbermill" type="Node3D"]
+
+[node name="building_lumbermill_blue2" parent="." instance=ExtResource("1_jrmkq")]

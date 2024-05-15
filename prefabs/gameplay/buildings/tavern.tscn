@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://87itnpdt8uck"]
+[gd_scene load_steps=2 format=3 uid="uid://87itnpdt8uck"]
+
+[ext_resource type="PackedScene" uid="uid://diu1doxxwd6t1" path="res://art/models/blue/building_tavern_blue.gltf" id="1_cxsx0"]
 
 [node name="Tavern" type="Node3D"]
+
+[node name="building_tavern_blue2" parent="." instance=ExtResource("1_cxsx0")]

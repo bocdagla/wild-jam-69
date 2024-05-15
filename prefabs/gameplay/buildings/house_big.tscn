@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://di7n2lihwau80"]
+[gd_scene load_steps=2 format=3 uid="uid://di7n2lihwau80"]
+
+[ext_resource type="PackedScene" uid="uid://o18tsqs0souf" path="res://art/models/blue/building_home_B_blue.gltf" id="1_prmu2"]
 
 [node name="HouseBig" type="Node3D"]
+
+[node name="building_home_B_blue2" parent="." instance=ExtResource("1_prmu2")]

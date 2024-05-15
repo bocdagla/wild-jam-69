@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://d0jgtltvupmxi"]
+[gd_scene load_steps=2 format=3 uid="uid://d0jgtltvupmxi"]
+
+[ext_resource type="PackedScene" uid="uid://cj5ligyss5k3o" path="res://art/models/blue/building_tower_base_blue.gltf" id="1_rvx4d"]
 
 [node name="Watchtower" type="Node3D"]
+
+[node name="building_tower_base_blue2" parent="." instance=ExtResource("1_rvx4d")]

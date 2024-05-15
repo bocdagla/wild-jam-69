@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bum0b4pciql3y"]
+[gd_scene load_steps=2 format=3 uid="uid://bum0b4pciql3y"]
+
+[ext_resource type="PackedScene" uid="uid://bc6t6j75uocvp" path="res://art/models/blue/building_market_blue.gltf" id="1_y5w7s"]
 
 [node name="Market" type="Node3D"]
+
+[node name="building_market_blue2" parent="." instance=ExtResource("1_y5w7s")]

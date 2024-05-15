@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://3cf6sbwbc76g"]
+[gd_scene load_steps=2 format=3 uid="uid://3cf6sbwbc76g"]
+
+[ext_resource type="PackedScene" uid="uid://bwrqlxgotax2v" path="res://art/models/blue/building_tower_B_blue.gltf" id="1_m5vdg"]
 
 [node name="MageTower" type="Node3D"]
+
+[node name="building_tower_B_blue2" parent="." instance=ExtResource("1_m5vdg")]

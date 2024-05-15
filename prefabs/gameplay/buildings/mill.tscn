@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://br52iv4wj4bqv"]
+[gd_scene load_steps=2 format=3 uid="uid://br52iv4wj4bqv"]
+
+[ext_resource type="PackedScene" uid="uid://d0s2j2yglo1ti" path="res://art/models/blue/building_windmill_blue.gltf" id="1_vol20"]
 
 [node name="Mill" type="Node3D"]
+
+[node name="building_windmill_blue2" parent="." instance=ExtResource("1_vol20")]

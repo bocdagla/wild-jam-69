@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://wmma76cjsa5h"]
+[gd_scene load_steps=2 format=3 uid="uid://wmma76cjsa5h"]
+
+[ext_resource type="PackedScene" uid="uid://bme8yvaslvd5f" path="res://art/models/blue/building_tower_catapult_blue.gltf" id="1_dkch3"]
 
 [node name="SiegeTower" type="Node3D"]
+
+[node name="building_tower_catapult_blue2" parent="." instance=ExtResource("1_dkch3")]

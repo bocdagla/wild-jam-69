@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://e42yfhksdto5"]
+[gd_scene load_steps=2 format=3 uid="uid://e42yfhksdto5"]
+
+[ext_resource type="PackedScene" uid="uid://buooyay1vaoi0" path="res://art/models/blue/building_tower_A_blue.gltf" id="1_7d8e6"]
 
 [node name="ArcherTower" type="Node3D"]
+
+[node name="building_tower_A_blue2" parent="." instance=ExtResource("1_7d8e6")]
