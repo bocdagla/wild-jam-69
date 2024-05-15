@@ -6,7 +6,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CurrentTurn" type="Label" parent="CanvasLayer"]
+[node name="CurrentTurn" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("end_game_message")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -16,6 +16,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "0"
 script = ExtResource("1_w2psw")
+end_game_message = NodePath("../EndGame")
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 anchors_preset = 3
@@ -28,6 +29,20 @@ offset_top = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "End Turn"
+
+[node name="EndGame" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "END GAME"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
