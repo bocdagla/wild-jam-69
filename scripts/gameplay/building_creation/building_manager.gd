@@ -28,7 +28,7 @@ var _left_last: bool = false;
 var _left_mid: bool = false;
 @export var front_grid: GridRow;
 var _left_front: bool = false;
-	
+
 #region Building functions
 
 func build_archery():
@@ -78,7 +78,7 @@ func build_tavern():
 
 func build_townhall():
 	_build_last(TOWNHALL);
-	
+
 func build_siege_tower():
 	_build_last(SIEGE_TOWER);
 
@@ -100,7 +100,7 @@ func _build_mid(building: PackedScene) -> void:
 	else:
 		mid_grid.add_building_right(building);
 	_left_mid = !_left_mid;
-	
+
 func _build_front(building: PackedScene) -> void:
 	if _left_front:
 		front_grid.add_building_left(building);
