@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ew0rt")
-name = "Castle"
+name = "Archery"
 gold_cost = 25
 defense_cost = 0
 build_turns = 3

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_5nopn")
-name = "market"
+name = "Mill"
 gold_cost = 25
 defense_cost = 0
 build_turns = 3

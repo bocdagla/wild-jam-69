@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_2bx7g"]
 [ext_resource type="PackedScene" uid="uid://846adv5wqtyd" path="res://art/models/blue/building_blacksmith_blue.gltf" id="1_mkdkx"]
-[ext_resource type="Resource" uid="uid://ck43v3eap1t4v" path="res://resources/buildings/Forge.tres" id="2_pcbdq"]
+[ext_resource type="Resource" uid="uid://ck43v3eap1t4v" path="res://resources/buildings/forge.tres" id="2_pcbdq"]
 [ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_xngwv"]
 [ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_bw176"]
 [ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_ghava"]

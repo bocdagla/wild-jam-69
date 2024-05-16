@@ -1,24 +1,21 @@
 [gd_scene load_steps=7 format=3 uid="uid://cy7axcwyek60f"]
 
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_67ac7"]
 [ext_resource type="PackedScene" uid="uid://vd7b6xbqif25" path="res://art/models/blue/building_home_A_blue.gltf" id="1_tnnqp"]
-[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_yo1qw"]
-[ext_resource type="Resource" uid="uid://copjmt7fkx3gy" path="res://resources/buildings/house.tres" id="2_4fo8j"]
-[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_4jmpt"]
-[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_rb5p8"]
-[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_tqnfq"]
+[ext_resource type="Resource" uid="uid://copjmt7fkx3gy" path="res://resources/buildings/house.tres" id="2_a5qpr"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_vtii2"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_gdu4p"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_x0641"]
 
 [node name="House" type="Node3D" node_paths=PackedStringArray("_main_structure")]
-script = ExtResource("1_yo1qw")
-building_record = ExtResource("2_4fo8j")
+script = ExtResource("1_67ac7")
+building_record = ExtResource("2_a5qpr")
 _main_structure = NodePath("building_home_A_blue2")
 
 [node name="building_home_A_blue2" parent="." instance=ExtResource("1_tnnqp")]
 
-[node name="building_stage_A2" parent="." instance=ExtResource("4_4jmpt")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+[node name="building_stage_A2" parent="." instance=ExtResource("4_vtii2")]
 
-[node name="building_stage_B2" parent="." instance=ExtResource("5_rb5p8")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+[node name="building_stage_B2" parent="." instance=ExtResource("5_gdu4p")]
 
-[node name="building_stage_C2" parent="." instance=ExtResource("6_tqnfq")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+[node name="building_stage_C2" parent="." instance=ExtResource("6_x0641")]

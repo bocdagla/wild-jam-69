@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_s664s")
-name = "mill"
+name = "Quarry"
 gold_cost = 25
 defense_cost = 0
 build_turns = 3

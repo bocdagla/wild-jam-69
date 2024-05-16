@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c1ig3hxgelsi1"]
+[gd_scene load_steps=64 format=3 uid="uid://c1ig3hxgelsi1"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/camera/camera_control.gd" id="1_3ogfs"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/game_manager.gd" id="1_xevgu"]
@@ -12,7 +12,23 @@
 [ext_resource type="Resource" uid="uid://881ixbkvvik1" path="res://resources/buildings/farm.tres" id="7_2a5bu"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/turn_manager.gd" id="8_ey73k"]
 [ext_resource type="Texture2D" uid="uid://cj6eldvcvgng7" path="res://art/models/nature/hexagons_medieval.png" id="9_aj7wp"]
+[ext_resource type="Resource" uid="uid://dxhok1mx2e302" path="res://resources/buildings/castle.tres" id="9_q2f8a"]
+[ext_resource type="Resource" uid="uid://y0pt2j55p1eq" path="res://resources/buildings/archery.tres" id="10_jv1j3"]
+[ext_resource type="Resource" uid="uid://ckiv1mrygtg6d" path="res://resources/buildings/archer_tower.tres" id="11_5iqjk"]
+[ext_resource type="Resource" uid="uid://55q7j6kws102" path="res://resources/buildings/barracks.tres" id="12_ew6k6"]
+[ext_resource type="Resource" uid="uid://ck43v3eap1t4v" path="res://resources/buildings/forge.tres" id="13_lq21y"]
+[ext_resource type="Resource" uid="uid://copjmt7fkx3gy" path="res://resources/buildings/house.tres" id="14_3kjyv"]
+[ext_resource type="Resource" uid="uid://1ck5ha0ih46o" path="res://resources/buildings/big_house.tres" id="15_gugbw"]
 [ext_resource type="PackedScene" uid="uid://b217m2gh7rwaf" path="res://prefabs/gameplay/building_creation/grid.tscn" id="16_gvmon"]
+[ext_resource type="Resource" uid="uid://bbreo33y8pgtr" path="res://resources/buildings/lumbremill.tres" id="16_hd5ya"]
+[ext_resource type="Resource" uid="uid://bea7qsrf3vpn5" path="res://resources/buildings/mage_tower.tres" id="17_4kkxd"]
+[ext_resource type="Resource" uid="uid://binh4o38jwlrl" path="res://resources/buildings/market.tres" id="18_voyhl"]
+[ext_resource type="Resource" uid="uid://dhye6n3yqy8ye" path="res://resources/buildings/mill.tres" id="19_cglw5"]
+[ext_resource type="Resource" uid="uid://cu810bulsaopa" path="res://resources/buildings/mine.tres" id="20_l8ikc"]
+[ext_resource type="Resource" uid="uid://b8y1igr8ky47t" path="res://resources/buildings/siege_tower.tres" id="21_iremg"]
+[ext_resource type="Resource" uid="uid://baemn4gqsmjtl" path="res://resources/buildings/quarry.tres" id="22_omnhh"]
+[ext_resource type="Resource" uid="uid://dppdvtsoiijm7" path="res://resources/buildings/tavern.tres" id="23_k7yup"]
+[ext_resource type="Resource" uid="uid://07qkq1q26fe6" path="res://resources/buildings/watchtower.tres" id="24_s80jp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_trfsu"]
 sky_top_color = Color(0.154306, 0.509777, 0.956504, 1)
@@ -456,112 +472,112 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Castle"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("9_q2f8a")
 
 [node name="Archery" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Archery"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("10_jv1j3")
 
 [node name="Archer_tower" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Archery Tower"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("11_5iqjk")
 
 [node name="Barracks" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Barracks"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("12_ew6k6")
 
 [node name="Forge" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Forge"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("13_lq21y")
 
 [node name="House" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "House"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("14_3kjyv")
 
 [node name="Big_house" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Big House"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("15_gugbw")
 
 [node name="Lumbremill" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Lumbremill"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("16_hd5ya")
 
 [node name="Mage_tower" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Mage Tower"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("17_4kkxd")
 
 [node name="Market" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Market"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("18_voyhl")
 
 [node name="Mill" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Mill"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("19_cglw5")
 
 [node name="Mine" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Mine"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("20_l8ikc")
 
 [node name="Siege_tower" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Siege Tower"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("21_iremg")
 
 [node name="Quarry" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Quarry"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("22_omnhh")
 
 [node name="Tavern" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Tavern"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("23_k7yup")
 
 [node name="Watchtower" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Watchtower"
 script = ExtResource("3_n7gp6")
-buildin_record = ExtResource("4_ox2nw")
+buildin_record = ExtResource("24_s80jp")
 
 [node name="CenterContainer" type="CenterContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2

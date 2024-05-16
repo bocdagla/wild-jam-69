@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_7vuk3")
-name = "siege_tower"
+name = "Siege Tower"
 gold_cost = 25
 defense_cost = 0
 build_turns = 3
