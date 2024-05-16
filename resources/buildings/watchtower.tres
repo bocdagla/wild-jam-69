@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BuildingRecord" load_steps=2 format=3 uid="uid://07qkq1q26fe6"]
+
+[ext_resource type="Script" path="res://scripts/resources/building_record.gd" id="1_ukktr"]
+
+[resource]
+script = ExtResource("1_ukktr")
+name = "watchtower"
+gold_cost = 25
+defense_cost = 0
+build_turns = 3
+gold_gain = 100
+defense_gain = 25
+turn_gold_gain = 50
+turn_defense_gain = 0

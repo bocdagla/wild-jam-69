@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://bua1n323sehg5"]
+[gd_scene load_steps=7 format=3 uid="uid://bua1n323sehg5"]
 
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_2j56r"]
 [ext_resource type="PackedScene" uid="uid://dpc77cad2qsif" path="res://art/models/blue/building_lumbermill_blue.gltf" id="1_jrmkq"]
+[ext_resource type="Resource" uid="uid://bbreo33y8pgtr" path="res://resources/buildings/lumbremill.tres" id="2_1k4cd"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_nslac"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_6fply"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_ubm11"]
 
-[node name="Lumbermill" type="Node3D"]
+[node name="Lumbermill" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_2j56r")
+building_record = ExtResource("2_1k4cd")
+_main_structure = NodePath("building_lumbermill_blue2")
 
 [node name="building_lumbermill_blue2" parent="." instance=ExtResource("1_jrmkq")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("4_nslac")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("5_6fply")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("6_ubm11")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

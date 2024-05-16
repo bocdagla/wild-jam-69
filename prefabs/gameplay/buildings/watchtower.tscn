@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0jgtltvupmxi"]
+[gd_scene load_steps=7 format=3 uid="uid://d0jgtltvupmxi"]
 
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_ei7ny"]
 [ext_resource type="PackedScene" uid="uid://cj5ligyss5k3o" path="res://art/models/blue/building_tower_base_blue.gltf" id="1_rvx4d"]
+[ext_resource type="Resource" uid="uid://07qkq1q26fe6" path="res://resources/buildings/watchtower.tres" id="2_unij6"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_ryu1o"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_vsjuf"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_ko6kc"]
 
-[node name="Watchtower" type="Node3D"]
+[node name="Watchtower" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_ei7ny")
+building_record = ExtResource("2_unij6")
+_main_structure = NodePath("building_tower_base_blue2")
 
 [node name="building_tower_base_blue2" parent="." instance=ExtResource("1_rvx4d")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("4_ryu1o")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("5_vsjuf")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("6_ko6kc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

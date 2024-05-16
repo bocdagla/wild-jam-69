@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://e42yfhksdto5"]
+[gd_scene load_steps=7 format=3 uid="uid://e42yfhksdto5"]
 
 [ext_resource type="PackedScene" uid="uid://buooyay1vaoi0" path="res://art/models/blue/building_tower_A_blue.gltf" id="1_7d8e6"]
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_k65dj"]
+[ext_resource type="Resource" uid="uid://ckiv1mrygtg6d" path="res://resources/buildings/archer_tower.tres" id="2_v8pyw"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_kfjkg"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_237au"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_hkdus"]
 
-[node name="ArcherTower" type="Node3D"]
+[node name="ArcherTower" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_k65dj")
+building_record = ExtResource("2_v8pyw")
+_main_structure = NodePath("building_tower_A_blue2")
 
 [node name="building_tower_A_blue2" parent="." instance=ExtResource("1_7d8e6")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("4_kfjkg")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("5_237au")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("6_hkdus")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
