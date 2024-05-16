@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://lkvugvqkgxvu"]
+[gd_scene load_steps=7 format=3 uid="uid://lkvugvqkgxvu"]
 
 [ext_resource type="PackedScene" uid="uid://clt8yf3odxs66" path="res://art/models/blue/building_archeryrange_blue.gltf" id="1_e32k3"]
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_uk5fy"]
+[ext_resource type="Resource" uid="uid://y0pt2j55p1eq" path="res://resources/buildings/archery.tres" id="2_x73vq"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_yggvi"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_dna8a"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_umt34"]
 
-[node name="Archery" type="Node3D"]
+[node name="Archery" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_uk5fy")
+building_record = ExtResource("2_x73vq")
+_main_structure = NodePath("building_archeryrange_blue2")
 
 [node name="building_archeryrange_blue2" parent="." instance=ExtResource("1_e32k3")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("4_yggvi")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("5_dna8a")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("6_umt34")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://br52iv4wj4bqv"]
+[gd_scene load_steps=7 format=3 uid="uid://br52iv4wj4bqv"]
 
 [ext_resource type="PackedScene" uid="uid://d0s2j2yglo1ti" path="res://art/models/blue/building_windmill_blue.gltf" id="1_vol20"]
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_w4ktf"]
+[ext_resource type="Resource" uid="uid://dhye6n3yqy8ye" path="res://resources/buildings/mill.tres" id="2_3anx8"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_cugc3"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_w7ay1"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_r1ahd"]
 
-[node name="Mill" type="Node3D"]
+[node name="Mill" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_w4ktf")
+building_record = ExtResource("2_3anx8")
+_main_structure = NodePath("building_windmill_blue2")
 
 [node name="building_windmill_blue2" parent="." instance=ExtResource("1_vol20")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("4_cugc3")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("5_w7ay1")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("6_r1ahd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

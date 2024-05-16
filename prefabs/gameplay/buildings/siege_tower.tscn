@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://wmma76cjsa5h"]
+[gd_scene load_steps=7 format=3 uid="uid://wmma76cjsa5h"]
 
 [ext_resource type="PackedScene" uid="uid://bme8yvaslvd5f" path="res://art/models/blue/building_tower_catapult_blue.gltf" id="1_dkch3"]
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_oa2q5"]
+[ext_resource type="Resource" uid="uid://b8y1igr8ky47t" path="res://resources/buildings/siege_tower.tres" id="2_pqe0m"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="2_v81sl"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="3_rq1rx"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="4_685dk"]
 
-[node name="SiegeTower" type="Node3D"]
+[node name="SiegeTower" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_oa2q5")
+building_record = ExtResource("2_pqe0m")
+_main_structure = NodePath("building_tower_catapult_blue2")
 
 [node name="building_tower_catapult_blue2" parent="." instance=ExtResource("1_dkch3")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("2_v81sl")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("3_rq1rx")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("4_685dk")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

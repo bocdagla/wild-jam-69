@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://3cf6sbwbc76g"]
+[gd_scene load_steps=7 format=3 uid="uid://3cf6sbwbc76g"]
 
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_5nb7s"]
 [ext_resource type="PackedScene" uid="uid://bwrqlxgotax2v" path="res://art/models/blue/building_tower_B_blue.gltf" id="1_m5vdg"]
+[ext_resource type="Resource" uid="uid://bea7qsrf3vpn5" path="res://resources/buildings/Mage_tower.tres" id="2_fxkpc"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_71wio"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_urgf4"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_jdr0f"]
 
-[node name="MageTower" type="Node3D"]
+[node name="MageTower" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_5nb7s")
+building_record = ExtResource("2_fxkpc")
+_main_structure = NodePath("building_tower_B_blue2")
 
 [node name="building_tower_B_blue2" parent="." instance=ExtResource("1_m5vdg")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("4_71wio")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("5_urgf4")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("6_jdr0f")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

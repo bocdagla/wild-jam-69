@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmupv25faxlh4"]
+[gd_scene load_steps=7 format=3 uid="uid://cmupv25faxlh4"]
 
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_hidul"]
 [ext_resource type="PackedScene" uid="uid://bdw87mbts2bc8" path="res://art/models/blue/building_mine_blue.gltf" id="1_me8n6"]
+[ext_resource type="Resource" uid="uid://cu810bulsaopa" path="res://resources/buildings/mine.tres" id="2_sud3v"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_woih1"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_tkr4g"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_cahr0"]
 
-[node name="Mine" type="Node3D"]
+[node name="Mine" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_hidul")
+building_record = ExtResource("2_sud3v")
+_main_structure = NodePath("building_mine_blue2")
 
 [node name="building_mine_blue2" parent="." instance=ExtResource("1_me8n6")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("4_woih1")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("5_tkr4g")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("6_cahr0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

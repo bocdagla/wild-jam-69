@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://2uw3ncicgy7w"]
+[gd_scene load_steps=7 format=3 uid="uid://2uw3ncicgy7w"]
 
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_2bx7g"]
 [ext_resource type="PackedScene" uid="uid://846adv5wqtyd" path="res://art/models/blue/building_blacksmith_blue.gltf" id="1_mkdkx"]
+[ext_resource type="Resource" uid="uid://ck43v3eap1t4v" path="res://resources/buildings/Forge.tres" id="2_pcbdq"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_xngwv"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_bw176"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_ghava"]
 
-[node name="Forge" type="Node3D"]
+[node name="Forge" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_2bx7g")
+building_record = ExtResource("2_pcbdq")
+_main_structure = NodePath("building_blacksmith_blue2")
 
 [node name="building_blacksmith_blue2" parent="." instance=ExtResource("1_mkdkx")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("4_xngwv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("5_bw176")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("6_ghava")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

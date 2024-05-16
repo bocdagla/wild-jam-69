@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6ljbsnnantaq"]
+[gd_scene load_steps=7 format=3 uid="uid://b6ljbsnnantaq"]
 
 [ext_resource type="PackedScene" uid="uid://byufjubre7rl2" path="res://art/models/blue/building_barracks_blue.gltf" id="1_ij810"]
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_ybseh"]
+[ext_resource type="Resource" uid="uid://55q7j6kws102" path="res://resources/buildings/barracks.tres" id="2_hf6xs"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_mgo4b"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_k647t"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_kf0l2"]
 
-[node name="Barracs" type="Node3D"]
+[node name="Barracs" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_ybseh")
+building_record = ExtResource("2_hf6xs")
+_main_structure = NodePath("building_barracks_blue2")
 
 [node name="building_barracks_blue2" parent="." instance=ExtResource("1_ij810")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("4_mgo4b")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("5_k647t")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("6_kf0l2")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
