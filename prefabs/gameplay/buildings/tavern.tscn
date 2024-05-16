@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://87itnpdt8uck"]
+[gd_scene load_steps=7 format=3 uid="uid://87itnpdt8uck"]
 
 [ext_resource type="PackedScene" uid="uid://diu1doxxwd6t1" path="res://art/models/blue/building_tavern_blue.gltf" id="1_cxsx0"]
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_ph75f"]
+[ext_resource type="Resource" uid="uid://dppdvtsoiijm7" path="res://resources/buildings/tavern.tres" id="2_4cai7"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="2_pmrnf"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="3_ykggk"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="4_fgp8s"]
 
-[node name="Tavern" type="Node3D"]
+[node name="Tavern" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_ph75f")
+building_record = ExtResource("2_4cai7")
+_main_structure = NodePath("building_tavern_blue2")
 
 [node name="building_tavern_blue2" parent="." instance=ExtResource("1_cxsx0")]
+
+[node name="building_stage_A2" parent="." instance=ExtResource("2_pmrnf")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("3_ykggk")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("4_fgp8s")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

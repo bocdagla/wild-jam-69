@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BuildingRecord" load_steps=2 format=3 uid="uid://bbreo33y8pgtr"]
+
+[ext_resource type="Script" path="res://scripts/resources/building_record.gd" id="1_45bul"]
+
+[resource]
+script = ExtResource("1_45bul")
+name = "big_house"
+gold_cost = 25
+defense_cost = 0
+build_turns = 3
+gold_gain = 100
+defense_gain = 25
+turn_gold_gain = 50
+turn_defense_gain = 0

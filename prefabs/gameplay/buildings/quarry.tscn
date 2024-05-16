@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqk7cpldk6167"]
+[gd_scene load_steps=7 format=3 uid="uid://dqk7cpldk6167"]
 
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_f4bxv"]
 [ext_resource type="PackedScene" uid="uid://ecqohh4ya31d" path="res://art/models/neutral/building_scaffolding.gltf" id="1_ktwh0"]
+[ext_resource type="Resource" uid="uid://baemn4gqsmjtl" path="res://resources/buildings/quarry.tres" id="2_gnj2k"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="2_smvo3"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="3_s7xpx"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="4_c6fk2"]
 
-[node name="Quarry" type="Node3D"]
+[node name="Quarry" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+script = ExtResource("1_f4bxv")
+building_record = ExtResource("2_gnj2k")
+_main_structure = NodePath("building_scaffolding2")
 
 [node name="building_scaffolding2" parent="." instance=ExtResource("1_ktwh0")]
 transform = Transform3D(0.14294, 0, 0.989731, 0, 1, 0, -0.989731, 0, 0.14294, 0, 0, 0)
+
+[node name="building_stage_A2" parent="." instance=ExtResource("2_smvo3")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("3_s7xpx")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("4_c6fk2")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
