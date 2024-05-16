@@ -1,8 +1,12 @@
 extends Camera3D
 
+@export var active: bool = true;
 var camera_speed : float = 100.0
 
 func _process(delta):
+	if not active:
+		return;
+
 	var camera_movement = Vector3.ZERO
 	if Input.is_action_pressed("left"):
 		print("estoy pulsando izquierda")

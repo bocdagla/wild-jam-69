@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://pi5wn32dkb5g"]
 
 [ext_resource type="PackedScene" uid="uid://b217m2gh7rwaf" path="res://prefabs/gameplay/building_creation/grid.tscn" id="1_qlrft"]
-[ext_resource type="Script" path="res://scripts/gameplay/camera/Camera3D.gd" id="1_u3a57"]
+[ext_resource type="Script" path="res://scripts/gameplay/camera/camera_control.gd" id="1_u3a57"]
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/building_manager.gd" id="2_l0oon"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4cuk"]

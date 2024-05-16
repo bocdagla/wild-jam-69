@@ -1,8 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgr0c4e7pmgq4"]
+[gd_scene load_steps=6 format=3 uid="uid://dgr0c4e7pmgq4"]
 
 [ext_resource type="PackedScene" uid="uid://cet4dkk1vr7qq" path="res://art/models/blue/building_castle_blue.gltf" id="1_34jfv"]
+[ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_chloh"]
+[ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_ky28f"]
+[ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_aarwv"]
+[ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_efrr7"]
 
-[node name="Castle" type="Node3D"]
+[node name="Castle" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+script = ExtResource("1_chloh")
+_main_structure = NodePath("building_castle_blue2")
 
 [node name="building_castle_blue2" parent="." instance=ExtResource("1_34jfv")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="building_stage_A2" parent="." instance=ExtResource("4_ky28f")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_B2" parent="." instance=ExtResource("5_aarwv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="building_stage_C2" parent="." instance=ExtResource("6_efrr7")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

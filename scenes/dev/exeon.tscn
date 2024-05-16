@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://5krc1ug3cjim"]
 
-[ext_resource type="Script" path="res://scripts/gameplay/turn_manager/turn_manager.gd" id="1_w2psw"]
+[ext_resource type="Script" path="res://scripts/gameplay/game_flow/turn_manager.gd" id="1_w2psw"]
 
 [node name="Exeon" type="Node3D"]
 
