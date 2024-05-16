@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_gxkwo")
 name = "Town hall"
-gold_cost = 25
+gold_cost = 0
 defense_cost = 0
-build_turns = 3
-gold_gain = 100
-defense_gain = 25
-turn_gold_gain = 50
+build_turns = 1
+gold_gain = 0
+defense_gain = 0
+turn_gold_gain = 500
 turn_defense_gain = 0

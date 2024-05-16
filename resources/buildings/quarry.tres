@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_s664s")
 name = "Quarry"
-gold_cost = 25
+gold_cost = 750
 defense_cost = 0
 build_turns = 3
-gold_gain = 100
-defense_gain = 25
-turn_gold_gain = 50
+gold_gain = 0
+defense_gain = 0
+turn_gold_gain = 150
 turn_defense_gain = 0

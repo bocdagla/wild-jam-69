@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_uo03x")
 name = "Castle"
-gold_cost = 25
+gold_cost = 5000
 defense_cost = 0
-build_turns = 3
-gold_gain = 100
-defense_gain = 25
-turn_gold_gain = 50
+build_turns = 5
+gold_gain = 0
+defense_gain = 20000
+turn_gold_gain = 0
 turn_defense_gain = 0
