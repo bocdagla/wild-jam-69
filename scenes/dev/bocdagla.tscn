@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c1ig3hxgelsi1"]
+[gd_scene load_steps=48 format=3 uid="uid://c1ig3hxgelsi1"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/camera/camera_control.gd" id="1_3ogfs"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/game_manager.gd" id="1_xevgu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://cgu15mlsrt7cw" path="res://resources/buildings/town_hall.tres" id="4_ox2nw"]
 [ext_resource type="Texture2D" uid="uid://dqpn44sihm61b" path="res://art/textures/icons/64/Coin.png" id="4_vyr5u"]
 [ext_resource type="Texture2D" uid="uid://bl1stv7uc6qrf" path="res://art/textures/icons/64/ShieldLargeT2.png" id="5_2fuwc"]
+[ext_resource type="Script" path="res://scripts/gameplay/game_flow/event_manager.gd" id="5_x1m7v"]
 [ext_resource type="Resource" uid="uid://881ixbkvvik1" path="res://resources/buildings/farm.tres" id="7_2a5bu"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/turn_manager.gd" id="8_ey73k"]
 [ext_resource type="Texture2D" uid="uid://cj6eldvcvgng7" path="res://art/models/nature/hexagons_medieval.png" id="9_aj7wp"]
@@ -353,7 +354,13 @@ buffer = PackedFloat32Array(-1.001, 0, 0, 40.688, 0, 1.001, 0, -18.2736, 0, 0, -
 [node name="Bocdagla" type="Node3D"]
 
 [node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_xevgu")
+
+[node name="EventManager" type="Node" parent="."]
+script = ExtResource("5_x1m7v")
+second_attack_defense = 20
+last_attack_defense = 30
 
 [node name="BuildingManager" type="Node" parent="." node_paths=PackedStringArray("last_grid", "mid_grid", "front_grid")]
 unique_name_in_owner = true
@@ -365,8 +372,6 @@ front_grid = NodePath("../GridFront")
 [node name="ResourceManager" type="Node" parent="." node_paths=PackedStringArray("_gold_label", "_defense_label")]
 unique_name_in_owner = true
 script = ExtResource("3_8yfc5")
-_gold = 100
-_defense = 100
 _gold_label = NodePath("../BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer/GoldUI")
 _defense_label = NodePath("../BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer/DefenseUI")
 
@@ -652,6 +657,82 @@ text = "Try again"
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="VictoryUI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="PanelContainer" type="PanelContainer" parent="VictoryUI"]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VictoryUI/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VictoryUI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "YOU WON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="VictoryUI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="restart_game" type="Button" parent="VictoryUI/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Try again"
+
+[node name="Control2" type="Control" parent="VictoryUI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EventUI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="PanelContainer" type="PanelContainer" parent="EventUI"]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EventUI/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EventUI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "This is an event"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="EventUI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="continue" type="Button" parent="EventUI/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Continue"
+
+[node name="Control2" type="Control" parent="EventUI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.474088, 0.880477, 0, -0.880477, 0.474088, 0, 1.7615, -0.16854)
 light_energy = 0.558
@@ -751,6 +832,7 @@ skeleton = NodePath("")
 
 [connection signal="building_created" from="BuildingManager" to="ResourceManager" method="register_building_for_tax_collection"]
 [connection signal="building_created" from="BuildingManager" to="TurnManager" method="_on_building_created"]
+[connection signal="turn_started" from="TurnManager" to="EventManager" method="_on_turn_start"]
 [connection signal="pressed" from="BuildUI/VBoxContainer/TopBar/NextTurn" to="TurnManager" method="next_turn"]
 [connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Townhall2" to="BuildingManager" method="build_townhall"]
 [connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/HBoxContainer/Farm2" to="BuildingManager" method="build_farm"]
@@ -773,3 +855,5 @@ skeleton = NodePath("")
 [connection signal="pressed" from="DevUI/GridContainer/AddGold" to="ResourceManager" method="add_gold" binds= [10]]
 [connection signal="pressed" from="DevUI/GridContainer/AddDefense" to="ResourceManager" method="add_defense" binds= [10]]
 [connection signal="pressed" from="GameOverUI/PanelContainer/VBoxContainer/restart_game" to="GameManager" method="_on_restart_pressed"]
+[connection signal="pressed" from="VictoryUI/PanelContainer/VBoxContainer/restart_game" to="GameManager" method="_on_restart_pressed"]
+[connection signal="pressed" from="EventUI/PanelContainer/VBoxContainer/continue" to="EventManager" method="_on_crucial_event_continue"]
