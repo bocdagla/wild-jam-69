@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_7vuk3")
 name = "Siege Tower"
-gold_cost = 25
+gold_cost = 800
 defense_cost = 0
 build_turns = 3
-gold_gain = 100
-defense_gain = 25
-turn_gold_gain = 50
+gold_gain = 0
+defense_gain = 2000
+turn_gold_gain = 0
 turn_defense_gain = 0
