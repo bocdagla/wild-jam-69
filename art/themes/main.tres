@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c1obi8v6viwa8"]
+
+[ext_resource type="FontFile" uid="uid://dnl4i40phkxk2" path="res://art/fonts/ThaleahFat.ttf" id="1_h8u1n"]
+
+[resource]
+default_font = ExtResource("1_h8u1n")
+default_font_size = 30

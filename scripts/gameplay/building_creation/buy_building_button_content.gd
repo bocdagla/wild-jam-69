@@ -36,7 +36,7 @@ func setup(buildin_record: BuildingRecord):
 	if buildin_record.defense_gain == 0:
 		benefit_defense.visible = false;
 		benefit_defense_icon.visible = false;
-		
+
 	benefit_turn_gold.text = str(buildin_record.turn_gold_gain);
 	benefit_turn_defense.text = str(buildin_record.turn_defense_gain);
 	if buildin_record.turn_gold_gain == 0 and buildin_record.turn_defense_gain == 0:
@@ -48,6 +48,6 @@ func setup(buildin_record: BuildingRecord):
 	if buildin_record.turn_defense_gain == 0:
 		benefit_turn_defense.visible = false;
 		benefit_turn_defense_icon.visible = false;
-		
-	
+
+
 

@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv0fsyjh07pfx"]
+
+[ext_resource type="PackedScene" uid="uid://c8tko7567n1r0" path="res://prefabs/gameplay/creatures/skeleton_minion.tscn" id="1_ry06g"]
+[ext_resource type="PackedScene" uid="uid://s1vq6oxbetob" path="res://prefabs/gameplay/creatures/skeleton_warrior.tscn" id="2_vp001"]
+
+[node name="Stampede" type="Node3D"]
+
+[node name="Skeleton_Minion2" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, 0.900447, 0, -0.0443521)
+
+[node name="Skeleton_Warrior2" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, -1.1, 0, 1.044)
+
+[node name="Skeleton_Minion3" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, 0.900447, 0, 16.363)
+
+[node name="Skeleton_Warrior3" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, -2.1, 0, 16.4513)
+
+[node name="Skeleton_Minion4" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, 0.900447, 0, 12.9556)
+
+[node name="Skeleton_Warrior4" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, -2.1, 0, 13.044)
+
+[node name="Skeleton_Minion5" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, 0.900447, 0, 8.95565)
+
+[node name="Skeleton_Minion10" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, 0.900447, 0, 4.95565)
+
+[node name="Skeleton_Minion11" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, -1.09955, 0, 4.95565)
+
+[node name="Skeleton_Minion12" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, -1.09955, 0, 14.9556)
+
+[node name="Skeleton_Minion13" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, 1.90045, 0, 14.9556)
+
+[node name="Skeleton_Minion14" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, -2.34362, 0, 14.9556)
+
+[node name="Skeleton_Minion15" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, -2.34362, 0, 10.9556)
+
+[node name="Skeleton_Minion16" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, -2.34362, 0, 6.95565)
+
+[node name="Skeleton_Minion17" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, -1.09955, 0, 6.95565)
+
+[node name="Skeleton_Minion18" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, 2.90045, 0, 6.95565)
+
+[node name="Skeleton_Warrior5" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, -2.1, 0, 9.044)
+
+[node name="Skeleton_Minion6" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, 0.900447, 0, 1.95565)
+
+[node name="Skeleton_Warrior6" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, 1.93413, 0, 3.044)
+
+[node name="Skeleton_Warrior16" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, 1.93413, 0, 5.044)
+
+[node name="Skeleton_Warrior10" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, 2.9, 0, 2.044)
+
+[node name="Skeleton_Warrior11" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, 2.9, 0, 5.044)
+
+[node name="Skeleton_Warrior14" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, 2.9, 0, 4.044)
+
+[node name="Skeleton_Warrior15" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, -2.1, 0, 4.044)
+
+[node name="Skeleton_Warrior12" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, 2.9, 0, 11.044)
+
+[node name="Skeleton_Warrior13" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, -1.1, 0, 11.044)
+
+[node name="Skeleton_Minion7" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, -3.34362, 0, 1.95565)
+
+[node name="Skeleton_Warrior8" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, 1.93413, 0, 9.044)
+
+[node name="Skeleton_Minion8" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, -3.34362, 0, 8.95565)
+
+[node name="Skeleton_Warrior9" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, 1.93413, 0, 13.044)
+
+[node name="Skeleton_Minion9" parent="." instance=ExtResource("1_ry06g")]
+transform = Transform3D(-0.29388, 0, -0.0602875, 0, 0.3, 0, 0.0602875, 0, -0.29388, -3.34362, 0, 12.9556)
+
+[node name="Skeleton_Warrior7" parent="." instance=ExtResource("2_vp001")]
+transform = Transform3D(-0.29947, 0, 0.0178285, 0, 0.3, 0, -0.0178285, 0, -0.29947, -2.1, 0, 2.044)

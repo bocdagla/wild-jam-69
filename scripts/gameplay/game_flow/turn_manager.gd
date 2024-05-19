@@ -1,9 +1,7 @@
 class_name TurnManager;
 extends Node
 
-
 @export var turn_label : Label
-@export var end_game_message : Label
 var current_turn := 1
 
 signal turn_ended();
@@ -11,7 +9,6 @@ signal turn_started(turn: int);
 
 func _ready():
 	turn_label.text = str(current_turn);
-	end_game_message.visible = false
 
 # Función para avanzar al siguiente turno
 func next_turn():

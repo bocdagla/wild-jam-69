@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_cahr0"]
 
 [node name="Mine" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_hidul")
 building_record = ExtResource("2_sud3v")
 _main_structure = NodePath("building_mine_blue2")

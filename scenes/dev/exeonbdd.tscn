@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/game_manager.gd" id="1_t7pit"]
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/building_manager.gd" id="2_e8nj1"]
-[ext_resource type="Script" path="res://prefabs/gameplay/resource_manager/resource_manager.gd" id="3_q0nhp"]
+[ext_resource type="Script" path="res://scripts/gameplay/resource_manager/resource_manager.gd" id="3_q0nhp"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/turn_manager.gd" id="4_c75ff"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/event_manager.gd" id="5_ksagu"]
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/buy_building_button.gd" id="5_loirg"]
@@ -11,18 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://b217m2gh7rwaf" path="res://prefabs/gameplay/building_creation/grid.tscn" id="10_e5xp8"]
 [ext_resource type="Script" path="res://scripts/gameplay/camera/camera_control.gd" id="11_40hs0"]
 [ext_resource type="Texture2D" uid="uid://cj6eldvcvgng7" path="res://art/models/nature/hexagons_medieval.png" id="12_0vbpw"]
-[ext_resource type="Resource" uid="uid://bsghhi3hkmnc4" path="res://resources/buildings/forge.tres" id="12_swgc7"]
-[ext_resource type="Resource" uid="uid://copjmt7fkx3gy" path="res://resources/buildings/house.tres" id="13_74m5c"]
-[ext_resource type="Resource" uid="uid://1ck5ha0ih46o" path="res://resources/buildings/big_house.tres" id="14_0py8x"]
-[ext_resource type="Resource" uid="uid://bbreo33y8pgtr" path="res://resources/buildings/lumbremill.tres" id="15_vk8f2"]
-[ext_resource type="Resource" uid="uid://c1sfwmtry8l7m" path="res://resources/buildings/mage_tower.tres" id="16_rshk5"]
-[ext_resource type="Resource" uid="uid://binh4o38jwlrl" path="res://resources/buildings/market.tres" id="17_imi8s"]
-[ext_resource type="Resource" uid="uid://dhye6n3yqy8ye" path="res://resources/buildings/mill.tres" id="18_63nmc"]
-[ext_resource type="Resource" uid="uid://cu810bulsaopa" path="res://resources/buildings/mine.tres" id="19_apt1b"]
-[ext_resource type="Resource" uid="uid://b8y1igr8ky47t" path="res://resources/buildings/siege_tower.tres" id="20_4171t"]
-[ext_resource type="Resource" uid="uid://baemn4gqsmjtl" path="res://resources/buildings/quarry.tres" id="21_fsjw8"]
-[ext_resource type="Resource" uid="uid://dppdvtsoiijm7" path="res://resources/buildings/tavern.tres" id="22_1qy6y"]
-[ext_resource type="Resource" uid="uid://07qkq1q26fe6" path="res://resources/buildings/watchtower.tres" id="23_g1mrm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_trfsu"]
 sky_top_color = Color(0.154306, 0.509777, 0.956504, 1)

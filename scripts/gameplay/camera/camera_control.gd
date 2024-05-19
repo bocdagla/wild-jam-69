@@ -2,6 +2,7 @@ extends Camera3D
 
 @export var active: bool = true;
 var camera_speed : float = 100.0
+var max_x_distance : float = 15;
 
 func _process(delta):
 	if not active:
@@ -21,5 +22,7 @@ func _process(delta):
 
 	# Aplica el movimiento a la posición de la cámara
 	translate(camera_movement)
+	var clamped = clamp(global_position.x, -max_x_distance, max_x_distance);
+	global_position.x = clamped;
 
 
