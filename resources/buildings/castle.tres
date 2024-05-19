@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource("1_uo03x")
+id = "castle"
+district_id = "castle"
 name = "Castle"
 gold_cost = 5000
 defense_cost = 0
@@ -12,3 +14,5 @@ gold_gain = 0
 defense_gain = 20000
 turn_gold_gain = 0
 turn_defense_gain = 0
+max_ammount = 1
+required_buildings = Array[String](["barracks", "forge", "tavern"])
