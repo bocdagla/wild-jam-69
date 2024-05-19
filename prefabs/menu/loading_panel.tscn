@@ -1,16 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcxkowmduxb5y"]
+[gd_scene load_steps=2 format=3 uid="uid://dcxkowmduxb5y"]
 
 [ext_resource type="Script" path="res://scripts/main_menu/loading_panel.gd" id="1_ehqhg"]
-
-[sub_resource type="Gradient" id="Gradient_rh7hy"]
-offsets = PackedFloat32Array(0, 0.671096, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.089701, 0.089701, 0.089701, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_b8x6m"]
-gradient = SubResource("Gradient_rh7hy")
-fill = 1
-fill_from = Vector2(0.505, 0.395)
-fill_to = Vector2(1, 0.38)
 
 [node name="LoadingPanel" type="PanelContainer"]
 visible = false
@@ -20,10 +10,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ehqhg")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 2
-texture = SubResource("GradientTexture2D_b8x6m")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

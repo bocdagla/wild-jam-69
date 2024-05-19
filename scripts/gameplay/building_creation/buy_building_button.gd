@@ -18,12 +18,17 @@ func _ready() -> void:
 	assert(_resource_manager);
 	assert(_building_manager);
 	assert(record);
+
 	content = BUY_BUILDING_BUTTON_CONTENT.instantiate() as BuyBuildingButtonContent;
 	add_child(content);
 	content.setup(record);
 
 	_turn_manager.turn_started.connect(_on_turn_started);
 	_resource_manager.value_changed.connect(_on_value_changed);
+	mouse_entered.connect(content.show);
+	mouse_exited.connect(content.hide);
+	content.hide();
+
 	building_names[record.id] = record.name;
 	call_deferred("_set_available");
 

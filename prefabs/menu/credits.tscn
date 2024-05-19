@@ -1,21 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://crxdwuvlnrsuk"]
+[gd_scene load_steps=3 format=3 uid="uid://crxdwuvlnrsuk"]
 
+[ext_resource type="Theme" uid="uid://c1obi8v6viwa8" path="res://art/themes/main.tres" id="1_7yqkg"]
 [ext_resource type="Script" path="res://scripts/main_menu/credits.gd" id="1_o4vjh"]
 
-[sub_resource type="Gradient" id="Gradient_a1mkl"]
-offsets = PackedFloat32Array(0, 0.538961, 1)
-colors = PackedColorArray(1, 0.576471, 1, 1, 0.917647, 0.227451, 0.780392, 1, 1, 0.498039, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_knwxd"]
-gradient = SubResource("Gradient_a1mkl")
-
 [node name="Credits" type="PanelContainer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_7yqkg")
 script = ExtResource("1_o4vjh")
 
 [node name="CreditsMargin" type="MarginContainer" parent="."]
@@ -24,10 +18,6 @@ theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
-
-[node name="CreditsBackground" type="TextureRect" parent="CreditsMargin"]
-layout_mode = 2
-texture = SubResource("GradientTexture2D_knwxd")
 
 [node name="CreditsPadding" type="MarginContainer" parent="CreditsMargin"]
 layout_mode = 2
@@ -48,7 +38,16 @@ horizontal_alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="CreditsMargin/CreditsPadding/Content"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "AAAAAAAA
+bbcode_enabled = true
+text = "====== Main Devs =====
+[url=\"https://bocdagla.itch.io/\"]ExeonZaxaon[/url]
+[url=\"https://bocdagla.itch.io/\"]Bocdagla [/url]
+
+---- External Assets ---
+3d Models: [url=\"https://kaylousberg.itch.io/\"]kaylousberg [/url]
+Font: [url=\"https://tinyworlds.itch.io/free-pixel-font-thaleah\"]tinyworlds[/url]
+UI Icons: [url=\"https://ravenmore.itch.io/fantasy-icon-pack\"] ravenmore [/url]
+Music: [url=\"https://hzsoundcreator.itch.io/fantasy-world-music\"] hzsoundcreator [/url]
 "
 
 [node name="Close" type="Button" parent="CreditsMargin/CreditsPadding/Content" groups=["MenuButtons"]]

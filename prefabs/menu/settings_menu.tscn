@@ -3,12 +3,10 @@
 [ext_resource type="Script" path="res://scripts/main_menu/settings.gd" id="1_nvrcs"]
 [ext_resource type="PackedScene" uid="uid://cmar8mw2p47nb" path="res://prefabs/menu/settings_buttons.tscn" id="2_knyp1"]
 
-[sub_resource type="Gradient" id="Gradient_o5ph7"]
-offsets = PackedFloat32Array(0, 0.538961, 1)
-colors = PackedColorArray(1, 0.576471, 1, 1, 0.917647, 0.227451, 0.780392, 1, 1, 0.498039, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t1ghe"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_47rpu"]
-gradient = SubResource("Gradient_o5ph7")
+[sub_resource type="Theme" id="Theme_5l5pw"]
+Panel/styles/panel = SubResource("StyleBoxTexture_t1ghe")
 
 [node name="SettingsMenu" type="PanelContainer"]
 anchors_preset = 15
@@ -16,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_5l5pw")
 script = ExtResource("1_nvrcs")
 
 [node name="SettingsMargin" type="MarginContainer" parent="."]
@@ -24,10 +23,6 @@ theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
-
-[node name="SettingsBackground" type="TextureRect" parent="SettingsMargin"]
-layout_mode = 2
-texture = SubResource("GradientTexture2D_47rpu")
 
 [node name="SettingsPadding" type="MarginContainer" parent="SettingsMargin"]
 layout_mode = 2
