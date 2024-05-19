@@ -19,94 +19,73 @@ const QUARRY = preload("res://prefabs/gameplay/buildings/quarry.tscn");
 const TAVERN = preload("res://prefabs/gameplay/buildings/tavern.tscn");
 const TOWNHALL = preload("res://prefabs/gameplay/buildings/townhall.tscn");
 const WATCHTOWER = preload("res://prefabs/gameplay/buildings/watchtower.tscn");
-const SIEGE_TOWER = preload("res://prefabs/gameplay/buildings/siege_tower.tscn")
+const SIEGE_TOWER = preload("res://prefabs/gameplay/buildings/siege_tower.tscn");
+
+const build_map : Dictionary = {
+	"archery" = ARCHERY,
+	"archer_tower" = ARCHER_TOWER,
+	"barracks" = BARRACS,
+	"castle" = CASTLE,
+	"farm" = FARM,
+	"forge" = FORGE,
+	"house" = HOUSE,
+	"big_house" = HOUSE_BIG,
+	"lumbremill" = LUMBERMILL,
+	"mage_tower" = MAGE_TOWER,
+	"market" = MARKET,
+	"mill" = MILL,
+	"mine" = MINE,
+	"quarry" = QUARRY,
+	"tavern" = TAVERN,
+	"town_hall" = TOWNHALL,
+	"watchtower" = WATCHTOWER,
+	"siege_tower" = SIEGE_TOWER,
+};
 #endregion
 
+@onready var city_quarters: Dictionary= {
+	"fields": $"Fields",
+	"peasants": $"Peasants",
+	"shops": $"Shops",
+	"castle": $"Castle",
+	"mage_towers": $"MageTowers",
+	"towers": $"Towers",
+	"mines": $"Mines",
+	"military": $"Military"
+};
 var bulding_registry: Dictionary;
-
-@export var last_grid: GridRow;
-@export var mid_grid: GridRow;
-@export var front_grid: GridRow;
 
 signal building_created(building: Building);
 
-#region Building functions
+func build(record: BuildingRecord) -> void:
+	_build(build_map[record.id], city_quarters[record.district_id] as GridRow);
 
-func build_archery():
-	_build_mid(ARCHERY);
+func has_district_space(record: BuildingRecord) -> bool:
+	var quarter = city_quarters[record.district_id] as GridRow;
+	return quarter.can_build();
 
-func build_archer_tower():
-	_build_last(ARCHER_TOWER);
+func has_required_buildings_built(record: BuildingRecord) -> Array[String]:
+	var result: Array[String] =  [];
+	var building_amt: int = bulding_registry.get(record.id, 0);
+	for required in record.required_buildings:
+		if (bulding_registry.get(required, 0) - building_amt) <= 0:
+			result.append(required);
+	return result;
 
-func build_barracs():
-	_build_mid(BARRACS);
+func has_enough_buildings(record: BuildingRecord) -> bool:
+	var building_amt: int = bulding_registry.get(record.id, 0);
+	return building_amt < record.max_ammount  || record.max_ammount == 0;
 
-func build_castle():
-	_build_last(CASTLE);
-
-func build_farm():
-	_build_front(FARM);
-
-func build_forge():
-	_build_mid(FORGE);
-
-func build_house():
-	_build_front(HOUSE);
-
-func build_house_big():
-	_build_mid(HOUSE_BIG);
-
-func build_lumbermill():
-	_build_front(LUMBERMILL);
-
-func build_mage_tower():
-	_build_last(MAGE_TOWER);
-
-func build_market():
-	_build_mid(MARKET);
-
-func build_mill():
-	_build_front(MILL);
-
-func build_mine():
-	_build_front(MINE);
-
-func build_quarry():
-	_build_front(QUARRY);
-
-func build_tavern():
-	_build_mid(TAVERN);
-
-func build_townhall():
-	_build_last(TOWNHALL);
-
-func build_siege_tower():
-	_build_last(SIEGE_TOWER);
-
-func build_watchtower():
-	_build_last(WATCHTOWER);
-
-#endregion
-
-func _build_last(building: PackedScene) -> void:
-	_build(building, last_grid);
-
-func _build_mid(building: PackedScene) -> void:
-	_build(building, mid_grid);
-
-func _build_front(building: PackedScene) -> void:
-	_build(building, front_grid);
+func can_build(record: BuildingRecord) -> bool:
+	return has_district_space(record) and has_required_buildings_built(record).is_empty() and has_enough_buildings(record);
 
 func _build(building: PackedScene, row: GridRow):
-	var inst: Building;
-	if randf() > 0.5:
-		inst = row.add_building_left(building);
-	else:
-		inst = row.add_building_right(building);
-
-	if bulding_registry.has(inst.building_record.name):
-		bulding_registry[inst.building_record.name] += 1;
-	else:
-		bulding_registry[inst.building_record.name] = 1;
-
+	var inst = row.add(building);
+	inst.finished_building.connect(func(): _add_register(inst.building_record)) ;
 	building_created.emit(inst);
+
+func _add_register(record: BuildingRecord):
+	if bulding_registry.has(record.id):
+		bulding_registry[record.id] += 1;
+	else:
+		bulding_registry[record.id] = 1;

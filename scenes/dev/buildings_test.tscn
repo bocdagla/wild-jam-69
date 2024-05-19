@@ -147,11 +147,8 @@ layout_mode = 2
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.509612, 0.860404, 0, -0.860404, 0.509612, 0, 1.7615, -0.16854)
 
-[node name="BuildingManager" type="Node" parent="." node_paths=PackedStringArray("last_grid", "mid_grid", "front_grid")]
+[node name="BuildingManager" type="Node" parent="."]
 script = ExtResource("2_l0oon")
-last_grid = NodePath("../GridLast")
-mid_grid = NodePath("../GridMiddle")
-front_grid = NodePath("../GridFront")
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_m803d")

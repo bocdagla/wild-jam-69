@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource("1_jyg7y")
+id = "farm"
+district_id = "fields"
 name = "Farm"
 gold_cost = 350
 defense_cost = 0
@@ -12,3 +14,5 @@ gold_gain = 0
 defense_gain = 40
 turn_gold_gain = 20
 turn_defense_gain = 0
+max_ammount = 0
+required_buildings = Array[String]([])
