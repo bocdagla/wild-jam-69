@@ -4,6 +4,7 @@ extends Button;
 
 static var building_names: Dictionary;
 const BUY_BUILDING_BUTTON_CONTENT = preload("res://prefabs/gameplay/building_creation/buy_building_button_content.tscn")
+var content: BuyBuildingButtonContent;
 
 @onready var _turn_manager: TurnManager = %TurnManager
 @onready var _resource_manager: ResourceManager = %ResourceManager;
@@ -17,7 +18,7 @@ func _ready() -> void:
 	assert(_resource_manager);
 	assert(_building_manager);
 	assert(record);
-	var content = BUY_BUILDING_BUTTON_CONTENT.instantiate() as BuyBuildingButtonContent;
+	content = BUY_BUILDING_BUTTON_CONTENT.instantiate() as BuyBuildingButtonContent;
 	add_child(content);
 	content.setup(record);
 
@@ -53,7 +54,7 @@ func _set_available() -> void:
 				text += "\n 1 "+ building_names[id];
 		disabled = true;
 	elif !_resource_manager.is_affordable(record.gold_cost, record.defense_cost):
-		text = record.name + "\nNO RESOURCES";
+		text = record.name;
 		disabled = true;
 	else:
 		text = record.name;

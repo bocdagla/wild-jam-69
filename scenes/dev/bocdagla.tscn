@@ -1,20 +1,28 @@
-[gd_scene load_steps=64 format=3 uid="uid://c1ig3hxgelsi1"]
+[gd_scene load_steps=87 format=3 uid="uid://c1ig3hxgelsi1"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/camera/camera_control.gd" id="1_3ogfs"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/game_manager.gd" id="1_xevgu"]
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/building_manager.gd" id="3_3auqd"]
-[ext_resource type="Script" path="res://prefabs/gameplay/resource_manager/resource_manager.gd" id="3_8yfc5"]
+[ext_resource type="Script" path="res://scripts/gameplay/resource_manager/resource_manager.gd" id="3_8yfc5"]
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/buy_building_button.gd" id="3_n7gp6"]
 [ext_resource type="Resource" uid="uid://cgu15mlsrt7cw" path="res://resources/buildings/town_hall.tres" id="4_ox2nw"]
 [ext_resource type="Texture2D" uid="uid://dqpn44sihm61b" path="res://art/textures/icons/64/Coin.png" id="4_vyr5u"]
 [ext_resource type="Texture2D" uid="uid://bl1stv7uc6qrf" path="res://art/textures/icons/64/ShieldLargeT2.png" id="5_2fuwc"]
+[ext_resource type="PackedScene" uid="uid://lkvugvqkgxvu" path="res://prefabs/gameplay/buildings/archery.tscn" id="5_jeyae"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/event_manager.gd" id="5_x1m7v"]
+[ext_resource type="PackedScene" uid="uid://cmupv25faxlh4" path="res://prefabs/gameplay/buildings/mine.tscn" id="6_ry76v"]
+[ext_resource type="PackedScene" uid="uid://3cf6sbwbc76g" path="res://prefabs/gameplay/buildings/mage_tower.tscn" id="7_4prnu"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/turn_manager.gd" id="8_ey73k"]
+[ext_resource type="PackedScene" uid="uid://d0jgtltvupmxi" path="res://prefabs/gameplay/buildings/watchtower.tscn" id="8_nswdc"]
 [ext_resource type="Resource" uid="uid://y0pt2j55p1eq" path="res://resources/buildings/archery.tres" id="9_6vvca"]
 [ext_resource type="Texture2D" uid="uid://cj6eldvcvgng7" path="res://art/models/nature/hexagons_medieval.png" id="9_aj7wp"]
+[ext_resource type="PackedScene" uid="uid://dgr0c4e7pmgq4" path="res://prefabs/gameplay/buildings/castle.tscn" id="9_j80xx"]
+[ext_resource type="PackedScene" uid="uid://2uw3ncicgy7w" path="res://prefabs/gameplay/buildings/forge.tscn" id="10_pqb5p"]
 [ext_resource type="Resource" uid="uid://ckiv1mrygtg6d" path="res://resources/buildings/archer_tower.tres" id="10_qhwrk"]
+[ext_resource type="PackedScene" uid="uid://cy7axcwyek60f" path="res://prefabs/gameplay/buildings/house.tscn" id="11_lxd82"]
 [ext_resource type="Resource" uid="uid://55q7j6kws102" path="res://resources/buildings/barracks.tres" id="11_wlbc7"]
 [ext_resource type="Resource" uid="uid://1ck5ha0ih46o" path="res://resources/buildings/big_house.tres" id="12_0d34j"]
+[ext_resource type="PackedScene" uid="uid://br52iv4wj4bqv" path="res://prefabs/gameplay/buildings/mill.tscn" id="12_qepoj"]
 [ext_resource type="Resource" uid="uid://dxhok1mx2e302" path="res://resources/buildings/castle.tres" id="13_6u116"]
 [ext_resource type="Resource" uid="uid://881ixbkvvik1" path="res://resources/buildings/farm.tres" id="14_qj0l8"]
 [ext_resource type="Resource" uid="uid://ck43v3eap1t4v" path="res://resources/buildings/forge.tres" id="15_cklnm"]
@@ -29,6 +37,46 @@
 [ext_resource type="Resource" uid="uid://b8y1igr8ky47t" path="res://resources/buildings/siege_tower.tres" id="23_wwubt"]
 [ext_resource type="Resource" uid="uid://dppdvtsoiijm7" path="res://resources/buildings/tavern.tres" id="24_ps4dy"]
 [ext_resource type="Resource" uid="uid://07qkq1q26fe6" path="res://resources/buildings/watchtower.tres" id="25_7bvmm"]
+[ext_resource type="PackedScene" uid="uid://3ufutmspfx7f" path="res://art/models/nature/hills_B.gltf" id="38_1kqr6"]
+[ext_resource type="PackedScene" uid="uid://befwbyrwq5fh3" path="res://art/models/nature/mountain_B.gltf" id="39_penal"]
+[ext_resource type="PackedScene" uid="uid://bv0fsyjh07pfx" path="res://prefabs/gameplay/animations/stampede.tscn" id="40_a0ct6"]
+
+[sub_resource type="Animation" id="Animation_gmt5w"]
+resource_name = "stampede"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Stampede:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(25, 0, 0), Vector3(-50, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ngsk4"]
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Stampede:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(25, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmpfv"]
+_data = {
+"RESET": SubResource("Animation_ngsk4"),
+"stampede": SubResource("Animation_gmt5w")
+}
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_trfsu"]
 sky_top_color = Color(0.154306, 0.509777, 0.956504, 1)
@@ -367,6 +415,56 @@ instance_count = 34
 mesh = SubResource("ArrayMesh_xmsap")
 buffer = PackedFloat32Array(-1.001, 0, 0, 40.688, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -24.6201, 0, 0, -1.001, 118.042, 0, 1.001, 0, -18.2736, 1.001, 0, 0, -32.4022, -1.001, 0, 0, -133.476, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -49.6328, 0, 0, -1.001, 99.4382, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 3.85872, 0, 0, -1.001, 126.039, 0, 1.001, 0, -18.2736, 1.001, 0, 0, -12.9005, -1.001, 0, 0, -134.356, 0, 1.001, 0, -18.2736, 0, 0, -1.001, 13.2875, 0, 0, -1.001, 106.641, 0, 1.001, 0, -18.2736, 1.001, 0, 0, -15.6775, -1.001, 0, 0, -53.3943, 0, 1.001, 0, -18.2736, 0, 0, -1.001, 9.53862, 0, 0, -1.001, -56.2608, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 20.9989, 0, 0, -1.001, 66.0682, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 34.1177, -1.001, 0, 0, -92.5516, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -19.386, -1.001, 0, 0, 34.5454, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -12.8057, -1.001, 0, 0, -136.953, 0, 1.001, 0, -18.2736, 0, 0, -1.001, 13.3917, -1.001, 0, 0, -41.6445, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -5.28659, -1.001, 0, 0, -125.52, 0, 1.001, 0, -18.2736, 0, 0, -1.001, 4.9819, -1.001, 0, 0, -17.1772, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -24.5494, 0, 0, -1.001, 105.107, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 10.0117, 0, 0, -1.001, 149.736, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 49.8793, 0, 0, -1.001, 49.668, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 7.40871, -1.001, 0, 0, -118.852, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -45.2037, 0, 0, -1.001, -20.4328, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 45.0069, 0, 0, -1.001, -87.6261, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 32.2068, -1.001, 0, 0, 88.4847, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -40.2237, -1.001, 0, 0, -34.7126, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -7.27507, 0, 0, -1.001, -64.2309, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 28.3535, 0, 0, -1.001, 15.1097, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 26.6391, 0, 0, -1.001, 61.6576, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 22.0805, 0, 0, -1.001, -80.4999, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 31.4327, 0, 0, -1.001, 143.74, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 8.91037, -1.001, 0, 0, -132.363, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -41.1811, -1.001, 0, 0, -43.4062, 0, 1.001, 0, -18.2736, 0, 0, -1.001, 3.3291, -1.001, 0, 0, -102.772, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -23.5259, -1.001, 0, 0, -77.7562, 0, 1.001, 0, -18.2736, 0, 0, -1.001, -18.127, 0, 0, -1.001, 89.4446, 0, 1.001, 0, -18.2736, 1.001, 0, 0, 41.1048)
 
+[sub_resource type="Curve" id="Curve_hvnld"]
+_data = [Vector2(0, 0.011423), 0.0, 2.98058, 0, 0, Vector2(0.501779, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.9602, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vk42c"]
+curve = SubResource("Curve_hvnld")
+
+[sub_resource type="Curve" id="Curve_si8gb"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 10), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_7jtf6"]
+curve_x = SubResource("Curve_si8gb")
+
+[sub_resource type="Curve" id="Curve_cqlnu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_u7uc0"]
+curve = SubResource("Curve_cqlnu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c11nw"]
+emission_shape_scale = Vector3(1, 1, 5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+directional_velocity_min = 1.0
+directional_velocity_max = 1.0
+directional_velocity_curve = SubResource("CurveXYZTexture_7jtf6")
+gravity = Vector3(0, 2, -5)
+radial_accel_min = 1.0
+radial_accel_max = 25.0
+scale_curve = SubResource("CurveTexture_u7uc0")
+alpha_curve = SubResource("CurveTexture_vk42c")
+turbulence_enabled = true
+turbulence_noise_strength = 0.2
+turbulence_noise_scale = 1.0
+turbulence_noise_speed = Vector3(1, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61a3q"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.823529, 0.32549, 0, 1)
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_xawib"]
+material = SubResource("StandardMaterial3D_61a3q")
+radial_segments = 8
+rings = 8
+
 [node name="Bocdagla" type="Node3D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -383,39 +481,69 @@ unique_name_in_owner = true
 script = ExtResource("3_3auqd")
 
 [node name="Military" parent="BuildingManager" instance=ExtResource("16_gvmon")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, -1.42493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.425)
 cell_size = 6.0
 x_offset = 6.0
 
+[node name="Archery" parent="BuildingManager/Military" instance=ExtResource("5_jeyae")]
+visible = false
+
 [node name="Mines" parent="BuildingManager" instance=ExtResource("16_gvmon")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, -1.42493)
-cell_size = 6.0
-x_offset = 10.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.333)
+cell_size = 5.0
+x_offset = 5.0
+max_builing_ammount = 6
+
+[node name="Mine" parent="BuildingManager/Mines" instance=ExtResource("6_ry76v")]
+visible = false
 
 [node name="MageTowers" parent="BuildingManager" instance=ExtResource("16_gvmon")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, -1.42493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.425)
 cell_size = 6.0
 x_offset = 10.0
 
+[node name="MageTower" parent="BuildingManager/MageTowers" instance=ExtResource("7_4prnu")]
+visible = false
+
 [node name="Towers" parent="BuildingManager" instance=ExtResource("16_gvmon")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, -1.42493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.861)
 cell_size = 6.0
+x_offset = 6.0
+
+[node name="Watchtower" parent="BuildingManager/Towers" instance=ExtResource("8_nswdc")]
+visible = false
 
 [node name="Castle" parent="BuildingManager" instance=ExtResource("16_gvmon")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, -1.42493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.835)
 cell_size = 6.0
-
-[node name="Shops" parent="BuildingManager" instance=ExtResource("16_gvmon")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, 4.57507)
-x_offset = 4.0
+max_builing_ammount = 1
 use_center = true
 
+[node name="Castle" parent="BuildingManager/Castle" instance=ExtResource("9_j80xx")]
+visible = false
+
+[node name="Shops" parent="BuildingManager" instance=ExtResource("16_gvmon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.654)
+x_offset = 2.0
+use_center = true
+
+[node name="Forge" parent="BuildingManager/Shops" instance=ExtResource("10_pqb5p")]
+visible = false
+
 [node name="Peasants" parent="BuildingManager" instance=ExtResource("16_gvmon")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, 4.57507)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.627)
+use_center = true
+
+[node name="House" parent="BuildingManager/Peasants" instance=ExtResource("11_lxd82")]
+visible = false
 
 [node name="Fields" parent="BuildingManager" instance=ExtResource("16_gvmon")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734717, 10.5751)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.575)
 cell_size = 6.0
+use_center = true
+
+[node name="Mill" parent="BuildingManager/Fields" instance=ExtResource("12_qepoj")]
+visible = false
 
 [node name="ResourceManager" type="Node" parent="." node_paths=PackedStringArray("_gold_label", "_defense_label")]
 unique_name_in_owner = true
@@ -428,6 +556,14 @@ unique_name_in_owner = true
 script = ExtResource("8_ey73k")
 turn_label = NodePath("../BuildUI/VBoxContainer/TopBar/Turns")
 end_game_message = NodePath("../BuildUI/VBoxContainer/Endgame")
+
+[node name="EventAnimations" type="Node" parent="."]
+
+[node name="Stampede" type="AnimationPlayer" parent="EventAnimations"]
+libraries = {
+"": SubResource("AnimationLibrary_fmpfv")
+}
+autoplay = "stampede"
 
 [node name="BuildUI" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -848,6 +984,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 18, 0)
 [node name="cloud_small" type="MeshInstance3D" parent="Ground/cloud_small2"]
 mesh = SubResource("ArrayMesh_xmsap")
 skeleton = NodePath("")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="hills_B2" parent="Props" instance=ExtResource("38_1kqr6")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6, 0, -17)
+
+[node name="hills_B3" parent="Props" instance=ExtResource("38_1kqr6")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6, 0, -17)
+
+[node name="mountain_B2" parent="Props" instance=ExtResource("39_penal")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10, 0, -18)
+
+[node name="mountain_B3" parent="Props" instance=ExtResource("39_penal")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -10, 0, -18)
+
+[node name="Stampede" parent="." instance=ExtResource("40_a0ct6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Stampede"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74846e-07, 0.494565, 4)
+amount = 128
+explosiveness = 0.2
+process_material = SubResource("ParticleProcessMaterial_c11nw")
+draw_pass_1 = SubResource("SphereMesh_xawib")
 
 [connection signal="building_created" from="BuildingManager" to="ResourceManager" method="register_building_for_tax_collection"]
 [connection signal="building_created" from="BuildingManager" to="TurnManager" method="_on_building_created"]

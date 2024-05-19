@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/game_manager.gd" id="1_t7pit"]
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/building_manager.gd" id="2_e8nj1"]
-[ext_resource type="Script" path="res://prefabs/gameplay/resource_manager/resource_manager.gd" id="3_q0nhp"]
+[ext_resource type="Script" path="res://scripts/gameplay/resource_manager/resource_manager.gd" id="3_q0nhp"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/turn_manager.gd" id="4_c75ff"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/event_manager.gd" id="5_ksagu"]
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/buy_building_button.gd" id="5_loirg"]

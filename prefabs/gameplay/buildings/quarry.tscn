@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="4_c6fk2"]
 
 [node name="Quarry" type="Node3D" node_paths=PackedStringArray("_main_structure")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_f4bxv")
 building_record = ExtResource("2_gnj2k")
 _main_structure = NodePath("building_scaffolding2")
