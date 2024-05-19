@@ -3,6 +3,7 @@ extends Node
 
 @onready var event_manager: EventManager = $"../EventManager"
 
+
 @onready var main_camera: Camera3D = %MainCamera
 @onready var game_over_ui: CanvasLayer = %GameOverUI
 @onready var victory_ui: CanvasLayer = %VictoryUI
