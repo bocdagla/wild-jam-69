@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource("1_04sts")
+id = "mine"
+district_id = "mines"
 name = "Mine"
 gold_cost = 1000
 defense_cost = 0
@@ -12,3 +14,5 @@ gold_gain = 0
 defense_gain = 0
 turn_gold_gain = 200
 turn_defense_gain = 0
+max_ammount = 0
+required_buildings = Array[String]([])

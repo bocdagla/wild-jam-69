@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="BuildingRecord" load_steps=2 format=3 uid="uid://c1sfwmtry8l7m"]
+[gd_resource type="Resource" script_class="BuildingRecord" load_steps=2 format=3 uid="uid://bea7qsrf3vpn5"]
 
 [ext_resource type="Script" path="res://scripts/resources/building_record.gd" id="1_u82ga"]
 
 [resource]
 script = ExtResource("1_u82ga")
+id = "mage_tower"
+district_id = "mage_towers"
 name = "Mage Tower"
 gold_cost = 1000
 defense_cost = 0
@@ -12,3 +14,5 @@ gold_gain = 0
 defense_gain = 500
 turn_gold_gain = 0
 turn_defense_gain = 0
+max_ammount = 0
+required_buildings = Array[String]([])
