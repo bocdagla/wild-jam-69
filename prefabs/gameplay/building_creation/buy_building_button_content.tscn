@@ -23,6 +23,13 @@ layout_mode = 2
 layout_mode = 2
 columns = 2
 
+[node name="Cost" type="Label" parent="VBoxContainer/Label"]
+layout_mode = 2
+text = "Cost"
+
+[node name="CostSeparator" type="HSeparator" parent="VBoxContainer/Label"]
+layout_mode = 2
+
 [node name="GoldIcon" type="TextureRect" parent="VBoxContainer/Label"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -45,3 +52,51 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 2
+
+[node name="Benefit" type="Label" parent="VBoxContainer/Label"]
+layout_mode = 2
+text = "Benefit"
+
+[node name="BenefitSeparator" type="HSeparator" parent="VBoxContainer/Label"]
+layout_mode = 2
+
+[node name="BenefitGoldIcon" type="TextureRect" parent="VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_t5c5a")
+expand_mode = 4
+
+[node name="BenefitGold" type="Label" parent="VBoxContainer/Label"]
+layout_mode = 2
+
+[node name="BenefitDefenseIcon" type="TextureRect" parent="VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("3_8bsxm")
+expand_mode = 4
+
+[node name="BenefitDefense" type="Label" parent="VBoxContainer/Label"]
+layout_mode = 2
+
+[node name="BenefitTurn" type="Label" parent="VBoxContainer/Label"]
+layout_mode = 2
+text = "Benefit/Turn"
+
+[node name="BenefitTurnSeparator" type="HSeparator" parent="VBoxContainer/Label"]
+layout_mode = 2
+
+[node name="BenefitTurnGoldIcon" type="TextureRect" parent="VBoxContainer/Label"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_t5c5a")
+expand_mode = 4
+
+[node name="BenefitTurnGold" type="Label" parent="VBoxContainer/Label"]
+layout_mode = 2
+
+[node name="BenefitTurnDefenseIcon" type="TextureRect" parent="VBoxContainer/Label"]
+layout_mode = 2
+texture = ExtResource("3_8bsxm")
+expand_mode = 4
+
+[node name="BenefitTurnDefense" type="Label" parent="VBoxContainer/Label"]
+layout_mode = 2
