@@ -5,14 +5,14 @@
 [resource]
 script = ExtResource("1_gxkwo")
 id = "town_hall"
-district_id = "shops"
+district_id = "townhall"
 name = "Town hall"
 gold_cost = 0
 defense_cost = 0
 build_turns = 1
-gold_gain = 0
+gold_gain = 100
 defense_gain = 0
-turn_gold_gain = 500
+turn_gold_gain = 100
 turn_defense_gain = 0
-max_ammount = 0
+max_ammount = 1
 required_buildings = Array[String]([])

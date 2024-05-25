@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://bebft1gnjg06s"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/events/event_window.gd" id="1_lppyb"]
+
+[node name="EventWindow" type="CanvasLayer" node_paths=PackedStringArray("_submit_event", "_description")]
+layer = 5
+script = ExtResource("1_lppyb")
+_submit_event = NodePath("PanelContainer/VBoxContainer/SubmitEvent")
+_description = NodePath("PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/Description")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Description" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 75
+text = "In a world forgotten by the gods, where the memory of time fades into shadows, a dark and deep void covers the land. From this abyss, creatures of darkness are born, threatening to consume everything in their path. Yet, in this shadowy realm, there is still hope.
+
+You, the last of the ancient architects, awaken amidst a desolate landscape, surrounded by ruins and echoes of a once-flourishing civilization. Without remembering how you arrived, you find yourself on the edge of the Void, an endless abyss that seems to devour the very light.
+
+With the power of construction in your hands, you embark on an epic mission: to rebuild the city that once was the heart of the world. Every building you erect, every path you trace, not only defies the darkness but also recovers pieces of a lost history and reveals ancient secrets about the struggle against the Void.
+
+As you build and expand your city, you will attract scattered and disoriented survivors, each with their own skills and knowledge, eager to join you and reclaim their home. However, the calm is fleeting. A terrible omen announces the arrival of an imminent threat: a horde of Void creatures preparing to attack and destroy everything in their path.
+
+Every decision counts. Will you build defenses to protect your inhabitants, or will you risk expanding faster despite the danger?"
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SubmitEvent" type="Button" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Start"

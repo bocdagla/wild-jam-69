@@ -23,4 +23,4 @@ func _on_TurnButton_pressed():
 	next_turn()
 
 func _on_building_created(building: Building):
-	turn_ended.connect(building.advance_turn);
+	turn_started.connect(building.advance_turn);

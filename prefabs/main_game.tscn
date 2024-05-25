@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://c1ig3hxgelsi1"]
+[gd_scene load_steps=97 format=3 uid="uid://c1ig3hxgelsi1"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/camera/camera_control.gd" id="1_3ogfs"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/game_manager.gd" id="1_xevgu"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://br52iv4wj4bqv" path="res://prefabs/gameplay/buildings/mill.tscn" id="12_qepoj"]
 [ext_resource type="Resource" uid="uid://dxhok1mx2e302" path="res://resources/buildings/castle.tres" id="13_6u116"]
 [ext_resource type="Resource" uid="uid://881ixbkvvik1" path="res://resources/buildings/farm.tres" id="14_qj0l8"]
+[ext_resource type="Texture2D" uid="uid://dtiru7cswnrqv" path="res://art/textures/icons/64/ShieldLargeT1.png" id="15_4xf3h"]
 [ext_resource type="Resource" uid="uid://ck43v3eap1t4v" path="res://resources/buildings/forge.tres" id="15_cklnm"]
 [ext_resource type="Resource" uid="uid://copjmt7fkx3gy" path="res://resources/buildings/house.tres" id="16_4b18j"]
 [ext_resource type="PackedScene" uid="uid://b217m2gh7rwaf" path="res://prefabs/gameplay/building_creation/grid.tscn" id="16_gvmon"]
@@ -37,41 +38,20 @@
 [ext_resource type="Resource" uid="uid://b8y1igr8ky47t" path="res://resources/buildings/siege_tower.tres" id="23_wwubt"]
 [ext_resource type="Resource" uid="uid://dppdvtsoiijm7" path="res://resources/buildings/tavern.tres" id="24_ps4dy"]
 [ext_resource type="Resource" uid="uid://07qkq1q26fe6" path="res://resources/buildings/watchtower.tres" id="25_7bvmm"]
+[ext_resource type="PackedScene" uid="uid://bysptyiqqdl0f" path="res://prefabs/gameplay/building_creation/buy_building_button_content.tscn" id="36_rh4w4"]
 [ext_resource type="PackedScene" uid="uid://3ufutmspfx7f" path="res://art/models/nature/hills_B.gltf" id="38_1kqr6"]
+[ext_resource type="PackedScene" uid="uid://bebft1gnjg06s" path="res://prefabs/gameplay/events/event_window.tscn" id="38_cbs6o"]
 [ext_resource type="PackedScene" uid="uid://befwbyrwq5fh3" path="res://art/models/nature/mountain_B.gltf" id="39_penal"]
-[ext_resource type="PackedScene" uid="uid://bv0fsyjh07pfx" path="res://prefabs/gameplay/animations/stampede.tscn" id="40_a0ct6"]
 [ext_resource type="AudioStream" uid="uid://cvt80pje8go6" path="res://art/music/main_menu/Track3.wav" id="41_s7s1y"]
+[ext_resource type="AudioStream" uid="uid://dmg034a7ih1bs" path="res://art/music/main_menu/Track7_Bonus2.wav" id="43_8snuc"]
+[ext_resource type="AudioStream" uid="uid://f4cvfnjsjdm3" path="res://art/music/main_menu/Track5.wav" id="44_vhrub"]
 
 [sub_resource type="Animation" id="Animation_ngsk4"]
 length = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Stampede:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(25, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_gmt5w"]
 resource_name = "stampede"
 length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Stampede:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(25, 0, 0), Vector3(-100, 0, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fmpfv"]
 _data = {
@@ -650,66 +630,24 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yfxcx")
 
-[sub_resource type="Curve" id="Curve_hvnld"]
-_data = [Vector2(0, 0.011423), 0.0, 2.98058, 0, 0, Vector2(0.501779, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.9602, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_vk42c"]
-curve = SubResource("Curve_hvnld")
-
-[sub_resource type="Curve" id="Curve_si8gb"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 10), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_7jtf6"]
-curve_x = SubResource("Curve_si8gb")
-
-[sub_resource type="Curve" id="Curve_cqlnu"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_u7uc0"]
-curve = SubResource("Curve_cqlnu")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c11nw"]
-emission_shape_scale = Vector3(1, 1, 5)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-directional_velocity_min = 1.0
-directional_velocity_max = 1.0
-directional_velocity_curve = SubResource("CurveXYZTexture_7jtf6")
-gravity = Vector3(0, 2, -5)
-radial_accel_min = 1.0
-radial_accel_max = 25.0
-scale_curve = SubResource("CurveTexture_u7uc0")
-alpha_curve = SubResource("CurveTexture_vk42c")
-turbulence_enabled = true
-turbulence_noise_strength = 0.2
-turbulence_noise_scale = 1.0
-turbulence_noise_speed = Vector3(1, 0, 0)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61a3q"]
-transparency = 1
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.823529, 0.32549, 0, 1)
-metallic_specular = 0.0
-roughness = 0.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_xawib"]
-material = SubResource("StandardMaterial3D_61a3q")
-radial_segments = 8
-rings = 8
-
 [node name="MainGame" type="Node3D"]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_xevgu")
 
-[node name="EventManager" type="Node" parent="."]
+[node name="EventManager" type="Node" parent="." node_paths=PackedStringArray("remaining_turns_label", "required_defense_label", "event_description_label", "stampede")]
 script = ExtResource("5_x1m7v")
-second_attack_defense = 20
-last_attack_defense = 30
+remaining_turns_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer2/NextTurn")
+required_defense_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer4/HBoxContainer/Defense")
+event_description_label = NodePath("../EventUI")
+stampede = NodePath("../EventAnimations/Stampede")
+first_event_success = "An eerie silence descends upon the city. The first creatures of the Void emerge from the abyss, advancing slowly but with relentless determination. Their dark and distorted forms slither through the newly built streets, seeking any trace of life to consume. This is the beginning of the trial. Your city must withstand, but this is only the first shadow of what is to come."
+second_event_success = "After the first wave, there is barely time to recover. The creatures of the Void return, now in greater numbers and with renewed ferocity. They move faster and strike harder. The city trembles under their assault. The survivors band together, fighting desperately to protect what they have built. The darkness is denser, but the light of hope still flickers faintly."
+last_event_success = "The final wave is a storm of pure darkness. Enormous and devastating creatures emerge from the Void, bringing with them unprecedented chaos. Their roars echo throughout the city, and their attacks threaten to reduce everything you have achieved to rubble. This is the ultimate test. Only those with the greatest determination and strategy will survive this definitive attack. The future of your city hangs by a thread.
+"
+second_attack_defense = 5000
+last_attack_defense = 35000
 
 [node name="BuildingManager" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -727,7 +665,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.333)
 cell_size = 5.0
 x_offset = 5.0
-max_builing_ammount = 6
+max_builing_ammount = 8
 
 [node name="Mine" parent="BuildingManager/Mines" instance=ExtResource("6_ry76v")]
 visible = false
@@ -760,13 +698,23 @@ visible = false
 [node name="Shops" parent="BuildingManager" instance=ExtResource("16_gvmon")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.654)
 x_offset = 2.0
-use_center = true
 
 [node name="Forge" parent="BuildingManager/Shops" instance=ExtResource("10_pqb5p")]
 visible = false
 
+[node name="Townhall" parent="BuildingManager" instance=ExtResource("16_gvmon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.654)
+x_offset = 2.0
+max_builing_ammount = 1
+use_center = true
+
+[node name="Forge" parent="BuildingManager/Townhall" node_paths=PackedStringArray("_main_structure") instance=ExtResource("10_pqb5p")]
+visible = false
+_main_structure = NodePath("../../Shops/Forge/building_blacksmith_blue2")
+
 [node name="Peasants" parent="BuildingManager" instance=ExtResource("16_gvmon")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.627)
+max_builing_ammount = 20
 use_center = true
 
 [node name="House" parent="BuildingManager/Peasants" instance=ExtResource("11_lxd82")]
@@ -775,21 +723,24 @@ visible = false
 [node name="Fields" parent="BuildingManager" instance=ExtResource("16_gvmon")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.575)
 cell_size = 6.0
+max_builing_ammount = 20
 use_center = true
 
 [node name="Mill" parent="BuildingManager/Fields" instance=ExtResource("12_qepoj")]
 visible = false
 
-[node name="ResourceManager" type="Node" parent="." node_paths=PackedStringArray("_gold_label", "_defense_label")]
+[node name="ResourceManager" type="Node" parent="." node_paths=PackedStringArray("_gold_label", "_defense_label", "_next_gold_label", "_next_defense_label")]
 unique_name_in_owner = true
 script = ExtResource("3_8yfc5")
-_gold_label = NodePath("../BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer/GoldUI")
-_defense_label = NodePath("../BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer/DefenseUI")
+_gold_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources/Current values/GoldUI")
+_defense_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources/Current values/DefenseUI")
+_next_gold_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources/Current values/GoldUI2")
+_next_defense_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources/Current values/DefenseUI2")
 
 [node name="TurnManager" type="Node" parent="." node_paths=PackedStringArray("turn_label")]
 unique_name_in_owner = true
 script = ExtResource("8_ey73k")
-turn_label = NodePath("../BuildUI/VBoxContainer/TopBar/PanelContainer/Turns")
+turn_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer/Turns")
 
 [node name="EventAnimations" type="Node" parent="."]
 
@@ -802,207 +753,275 @@ autoplay = "stampede"
 [node name="BuildUI" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BuildUI"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopBar" type="HBoxContainer" parent="BuildUI/VBoxContainer"]
-layout_mode = 2
-
-[node name="Control" type="Control" parent="BuildUI/VBoxContainer/TopBar"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="BuildUI/VBoxContainer/TopBar"]
+[node name="TurnStatus" type="HBoxContainer" parent="BuildUI/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BuildUI/HBoxContainer/VBoxContainer/TurnStatus"]
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 
-[node name="Turns" type="Label" parent="BuildUI/VBoxContainer/TopBar/PanelContainer"]
+[node name="Turns" type="Label" parent="BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control2" type="Control" parent="BuildUI/VBoxContainer/TopBar"]
+[node name="Control2" type="Control" parent="BuildUI/HBoxContainer/VBoxContainer/TurnStatus"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control" type="Control" parent="BuildUI/VBoxContainer"]
+[node name="PanelContainer4" type="PanelContainer" parent="BuildUI/HBoxContainer/VBoxContainer/TurnStatus"]
+custom_minimum_size = Vector2(100, 75)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer4"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer4/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_4xf3h")
+
+[node name="Defense" type="Label" parent="BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer4/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.736672, 0.454237, 0.0863621, 1)
+theme_override_font_sizes/font_size = 40
+text = "1
+"
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="BuildUI/HBoxContainer/VBoxContainer/TurnStatus"]
+custom_minimum_size = Vector2(100, 75)
+layout_mode = 2
+
+[node name="NextTurn" type="Label" parent="BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.736672, 0.454237, 0.0863621, 1)
+theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="BuildUI/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="BuildUI/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer"]
+[node name="Resources" type="HBoxContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+[node name="Current values" type="HBoxContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources"]
 layout_mode = 2
 
-[node name="NextTurn" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
-layout_mode = 2
-text = "Next turn"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ButtonsContainer" type="HBoxContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-
-[node name="Town hall" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("4_ox2nw")
-
-[node name="Archery" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("9_6vvca")
-
-[node name="Archer Tower" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("10_qhwrk")
-
-[node name="Barracks" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("11_wlbc7")
-
-[node name="Manor" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("12_0d34j")
-
-[node name="Castle" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("13_6u116")
-
-[node name="Farm" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("14_qj0l8")
-
-[node name="Forge" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("15_cklnm")
-
-[node name="House" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("16_4b18j")
-
-[node name="Lumbermill" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("17_lxmy4")
-
-[node name="Mage Tower" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("18_duc8l")
-
-[node name="Market" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("19_ljsbb")
-
-[node name="Mill" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("20_6f3uk")
-
-[node name="Mine" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("21_v4npa")
-
-[node name="Quarry" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("22_np5r7")
-
-[node name="Siege Tower" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("23_wwubt")
-
-[node name="Tavern" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("24_ps4dy")
-
-[node name="Watchtower" type="Button" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-script = ExtResource("3_n7gp6")
-record = ExtResource("25_7bvmm")
-
-[node name="CenterContainer" type="CenterContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_right = 20
-
-[node name="GridContainer" type="GridContainer" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer"]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-columns = 2
-
-[node name="TextureRect" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer"]
+[node name="TextureRect" type="TextureRect" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources/Current values"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("4_vyr5u")
 
-[node name="GoldUI" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer"]
+[node name="GoldUI" type="Label" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources/Current values"]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 2
 
-[node name="TextureRect2" type="TextureRect" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer"]
+[node name="GoldUI2" type="Label" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources/Current values"]
+layout_mode = 2
+text = "(+0)"
+horizontal_alignment = 2
+
+[node name="TextureRect2" type="TextureRect" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources/Current values"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("5_2fuwc")
 
-[node name="DefenseUI" type="Label" parent="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/CenterContainer/MarginContainer/GridContainer"]
+[node name="DefenseUI" type="Label" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources/Current values"]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 2
+
+[node name="DefenseUI2" type="Label" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources/Current values"]
+layout_mode = 2
+text = "(+0)"
+horizontal_alignment = 2
+
+[node name="Control3" type="Control" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Resources"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonsContainer" type="GridContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="Town hall" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("4_ox2nw")
+
+[node name="Archery" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("9_6vvca")
+
+[node name="Archer Tower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("10_qhwrk")
+
+[node name="Barracks" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("11_wlbc7")
+
+[node name="Manor" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("12_0d34j")
+
+[node name="Castle" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("13_6u116")
+
+[node name="Farm" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("14_qj0l8")
+
+[node name="Forge" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("15_cklnm")
+
+[node name="House" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("16_4b18j")
+
+[node name="Lumbermill" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("17_lxmy4")
+
+[node name="Mage Tower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("18_duc8l")
+
+[node name="Market" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("19_ljsbb")
+
+[node name="Mill" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("20_6f3uk")
+
+[node name="Mine" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("21_v4npa")
+
+[node name="Quarry" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("22_np5r7")
+
+[node name="Siege Tower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("23_wwubt")
+
+[node name="Tavern" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("24_ps4dy")
+
+[node name="Watchtower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("25_7bvmm")
+
+[node name="Requisites" type="PanelContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BuyBuildingButtonContent2" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Requisites" instance=ExtResource("36_rh4w4")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="NextTurn" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "Next turn"
+
+[node name="Control3" type="Control" parent="BuildUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control4" type="Control" parent="BuildUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="DevUI" type="CanvasLayer" parent="."]
 layer = 2
@@ -1025,122 +1044,22 @@ text = "+ Gold"
 layout_mode = 2
 text = "+ Defense"
 
-[node name="GameOverUI" type="CanvasLayer" parent="."]
+[node name="VictoryUI" parent="." instance=ExtResource("38_cbs6o")]
 unique_name_in_owner = true
-layer = 5
+description_text = "Against all odds, light has prevailed. With courage and determination, you have defended your city from the three waves of the Void. The creatures have been defeated, and the abyss recedes. The city, though wounded, stands victorious. The survivors celebrate, knowing they have faced the darkness and triumphed. This is the beginning of a new era of hope and reconstruction. The Void has been repelled, and life will flourish once more."
+button_text = "Try again"
 
-[node name="PanelContainer" type="PanelContainer" parent="GameOverUI"]
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GameOverUI/PanelContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="GameOverUI/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "GAME OVER"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control" type="Control" parent="GameOverUI/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="restart_game" type="Button" parent="GameOverUI/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(250, 120)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 40
-text = "Try again"
-
-[node name="Control2" type="Control" parent="GameOverUI/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VictoryUI" type="CanvasLayer" parent="."]
+[node name="GameOverUI" parent="." instance=ExtResource("38_cbs6o")]
 unique_name_in_owner = true
-layer = 5
+description_text = "Darkness has triumphed. Despite your best efforts, the creatures of the Void have overwhelmed your defenses. The city lies in ruins, and the cries of the survivors are lost in the eternal night. Everything you built has been consumed by the abyss. The Void now reigns supreme, and hope has vanished. It is the end of an era, and the light has been extinguished. The struggle is over, and darkness prevails.
+"
+button_text = "Try again"
 
-[node name="PanelContainer" type="PanelContainer" parent="VictoryUI"]
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VictoryUI/PanelContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VictoryUI/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "YOU WON"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control" type="Control" parent="VictoryUI/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="restart_game" type="Button" parent="VictoryUI/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(250, 120)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 40
-text = "Try again"
-
-[node name="Control2" type="Control" parent="VictoryUI/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="EventUI" type="CanvasLayer" parent="."]
+[node name="Tutorial" parent="." instance=ExtResource("38_cbs6o")]
 unique_name_in_owner = true
-layer = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="EventUI"]
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="EventUI/PanelContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="EventUI/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "This is an event"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control" type="Control" parent="EventUI/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="continue" type="Button" parent="EventUI/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(250, 120)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 40
-text = "Continue"
-
-[node name="Control2" type="Control" parent="EventUI/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="EventUI" parent="." instance=ExtResource("38_cbs6o")]
+unique_name_in_owner = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.474088, 0.880477, 0, -0.880477, 0.474088, 0, 1.7615, -0.16854)
@@ -1242,15 +1161,13 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10, 0, -18)
 [node name="mountain_B3" parent="Props" instance=ExtResource("39_penal")]
 transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -10, 0, -18)
 
-[node name="Stampede" parent="." instance=ExtResource("40_a0ct6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 0, 0)
+[node name="win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("43_8snuc")
+volume_db = -20.0
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Stampede"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74846e-07, 0.494565, 4)
-amount = 128
-explosiveness = 0.2
-process_material = SubResource("ParticleProcessMaterial_c11nw")
-draw_pass_1 = SubResource("SphereMesh_xawib")
+[node name="loose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_vhrub")
+volume_db = -20.0
 
 [node name="main_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_s7s1y")
@@ -1259,10 +1176,12 @@ autoplay = true
 
 [connection signal="building_created" from="BuildingManager" to="ResourceManager" method="register_building_for_tax_collection"]
 [connection signal="building_created" from="BuildingManager" to="TurnManager" method="_on_building_created"]
+[connection signal="turn_ended" from="TurnManager" to="ResourceManager" method="_on_turn_ended"]
 [connection signal="turn_started" from="TurnManager" to="EventManager" method="_on_turn_start"]
-[connection signal="pressed" from="BuildUI/VBoxContainer/PanelContainer/HBoxContainer/PanelContainer/NextTurn" to="TurnManager" method="next_turn"]
+[connection signal="pressed" from="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/NextTurn" to="TurnManager" method="next_turn"]
 [connection signal="pressed" from="DevUI/GridContainer/AddGold" to="ResourceManager" method="add_gold" binds= [10]]
 [connection signal="pressed" from="DevUI/GridContainer/AddDefense" to="ResourceManager" method="add_defense" binds= [10]]
-[connection signal="pressed" from="GameOverUI/PanelContainer/VBoxContainer/restart_game" to="GameManager" method="_on_restart_pressed"]
-[connection signal="pressed" from="VictoryUI/PanelContainer/VBoxContainer/restart_game" to="GameManager" method="_on_restart_pressed"]
-[connection signal="pressed" from="EventUI/PanelContainer/VBoxContainer/continue" to="EventManager" method="_on_crucial_event_continue"]
+[connection signal="submit_event" from="VictoryUI" to="GameManager" method="_on_restart_pressed"]
+[connection signal="submit_event" from="GameOverUI" to="GameManager" method="_on_restart_pressed"]
+[connection signal="submit_event" from="Tutorial" to="GameManager" method="_on_tutorial_finished"]
+[connection signal="submit_event" from="EventUI" to="EventManager" method="_on_crucial_event_continue"]

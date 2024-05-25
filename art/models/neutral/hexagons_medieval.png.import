@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6sxj5fcff0pd"
 path.s3tc="res://.godot/imported/hexagons_medieval.png-cf3198db1a6ca4f7c192b99c60dc374f.s3tc.ctex"
+path.etc2="res://.godot/imported/hexagons_medieval.png-cf3198db1a6ca4f7c192b99c60dc374f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://art/models/neutral/hexagons_medieval.png"
-dest_files=["res://.godot/imported/hexagons_medieval.png-cf3198db1a6ca4f7c192b99c60dc374f.s3tc.ctex"]
+dest_files=["res://.godot/imported/hexagons_medieval.png-cf3198db1a6ca4f7c192b99c60dc374f.s3tc.ctex", "res://.godot/imported/hexagons_medieval.png-cf3198db1a6ca4f7c192b99c60dc374f.etc2.ctex"]
 
 [params]
 

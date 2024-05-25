@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2w6ier12mqh8"
 path.s3tc="res://.godot/imported/Mage_mage_texture.png-8af559be8da106be582938d166ac163c.s3tc.ctex"
+path.etc2="res://.godot/imported/Mage_mage_texture.png-8af559be8da106be582938d166ac163c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://art/models/humans/Mage_mage_texture.png"
-dest_files=["res://.godot/imported/Mage_mage_texture.png-8af559be8da106be582938d166ac163c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Mage_mage_texture.png-8af559be8da106be582938d166ac163c.s3tc.ctex", "res://.godot/imported/Mage_mage_texture.png-8af559be8da106be582938d166ac163c.etc2.ctex"]
 
 [params]
 

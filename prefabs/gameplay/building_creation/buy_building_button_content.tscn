@@ -19,91 +19,117 @@ script = ExtResource("1_lbocx")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Label" type="GridContainer" parent="VBoxContainer"]
-clip_contents = true
+[node name="Name" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-columns = 2
+theme_override_font_sizes/font_size = 40
+text = "Building Name"
 
-[node name="Cost" type="Label" parent="VBoxContainer/Label"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CostRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Cost" type="Label" parent="VBoxContainer/CostRow"]
 layout_mode = 2
 text = "Cost"
 
-[node name="CostSeparator" type="HSeparator" parent="VBoxContainer/Label"]
-layout_mode = 2
-
-[node name="GoldIcon" type="TextureRect" parent="VBoxContainer/Label"]
+[node name="GoldIcon" type="TextureRect" parent="VBoxContainer/CostRow"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("2_t5c5a")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="GoldLabel" type="Label" parent="VBoxContainer/Label"]
+[node name="GoldLabel" type="Label" parent="VBoxContainer/CostRow"]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 2
 
-[node name="DefenseIcon" type="TextureRect" parent="VBoxContainer/Label"]
+[node name="DefenseIcon" type="TextureRect" parent="VBoxContainer/CostRow"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("3_8bsxm")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="DefenseLabel" type="Label" parent="VBoxContainer/Label"]
+[node name="DefenseLabel" type="Label" parent="VBoxContainer/CostRow"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 2
 
-[node name="Benefit" type="Label" parent="VBoxContainer/Label"]
+[node name="BenefitRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Benefit" type="Label" parent="VBoxContainer/BenefitRow"]
 layout_mode = 2
 text = "Benefit"
 
-[node name="BenefitSeparator" type="HSeparator" parent="VBoxContainer/Label"]
-layout_mode = 2
-
-[node name="BenefitGoldIcon" type="TextureRect" parent="VBoxContainer/Label"]
+[node name="BenefitGoldIcon" type="TextureRect" parent="VBoxContainer/BenefitRow"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("2_t5c5a")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="BenefitGold" type="Label" parent="VBoxContainer/Label"]
+[node name="BenefitGold" type="Label" parent="VBoxContainer/BenefitRow"]
 layout_mode = 2
+text = "0"
+horizontal_alignment = 2
 
-[node name="BenefitDefenseIcon" type="TextureRect" parent="VBoxContainer/Label"]
+[node name="BenefitDefenseIcon" type="TextureRect" parent="VBoxContainer/BenefitRow"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("3_8bsxm")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="BenefitDefense" type="Label" parent="VBoxContainer/Label"]
+[node name="BenefitDefense" type="Label" parent="VBoxContainer/BenefitRow"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="TurnRow" type="HBoxContainer" parent="VBoxContainer"]
+clip_contents = true
 layout_mode = 2
 
-[node name="BenefitTurn" type="Label" parent="VBoxContainer/Label"]
+[node name="BenefitTurn" type="Label" parent="VBoxContainer/TurnRow"]
 layout_mode = 2
 text = "Benefit/Turn"
 
-[node name="BenefitTurnSeparator" type="HSeparator" parent="VBoxContainer/Label"]
-layout_mode = 2
-
-[node name="BenefitTurnGoldIcon" type="TextureRect" parent="VBoxContainer/Label"]
+[node name="BenefitTurnGoldIcon" type="TextureRect" parent="VBoxContainer/TurnRow"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("2_t5c5a")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="BenefitTurnGold" type="Label" parent="VBoxContainer/Label"]
+[node name="BenefitTurnGold" type="Label" parent="VBoxContainer/TurnRow"]
 layout_mode = 2
+text = "0
+"
+horizontal_alignment = 2
 
-[node name="BenefitTurnDefenseIcon" type="TextureRect" parent="VBoxContainer/Label"]
+[node name="BenefitTurnDefenseIcon" type="TextureRect" parent="VBoxContainer/TurnRow"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("3_8bsxm")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="BenefitTurnDefense" type="Label" parent="VBoxContainer/Label"]
+[node name="BenefitTurnDefense" type="Label" parent="VBoxContainer/TurnRow"]
 layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="RequiredBuildings" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Build" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Build"

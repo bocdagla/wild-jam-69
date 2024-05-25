@@ -15,4 +15,4 @@ defense_gain = 2000
 turn_gold_gain = 0
 turn_defense_gain = 0
 max_ammount = 0
-required_buildings = Array[String]([])
+required_buildings = Array[String](["watchtower"])

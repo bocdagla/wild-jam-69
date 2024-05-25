@@ -44,6 +44,5 @@ func _add_building(pos: float, building: PackedScene) -> Building:
 	var inst = building.instantiate() as Building;
 	add_child(inst);
 	inst.position = Vector3(pos, 0, 0);
-	inst.start_build();
 	_current_buildings_built += 1;
 	return inst;
