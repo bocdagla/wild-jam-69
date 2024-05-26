@@ -13,6 +13,6 @@ build_turns = 2
 gold_gain = 0
 defense_gain = 200
 turn_gold_gain = 0
-turn_defense_gain = 5
+turn_defense_gain = 15
 max_ammount = 0
 required_buildings = Array[String](["forge"])

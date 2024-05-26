@@ -40,6 +40,9 @@ func add_building_center(building: PackedScene) -> Building:
 	var build = _add_building(0, building); # queremos poner el edificio en el centro
 	return build;
 
+func get_space() -> Array[int]:
+	return [_current_buildings_built, max_builing_ammount];
+
 func _add_building(pos: float, building: PackedScene) -> Building:
 	var inst = building.instantiate() as Building;
 	add_child(inst);

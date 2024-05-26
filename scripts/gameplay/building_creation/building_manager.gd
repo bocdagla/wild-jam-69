@@ -65,6 +65,13 @@ func build(record: BuildingRecord) -> void:
 		return;
 	_build(build_map[record.id], city_quarters[record.district_id] as GridRow);
 
+func get_district_space(district_id: String) -> Array[int]:
+	if !city_quarters.has(district_id):
+		return [];
+
+	var quarter = city_quarters[district_id] as GridRow;
+	return quarter.get_space();
+
 func has_district_space(record: BuildingRecord) -> bool:
 	if record == null:
 		return false;

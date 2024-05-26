@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 SceneLoader="*res://scripts/autoloads/scene_loader.gd"
 Db="*res://scripts/autoloads/db.gd"
 
+[debug]
+
+gdscript/warnings/unsafe_cast=1
+gdscript/warnings/unsafe_call_argument=1
+
 [display]
 
 window/size/viewport_width=1920

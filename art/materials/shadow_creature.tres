@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://8t28vdtbdvci"]
+
+[ext_resource type="Texture2D" uid="uid://c0yip7tkwhwlq" path="res://art/models/humans/Rogue_Hooded_rogue_texture.png" id="1_qcnbo"]
+
+[resource]
+resource_name = "rogue_texture"
+cull_mode = 2
+albedo_color = Color(0.276717, 0.000483522, 0.745072, 1)
+albedo_texture = ExtResource("1_qcnbo")
+roughness = 0.5

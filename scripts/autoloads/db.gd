@@ -1,6 +1,18 @@
+@tool
 extends Node
 
 var buildings: Dictionary;
+var districts: Dictionary = {
+	"military": "Military",
+	"towers": "Defense",
+	"peasants": "Residential",
+	"fields": "Agriculture",
+	"mage_towers": "Magic",
+	"shops": "Commerce",
+	"mines": "Industry",
+	"townhall": "Government",
+	"castle": "Nobility",
+}
 
 func _ready() -> void:
 	for path in get_resources_from_folder("res://resources/buildings/"):

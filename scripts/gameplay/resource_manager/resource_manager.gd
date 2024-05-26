@@ -45,8 +45,9 @@ func _ready() -> void:
 func is_affordable(gold_cost: int, defense_cost: int) -> bool:
 	return (gold_cost <= _gold && defense_cost <= _defense) || _ignore_cost;
 
-func purchase(gold_cost: int) -> void:
+func purchase(gold_cost: int, defense_cost: int) -> void:
 	_gold -= gold_cost;
+	_defense -= defense_cost;
 
 func force_update_labels() -> void:
 	_gold = _gold;

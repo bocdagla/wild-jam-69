@@ -2,9 +2,9 @@ class_name GameManager;
 extends Node
 
 @onready var event_manager: EventManager = $"../EventManager"
+@onready var main_music: AudioStreamPlayer = $"../main_music"
 @onready var win: AudioStreamPlayer = $"../win"
 @onready var loose: AudioStreamPlayer = $"../loose"
-@onready var main_music: AudioStreamPlayer = $"../main_music"
 
 
 @onready var main_camera: Camera3D = %MainCamera
@@ -12,7 +12,8 @@ extends Node
 @onready var victory_ui: EventWindow = %VictoryUI
 @onready var event_ui: EventWindow = %EventUI
 @onready var build_ui: CanvasLayer = %BuildUI
-@onready var tutorial: EventWindow = %Tutorial
+@onready var tutorial: EventWindow 	= %Tutorial
+@onready var town_game_over: AnimationPlayer = %TownGameOver
 
 
 enum GAME_STATE { STARTING, TUTORIAL, PLAYING, CRUCIAL_EVENT_HAPPENING, FINAL_EVENT_HAPPENING, GAMEOVER, VICTORY };
@@ -92,6 +93,7 @@ func _change_state(new_state: GAME_STATE):
 	state = new_state;
 
 func _on_game_start():
+	town_game_over.play("RESET");
 	_change_state(GAME_STATE.TUTORIAL);
 
 func _on_tutorial_finished():
@@ -106,16 +108,24 @@ func _on_crucial_event_started() -> void:
 func _on_final_event_started() -> void:
 	_change_state(GAME_STATE.FINAL_EVENT_HAPPENING);
 
-
 func _on_crucial_event_resolved(success: bool) -> void:
 	match state:
 		GAME_STATE.CRUCIAL_EVENT_HAPPENING:
 			if success:
 				_change_state(GAME_STATE.PLAYING);
 			else:
-				_change_state(GAME_STATE.GAMEOVER);
+				_play_game_over();
 		GAME_STATE.FINAL_EVENT_HAPPENING:
 			if success:
 				_change_state(GAME_STATE.VICTORY);
 			else:
-				_change_state(GAME_STATE.GAMEOVER);
+				_play_game_over();
+
+func _play_game_over() -> void:
+	event_ui.hide();
+	town_game_over.animation_finished.connect(_on_town_destroy_animation_finish);
+	town_game_over.stop();
+	town_game_over.play("TownDestroy");
+
+func _on_town_destroy_animation_finish(_animation: String):
+	_change_state(GAME_STATE.GAMEOVER);

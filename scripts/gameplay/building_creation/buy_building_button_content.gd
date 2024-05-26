@@ -1,25 +1,26 @@
 class_name BuyBuildingButtonContent
 extends MarginContainer
 
-@onready var _gold_label: Label = $VBoxContainer/CostRow/GoldLabel
-@onready var _defense_icon: TextureRect = $VBoxContainer/CostRow/DefenseIcon
-@onready var _defense_label: Label = $VBoxContainer/CostRow/DefenseLabel
-@onready var _benefit = $VBoxContainer/BenefitRow/Benefit
-@onready var _benefit_gold_icon = $VBoxContainer/BenefitRow/BenefitGoldIcon
-@onready var _benefit_gold = $VBoxContainer/BenefitRow/BenefitGold
-@onready var _benefit_defense_icon = $VBoxContainer/BenefitRow/BenefitDefenseIcon
-@onready var _benefit_defense = $VBoxContainer/BenefitRow/BenefitDefense
-@onready var _benefit_turn = $VBoxContainer/TurnRow/BenefitTurn
-@onready var _benefit_turn_gold_icon = $VBoxContainer/TurnRow/BenefitTurnGoldIcon
-@onready var _benefit_turn_gold = $VBoxContainer/TurnRow/BenefitTurnGold
-@onready var _benefit_turn_defense_icon = $VBoxContainer/TurnRow/BenefitTurnDefenseIcon
-@onready var _benefit_turn_defense = $VBoxContainer/TurnRow/BenefitTurnDefense
-@onready var _building_name: Label = $VBoxContainer/Name
-@onready var _required_buildings: VBoxContainer = $VBoxContainer/RequiredBuildings
-@onready var _resource_manager: ResourceManager = %ResourceManager
-@onready var _building_manager: BuildingManager = %BuildingManager
-@onready var _turn_manager: TurnManager = %TurnManager
-@onready var _build_button: Button = $VBoxContainer/Build
+@export var _resource_manager: ResourceManager
+@export var _building_manager: BuildingManager
+@export var _turn_manager: TurnManager
+
+@onready var _gold_label: Label = $HBoxContainer/VBoxContainer/CostRow/GoldLabel
+@onready var _defense_icon: TextureRect = $HBoxContainer/VBoxContainer/CostRow/DefenseIcon
+@onready var _defense_label: Label = $HBoxContainer/VBoxContainer/CostRow/DefenseLabel
+@onready var _benefit = $HBoxContainer/VBoxContainer/BenefitRow/Benefit
+@onready var _benefit_gold_icon = $HBoxContainer/VBoxContainer/BenefitRow/BenefitGoldIcon
+@onready var _benefit_gold = $HBoxContainer/VBoxContainer/BenefitRow/BenefitGold
+@onready var _benefit_defense_icon = $HBoxContainer/VBoxContainer/BenefitRow/BenefitDefenseIcon
+@onready var _benefit_defense = $HBoxContainer/VBoxContainer/BenefitRow/BenefitDefense
+@onready var _benefit_turn = $HBoxContainer/VBoxContainer/TurnRow/BenefitTurn
+@onready var _benefit_turn_gold_icon = $HBoxContainer/VBoxContainer/TurnRow/BenefitTurnGoldIcon
+@onready var _benefit_turn_gold = $HBoxContainer/VBoxContainer/TurnRow/BenefitTurnGold
+@onready var _benefit_turn_defense_icon = $HBoxContainer/VBoxContainer/TurnRow/BenefitTurnDefenseIcon
+@onready var _benefit_turn_defense = $HBoxContainer/VBoxContainer/TurnRow/BenefitTurnDefense
+@onready var _building_name: Label = $HBoxContainer/VBoxContainer/Name
+@onready var _required_buildings: VBoxContainer = %RequiredBuildings
+@onready var _build_button: Button = $HBoxContainer/VBoxContainer/Build
 
 var current_selection: BuildingRecord = null
 
@@ -32,7 +33,7 @@ func _ready() -> void:
 
 func setup(building_record: BuildingRecord) -> void:
 	current_selection = building_record
-	_building_name.text = "%s (%d turns to build)" % [current_selection.name, current_selection.build_turns]
+	_building_name.text = "%s (%d days to build)" % [current_selection.name, current_selection.build_turns]
 	_gold_label.text = str(building_record.gold_cost)
 	_defense_label.text = str(building_record.defense_cost)
 	_defense_label.visible = building_record.defense_cost != 0
@@ -93,7 +94,7 @@ func add_required_buildings(requirements: Array[String]) -> void:
 
 func _build() -> void:
 	if _build_enabled():
-		_resource_manager.purchase(current_selection.gold_cost)
+		_resource_manager.purchase(current_selection.gold_cost, current_selection.defense_cost)
 		_building_manager.build(current_selection)
 
 func _build_enabled() -> bool:

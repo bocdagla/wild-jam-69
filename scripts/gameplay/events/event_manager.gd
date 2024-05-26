@@ -8,15 +8,15 @@ extends Node
 @export_multiline var second_event_success
 @export_multiline var last_event_success
 
-@onready var resource_manager: ResourceManager = %ResourceManager
-@onready var event_ui: CanvasLayer = %EventUI
-
 @export var first_attack_turn: int = 20
 @export var first_attack_defense: int = 200
 @export var second_attack_turn: int = 40
 @export var second_attack_defense: int = 20000
 @export var last_attack_turn: int = 60
 @export var last_attack_defense: int = 60000
+
+@onready var resource_manager: ResourceManager = %ResourceManager
+
 
 signal crucial_event_started
 signal final_event_started
