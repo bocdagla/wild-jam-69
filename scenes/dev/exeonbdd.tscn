@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/building_manager.gd" id="2_e8nj1"]
 [ext_resource type="Script" path="res://scripts/gameplay/resource_manager/resource_manager.gd" id="3_q0nhp"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/turn_manager.gd" id="4_c75ff"]
-[ext_resource type="Script" path="res://scripts/gameplay/game_flow/event_manager.gd" id="5_ksagu"]
+[ext_resource type="Script" path="res://scripts/gameplay/events/event_manager.gd" id="5_ksagu"]
 [ext_resource type="Script" path="res://scripts/gameplay/building_creation/buy_building_button.gd" id="5_loirg"]
 [ext_resource type="Texture2D" uid="uid://dqpn44sihm61b" path="res://art/textures/icons/64/Coin.png" id="8_eqnab"]
 [ext_resource type="Texture2D" uid="uid://bl1stv7uc6qrf" path="res://art/textures/icons/64/ShieldLargeT2.png" id="9_w5uae"]

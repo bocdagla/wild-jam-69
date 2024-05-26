@@ -63,7 +63,7 @@ mesh = SubResource("ArrayMesh_j6ehs")
 skeleton = NodePath("")
 
 [node name="BottleABrown" type="MeshInstance3D" parent="building_church_blue2"]
-transform = Transform3D(0.51, 0, 0, 0, 0.51, 0, 0, 0, 0.51, 0.00265163, 1.35077, 0.320889)
+transform = Transform3D(0.51, 0, 0, 0, 0.51, 0, 0, 0, 0.51, 0.00265163, 1.35077, 0.203117)
 material_override = SubResource("StandardMaterial3D_ll8tr")
 mesh = ExtResource("3_knhxk")
 skeleton = NodePath("../..")

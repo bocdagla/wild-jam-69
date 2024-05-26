@@ -4,7 +4,7 @@ extends Button;
 
 static var building_names: Dictionary;
 
-@onready var buy_building_button_content_2: BuyBuildingButtonContent = $"../../../Requisites/BuyBuildingButtonContent2"
+@onready var buy_building_button_content: BuyBuildingButtonContent = %BuyBuildingButtonContent
 @onready var _turn_manager: TurnManager = %TurnManager
 @onready var _resource_manager: ResourceManager = %ResourceManager;
 @onready var _building_manager: BuildingManager = %BuildingManager
@@ -30,7 +30,7 @@ func _ready() -> void:
 
 
 func _pressed() -> void:
-	buy_building_button_content_2.setup(record);
+	buy_building_button_content.setup(record);
 
 func _on_turn_started(_next_turn: int) -> void:
 	_set_available();
@@ -43,7 +43,7 @@ func _on_registry_updated() -> void:
 
 func _set_available() -> void:
 	var requried_buildings = _building_manager.has_required_buildings_built(record);
-	add_theme_color_override("font_color", Color.DARK_GRAY);
+	add_theme_color_override("font_color", Color.PALE_VIOLET_RED);
 	text = record.name;
 	if !_building_manager.has_district_space(record):
 		text +="\nNO SPACE IN DISTRICT";
@@ -54,5 +54,5 @@ func _set_available() -> void:
 	elif !_resource_manager.is_affordable(record.gold_cost, record.defense_cost):
 		text += "\nNOT AFFORDABLE";
 	else:
-		add_theme_color_override("font_color", Color.WHITE);
+		add_theme_color_override("font_color", Color.SKY_BLUE);
 		text = record.name;

@@ -4,7 +4,6 @@ extends Node
 @export var remaining_turns_label: Label
 @export var required_defense_label: Label
 @export var event_description_label: EventWindow
-@export var stampede: AnimationPlayer
 @export_multiline var first_event_success
 @export_multiline var second_event_success
 @export_multiline var last_event_success
@@ -63,6 +62,4 @@ func _on_crucial_event_continue() -> void:
 	if resource_manager.is_affordable(0, _current_event_defense_cost):
 		crucial_event_resolved.emit(true)
 	else:
-		stampede.stop()
-		stampede.play("stampede")
 		crucial_event_resolved.emit(false)

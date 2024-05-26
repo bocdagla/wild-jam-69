@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://c1ig3hxgelsi1"]
+[gd_scene load_steps=108 format=3 uid="uid://c1ig3hxgelsi1"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/camera/camera_control.gd" id="1_3ogfs"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/game_manager.gd" id="1_xevgu"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dqpn44sihm61b" path="res://art/textures/icons/64/Coin.png" id="4_vyr5u"]
 [ext_resource type="Texture2D" uid="uid://bl1stv7uc6qrf" path="res://art/textures/icons/64/ShieldLargeT2.png" id="5_2fuwc"]
 [ext_resource type="PackedScene" uid="uid://lkvugvqkgxvu" path="res://prefabs/gameplay/buildings/archery.tscn" id="5_jeyae"]
-[ext_resource type="Script" path="res://scripts/gameplay/game_flow/event_manager.gd" id="5_x1m7v"]
 [ext_resource type="PackedScene" uid="uid://cmupv25faxlh4" path="res://prefabs/gameplay/buildings/mine.tscn" id="6_ry76v"]
 [ext_resource type="PackedScene" uid="uid://3cf6sbwbc76g" path="res://prefabs/gameplay/buildings/mage_tower.tscn" id="7_4prnu"]
 [ext_resource type="Script" path="res://scripts/gameplay/game_flow/turn_manager.gd" id="8_ey73k"]
@@ -24,15 +23,21 @@
 [ext_resource type="Resource" uid="uid://1ck5ha0ih46o" path="res://resources/buildings/big_house.tres" id="12_0d34j"]
 [ext_resource type="PackedScene" uid="uid://br52iv4wj4bqv" path="res://prefabs/gameplay/buildings/mill.tscn" id="12_qepoj"]
 [ext_resource type="Resource" uid="uid://dxhok1mx2e302" path="res://resources/buildings/castle.tres" id="13_6u116"]
+[ext_resource type="Script" path="res://scripts/gameplay/events/event_manager.gd" id="14_e40fo"]
 [ext_resource type="Resource" uid="uid://881ixbkvvik1" path="res://resources/buildings/farm.tres" id="14_qj0l8"]
 [ext_resource type="Texture2D" uid="uid://dtiru7cswnrqv" path="res://art/textures/icons/64/ShieldLargeT1.png" id="15_4xf3h"]
 [ext_resource type="Resource" uid="uid://ck43v3eap1t4v" path="res://resources/buildings/forge.tres" id="15_cklnm"]
+[ext_resource type="PackedScene" uid="uid://cdgi023tejgqi" path="res://art/models/neutral/fence_stone_straight.gltf" id="15_f325a"]
+[ext_resource type="Script" path="res://scripts/gameplay/events/wall_event_manager.gd" id="15_he41n"]
 [ext_resource type="Resource" uid="uid://copjmt7fkx3gy" path="res://resources/buildings/house.tres" id="16_4b18j"]
 [ext_resource type="PackedScene" uid="uid://b217m2gh7rwaf" path="res://prefabs/gameplay/building_creation/grid.tscn" id="16_gvmon"]
+[ext_resource type="PackedScene" uid="uid://bxeg8f6dqed73" path="res://art/models/neutral/fence_wood_straight.gltf" id="17_1ru8d"]
 [ext_resource type="Resource" uid="uid://bbreo33y8pgtr" path="res://resources/buildings/lumbremill.tres" id="17_lxmy4"]
 [ext_resource type="Resource" uid="uid://bea7qsrf3vpn5" path="res://resources/buildings/mage_tower.tres" id="18_duc8l"]
 [ext_resource type="Resource" uid="uid://binh4o38jwlrl" path="res://resources/buildings/market.tres" id="19_ljsbb"]
+[ext_resource type="PackedScene" uid="uid://b43f4usop8847" path="res://art/models/neutral/wall_straight.gltf" id="19_pgiyp"]
 [ext_resource type="Resource" uid="uid://dhye6n3yqy8ye" path="res://resources/buildings/mill.tres" id="20_6f3uk"]
+[ext_resource type="PackedScene" uid="uid://c5qotlgtu1ii4" path="res://art/models/neutral/wall_corner_B_outside.gltf" id="20_xwxxs"]
 [ext_resource type="Resource" uid="uid://cu810bulsaopa" path="res://resources/buildings/mine.tres" id="21_v4npa"]
 [ext_resource type="Resource" uid="uid://baemn4gqsmjtl" path="res://resources/buildings/quarry.tres" id="22_np5r7"]
 [ext_resource type="Resource" uid="uid://b8y1igr8ky47t" path="res://resources/buildings/siege_tower.tres" id="23_wwubt"]
@@ -45,19 +50,9 @@
 [ext_resource type="AudioStream" uid="uid://cvt80pje8go6" path="res://art/music/main_menu/Track3.wav" id="41_s7s1y"]
 [ext_resource type="AudioStream" uid="uid://dmg034a7ih1bs" path="res://art/music/main_menu/Track7_Bonus2.wav" id="43_8snuc"]
 [ext_resource type="AudioStream" uid="uid://f4cvfnjsjdm3" path="res://art/music/main_menu/Track5.wav" id="44_vhrub"]
-
-[sub_resource type="Animation" id="Animation_ngsk4"]
-length = 0.01
-
-[sub_resource type="Animation" id="Animation_gmt5w"]
-resource_name = "stampede"
-length = 5.0
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmpfv"]
-_data = {
-"RESET": SubResource("Animation_ngsk4"),
-"stampede": SubResource("Animation_gmt5w")
-}
+[ext_resource type="PackedScene" uid="uid://dqt1vo5a7bc4k" path="res://art/models/neutral/fence_stone_straight_gate.gltf" id="47_ox640"]
+[ext_resource type="PackedScene" uid="uid://dpas5ddix7bhg" path="res://art/models/neutral/fence_wood_straight_gate.gltf" id="49_6jfcp"]
+[ext_resource type="PackedScene" uid="uid://b0m5f8nhwpp52" path="res://art/models/neutral/wall_straight_gate.gltf" id="52_iwuxe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_trfsu"]
 sky_top_color = Color(0.154306, 0.509777, 0.956504, 1)
@@ -630,24 +625,373 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yfxcx")
 
+[sub_resource type="Animation" id="Animation_ktihf"]
+resource_name = "clouds"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ground/Clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ground/Clouds2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 7.5, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 40, 0), Vector3(-10, 40, 0), Vector3(10, 40, 0), Vector3(0, 40, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ground/Clouds2:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ground/Clouds:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gt52m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ground/Clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 20, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ground/Clouds2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 40, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ground/Clouds2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ground/Clouds:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5kiht"]
+_data = {
+"RESET": SubResource("Animation_gt52m"),
+"clouds": SubResource("Animation_ktihf")
+}
+
+[sub_resource type="Animation" id="Animation_1in85"]
+resource_name = "sun"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.48044, 0.545321, -0.687886), Vector3(-2.0944, 0.544543, -0.68766), Vector3(-0.48044, 0.545321, -0.687886)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionalLight3D:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.948794, 0.973649, 0.841472, 1), Color(0.204826, 0.216538, 0.0900989, 1), Color(0.948794, 0.973649, 0.841472, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DirectionalLight3D:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.65, 0.4, 0.65]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.154306, 0.509777, 0.956504, 1), Color(0.381549, 0.278665, 0.206039, 1), Color(0.0369748, 0.0647313, 0.232074, 1), Color(0.154306, 0.509777, 0.956504, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_horizon_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.448831, 0.725485, 0.57617, 1), Color(0.134052, 0.266423, 0.197073, 1), Color(0.448831, 0.725485, 0.57617, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_energy_multiplier")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.5, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WorldEnvironment:environment:sky:sky_material:ground_bottom_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.284715, 0.57, 0.1311, 1), Color(0.109217, 0.243646, 0.0383087, 1), Color(0.284715, 0.57, 0.1311, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WorldEnvironment:environment:sky:sky_material:ground_horizon_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.447059, 0.72549, 0.576471, 1), Color(0.140633, 0.278557, 0.206893, 1), Color(0.447059, 0.72549, 0.576471, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DirectionalLight3D:shadow_opacity")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.6, 0.0, 0.6]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BuildUI:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_8stft"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.48044, 0.545321, -0.687886)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionalLight3D:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.948794, 0.973649, 0.841472, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DirectionalLight3D:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.65]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.154306, 0.509777, 0.956504, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_horizon_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.448831, 0.725485, 0.57617, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_energy_multiplier")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WorldEnvironment:environment:sky:sky_material:ground_bottom_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.284715, 0.57, 0.1311, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WorldEnvironment:environment:sky:sky_material:ground_horizon_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.447059, 0.72549, 0.576471, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DirectionalLight3D:shadow_opacity")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.6]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BuildUI:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wdsb8"]
+_data = {
+"RESET": SubResource("Animation_8stft"),
+"sun": SubResource("Animation_1in85")
+}
+
 [node name="MainGame" type="Node3D"]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_xevgu")
-
-[node name="EventManager" type="Node" parent="." node_paths=PackedStringArray("remaining_turns_label", "required_defense_label", "event_description_label", "stampede")]
-script = ExtResource("5_x1m7v")
-remaining_turns_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer2/NextTurn")
-required_defense_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer4/HBoxContainer/Defense")
-event_description_label = NodePath("../EventUI")
-stampede = NodePath("../EventAnimations/Stampede")
-first_event_success = "An eerie silence descends upon the city. The first creatures of the Void emerge from the abyss, advancing slowly but with relentless determination. Their dark and distorted forms slither through the newly built streets, seeking any trace of life to consume. This is the beginning of the trial. Your city must withstand, but this is only the first shadow of what is to come."
-second_event_success = "After the first wave, there is barely time to recover. The creatures of the Void return, now in greater numbers and with renewed ferocity. They move faster and strike harder. The city trembles under their assault. The survivors band together, fighting desperately to protect what they have built. The darkness is denser, but the light of hope still flickers faintly."
-last_event_success = "The final wave is a storm of pure darkness. Enormous and devastating creatures emerge from the Void, bringing with them unprecedented chaos. Their roars echo throughout the city, and their attacks threaten to reduce everything you have achieved to rubble. This is the ultimate test. Only those with the greatest determination and strategy will survive this definitive attack. The future of your city hangs by a thread.
-"
-second_attack_defense = 5000
-last_attack_defense = 35000
 
 [node name="BuildingManager" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -742,13 +1086,368 @@ unique_name_in_owner = true
 script = ExtResource("8_ey73k")
 turn_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer/Turns")
 
-[node name="EventAnimations" type="Node" parent="."]
+[node name="EventManager" type="Node" parent="." node_paths=PackedStringArray("remaining_turns_label", "required_defense_label", "event_description_label")]
+script = ExtResource("14_e40fo")
+remaining_turns_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer2/NextTurn")
+required_defense_label = NodePath("../BuildUI/HBoxContainer/VBoxContainer/TurnStatus/PanelContainer4/HBoxContainer/Defense")
+event_description_label = NodePath("../EventUI")
+first_event_success = "An eerie silence descends upon the city. The first creatures of the Void emerge from the abyss, advancing slowly but with relentless determination. Their dark and distorted forms slither through the newly built streets, seeking any trace of life to consume. This is the beginning of the trial. Your city must withstand, but this is only the first shadow of what is to come."
+second_event_success = "After the first wave, there is barely time to recover. The creatures of the Void return, now in greater numbers and with renewed ferocity. They move faster and strike harder. The city trembles under their assault. The survivors band together, fighting desperately to protect what they have built. The darkness is denser, but the light of hope still flickers faintly."
+last_event_success = "The final wave is a storm of pure darkness. Enormous and devastating creatures emerge from the Void, bringing with them unprecedented chaos. Their roars echo throughout the city, and their attacks threaten to reduce everything you have achieved to rubble. This is the ultimate test. Only those with the greatest determination and strategy will survive this definitive attack. The future of your city hangs by a thread.
+"
+second_attack_defense = 5000
+last_attack_defense = 35000
 
-[node name="Stampede" type="AnimationPlayer" parent="EventAnimations"]
-libraries = {
-"": SubResource("AnimationLibrary_fmpfv")
-}
-autoplay = "stampede"
+[node name="WallEventManager" type="Node3D" parent="."]
+script = ExtResource("15_he41n")
+
+[node name="FenceStone" type="Node3D" parent="WallEventManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+visible = false
+
+[node name="fence_stone_straight2" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 0, 0, -15)
+
+[node name="fence_stone_straight3" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 3, 0, -15)
+
+[node name="fence_stone_straight4" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 6, 0, -15)
+
+[node name="fence_stone_straight5" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 9, 0, -15)
+
+[node name="fence_stone_straight6" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 12, 0, -15)
+
+[node name="fence_stone_straight7" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 14, 0, -15)
+
+[node name="fence_stone_straight8" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -14, 0, -15)
+
+[node name="fence_stone_straight9" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -11, 0, -15)
+
+[node name="fence_stone_straight10" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -8, 0, -15)
+
+[node name="fence_stone_straight11" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -5, 0, -15)
+
+[node name="fence_stone_straight12" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -3, 0, -15)
+
+[node name="fence_stone_straight13" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -28, 0, -15)
+
+[node name="fence_stone_straight14" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25, 0, -15)
+
+[node name="fence_stone_straight15" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -22, 0, -15)
+
+[node name="fence_stone_straight16" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -19, 0, -15)
+
+[node name="fence_stone_straight17" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -17, 0, -15)
+
+[node name="fence_stone_straight18" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 17, 0, -15)
+
+[node name="fence_stone_straight19" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 20, 0, -15)
+
+[node name="fence_stone_straight20" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 23, 0, -15)
+
+[node name="fence_stone_straight21" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 26, 0, -15)
+
+[node name="fence_stone_straight22" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 28, 0, -15)
+
+[node name="fence_stone_straight23" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 26.5, 0, -7.71315)
+
+[node name="fence_stone_straight24" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 26.5, 0, -4.75807)
+
+[node name="fence_stone_straight26" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 26.5, 0, -1.84792)
+
+[node name="fence_stone_straight41" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 26.5, 0, -16.7131)
+
+[node name="fence_stone_straight42" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 26.5, 0, -13.7581)
+
+[node name="fence_stone_straight43" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 26.5, 0, -10.8479)
+
+[node name="fence_stone_straight35" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 26.5, 0, 6.28685)
+
+[node name="fence_stone_straight36" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 26.5, 0, 9.24193)
+
+[node name="fence_stone_straight37" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 26.5, 0, 12.1521)
+
+[node name="fence_stone_straight27" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 26.5, 0, 3.12213)
+
+[node name="fence_stone_straight25" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -32.5, 0, -7.71315)
+
+[node name="fence_stone_straight28" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -32.5, 0, -4.75807)
+
+[node name="fence_stone_straight31" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -32.5, 0, -1.75807)
+
+[node name="fence_stone_straight38" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -32.5, 0, -15.7131)
+
+[node name="fence_stone_straight39" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -32.5, 0, -12.7581)
+
+[node name="fence_stone_straight40" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -32.5, 0, -9.75807)
+
+[node name="fence_stone_straight29" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -32.5, 0, 1.15208)
+
+[node name="fence_stone_straight30" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -32.5, 0, 3.12213)
+
+[node name="fence_stone_straight32" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -32.5, 0, 6.24193)
+
+[node name="fence_stone_straight33" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -32.5, 0, 9.15208)
+
+[node name="fence_stone_straight34" parent="WallEventManager/FenceStone" instance=ExtResource("15_f325a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -32.5, 0, 11.1221)
+
+[node name="fence_stone_straight_gate2" parent="WallEventManager/FenceStone" instance=ExtResource("47_ox640")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 26.5, 0, 0.125)
+
+[node name="FenceWood" type="Node3D" parent="WallEventManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+visible = false
+
+[node name="fence_wood_straight2" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 0, 0, -14.9842)
+
+[node name="fence_wood_straight3" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 3, 0, -14.9842)
+
+[node name="fence_wood_straight4" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 6, 0, -14.9842)
+
+[node name="fence_wood_straight5" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 9, 0, -14.9842)
+
+[node name="fence_wood_straight6" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 12, 0, -14.9842)
+
+[node name="fence_wood_straight7" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 15, 0, -14.9842)
+
+[node name="fence_wood_straight8" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 18, 0, -14.9842)
+
+[node name="fence_wood_straight9" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 21, 0, -14.9842)
+
+[node name="fence_wood_straight10" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 24, 0, -14.9842)
+
+[node name="fence_wood_straight11" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 27, 0, -14.9842)
+
+[node name="fence_wood_straight12" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -27, 0, -14.9842)
+
+[node name="fence_wood_straight13" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -24, 0, -14.9842)
+
+[node name="fence_wood_straight14" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -21, 0, -14.9842)
+
+[node name="fence_wood_straight15" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -18, 0, -14.9842)
+
+[node name="fence_wood_straight16" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -15, 0, -14.9842)
+
+[node name="fence_wood_straight17" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -12, 0, -14.9842)
+
+[node name="fence_wood_straight18" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -9, 0, -14.9842)
+
+[node name="fence_wood_straight19" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -6, 0, -14.9842)
+
+[node name="fence_wood_straight20" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -3, 0, -14.9842)
+
+[node name="fence_wood_straight21" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, 16.7256)
+
+[node name="fence_wood_straight22" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, 13.7256)
+
+[node name="fence_wood_straight23" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, 10.7256)
+
+[node name="fence_wood_straight24" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, 7.72562)
+
+[node name="fence_wood_straight25" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, 4.72562)
+
+[node name="fence_wood_straight26" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, 1.72562)
+
+[node name="fence_wood_straight27" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, -1.27438)
+
+[node name="fence_wood_straight28" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, -4.27438)
+
+[node name="fence_wood_straight29" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, -7.27438)
+
+[node name="fence_wood_straight35" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, -10.2744)
+
+[node name="fence_wood_straight39" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, -13.2744)
+
+[node name="fence_wood_straight40" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25.7266, 0, -16.2744)
+
+[node name="fence_wood_straight30" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.7192, 0, 16.7256)
+
+[node name="fence_wood_straight31" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.7192, 0, 13.7256)
+
+[node name="fence_wood_straight32" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.7192, 0, 10.7256)
+
+[node name="fence_wood_straight33" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.7192, 0, 7.72562)
+
+[node name="fence_wood_straight34" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.7192, 0, 4.72562)
+
+[node name="fence_wood_straight36" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.7192, 0, -1.27438)
+
+[node name="fence_wood_straight37" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.7192, 0, -4.27438)
+
+[node name="fence_wood_straight38" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.7192, 0, -7.27438)
+
+[node name="fence_wood_straight41" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.7192, 0, -10.2744)
+
+[node name="fence_wood_straight42" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.7192, 0, -13.2744)
+
+[node name="fence_wood_straight43" parent="WallEventManager/FenceWood" instance=ExtResource("17_1ru8d")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.7192, 0, -16.2744)
+
+[node name="fence_wood_straight_gate2" parent="WallEventManager/FenceWood" instance=ExtResource("49_6jfcp")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.719, 0, 1.921)
+
+[node name="Wall" type="Node3D" parent="WallEventManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+visible = false
+
+[node name="wall_straight2" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, 0, 0, -19)
+
+[node name="wall_straight3" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, 6, 0, -19)
+
+[node name="wall_straight4" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, 12, 0, -19)
+
+[node name="wall_straight22" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, 18, 0, -19)
+
+[node name="wall_straight23" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, 24, 0, -19)
+
+[node name="wall_straight9" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, -11, 0, -19)
+
+[node name="wall_straight26" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, -17, 0, -19)
+
+[node name="wall_straight27" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, -23, 0, -19)
+
+[node name="wall_straight28" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, -29, 0, -19)
+
+[node name="wall_straight10" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, -5, 0, -19)
+
+[node name="wall_straight12" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -33.7207, 0, 14)
+
+[node name="wall_straight13" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -33.7207, 0, 20)
+
+[node name="wall_straight14" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -33.7207, 0, 8)
+
+[node name="wall_straight15" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -33.7207, 0, 2)
+
+[node name="wall_straight16" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -33.7207, 0, -4)
+
+[node name="wall_straight20" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -33.7207, 0, -14)
+
+[node name="wall_straight29" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -33.7207, 0, -10)
+
+[node name="wall_straight17" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 28.7214, 0, 14)
+
+[node name="wall_straight18" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 28.7214, 0, 20)
+
+[node name="wall_straight19" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 28.7214, 0, 8)
+
+[node name="wall_straight21" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 28.7214, 0, -4)
+
+[node name="wall_straight24" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 28.7214, 0, -10)
+
+[node name="wall_straight25" parent="WallEventManager/Wall" instance=ExtResource("19_pgiyp")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 28.7214, 0, -15)
+
+[node name="wall_corner_B_outside2" parent="WallEventManager/Wall" instance=ExtResource("20_xwxxs")]
+transform = Transform3D(1.5, 0, 2.59808, 0, 3, 0, -2.59808, 0, 1.5, 30, 0, -19)
+
+[node name="wall_corner_B_outside3" parent="WallEventManager/Wall" instance=ExtResource("20_xwxxs")]
+transform = Transform3D(-3, 0, 6.55651e-07, 0, 3, 0, -6.55651e-07, 0, -3, -35, 0, -19)
+
+[node name="wall_straight_gate2" parent="WallEventManager/Wall" instance=ExtResource("52_iwuxe")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 28.7125, -9.53674e-07, 2.19181)
 
 [node name="BuildUI" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -859,149 +1558,183 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+[node name="TabBar" type="TabContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/side_margin = 10
+theme_override_font_sizes/font_size = 40
+tab_alignment = 1
+
+[node name="Citty" type="ScrollContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ButtonsContainer" type="GridContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer"]
+[node name="ButtonsContainer" type="GridContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Citty"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 2
 
-[node name="Town hall" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
+[node name="Town hall" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Citty/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_n7gp6")
 record = ExtResource("4_ox2nw")
 
-[node name="Archery" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("9_6vvca")
-
-[node name="Archer Tower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("10_qhwrk")
-
-[node name="Barracks" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("11_wlbc7")
-
-[node name="Manor" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("12_0d34j")
-
-[node name="Castle" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("13_6u116")
-
-[node name="Farm" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("14_qj0l8")
-
-[node name="Forge" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("15_cklnm")
-
-[node name="House" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
+[node name="House" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Citty/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_n7gp6")
 record = ExtResource("16_4b18j")
 
-[node name="Lumbermill" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("17_lxmy4")
-
-[node name="Mage Tower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("18_duc8l")
-
-[node name="Market" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("19_ljsbb")
-
-[node name="Mill" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("20_6f3uk")
-
-[node name="Mine" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("21_v4npa")
-
-[node name="Quarry" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("22_np5r7")
-
-[node name="Siege Tower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_n7gp6")
-record = ExtResource("23_wwubt")
-
-[node name="Tavern" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
-custom_minimum_size = Vector2(0, 200)
+[node name="Tavern" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Citty/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_n7gp6")
 record = ExtResource("24_ps4dy")
 
-[node name="Watchtower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/ButtonsContainer"]
+[node name="Market" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Citty/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("19_ljsbb")
+
+[node name="Forge" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Citty/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("15_cklnm")
+
+[node name="Manor" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Citty/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("12_0d34j")
+
+[node name="Castle" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Citty/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("13_6u116")
+
+[node name="Military" type="ScrollContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar"]
+visible = false
 custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonsContainer" type="GridContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Military"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="Barracks" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Military/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("11_wlbc7")
+
+[node name="Archery" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Military/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("9_6vvca")
+
+[node name="Watchtower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Military/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_n7gp6")
 record = ExtResource("25_7bvmm")
 
+[node name="Archer Tower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Military/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("10_qhwrk")
+
+[node name="Siege Tower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Military/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("23_wwubt")
+
+[node name="Mage Tower" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Military/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("18_duc8l")
+
+[node name="Production" type="ScrollContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar"]
+visible = false
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonsContainer" type="GridContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Production"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="Farm" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Production/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("14_qj0l8")
+
+[node name="Mill" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Production/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("20_6f3uk")
+
+[node name="Lumbermill" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Production/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("17_lxmy4")
+
+[node name="Mine" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Production/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("21_v4npa")
+
+[node name="Quarry" type="Button" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/TabBar/Production/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_n7gp6")
+record = ExtResource("22_np5r7")
+
 [node name="Requisites" type="PanelContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BuyBuildingButtonContent2" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Requisites" instance=ExtResource("36_rh4w4")]
+[node name="BuyBuildingButtonContent" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Requisites" instance=ExtResource("36_rh4w4")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
@@ -1023,54 +1756,43 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="DevUI" type="CanvasLayer" parent="."]
-layer = 2
-visible = false
-
-[node name="GridContainer" type="GridContainer" parent="DevUI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-columns = 16
-
-[node name="AddGold" type="Button" parent="DevUI/GridContainer"]
-layout_mode = 2
-text = "+ Gold"
-
-[node name="AddDefense" type="Button" parent="DevUI/GridContainer"]
-layout_mode = 2
-text = "+ Defense"
-
 [node name="VictoryUI" parent="." instance=ExtResource("38_cbs6o")]
 unique_name_in_owner = true
+visible = false
 description_text = "Against all odds, light has prevailed. With courage and determination, you have defended your city from the three waves of the Void. The creatures have been defeated, and the abyss recedes. The city, though wounded, stands victorious. The survivors celebrate, knowing they have faced the darkness and triumphed. This is the beginning of a new era of hope and reconstruction. The Void has been repelled, and life will flourish once more."
 button_text = "Try again"
 
 [node name="GameOverUI" parent="." instance=ExtResource("38_cbs6o")]
 unique_name_in_owner = true
+visible = false
 description_text = "Darkness has triumphed. Despite your best efforts, the creatures of the Void have overwhelmed your defenses. The city lies in ruins, and the cries of the survivors are lost in the eternal night. Everything you built has been consumed by the abyss. The Void now reigns supreme, and hope has vanished. It is the end of an era, and the light has been extinguished. The struggle is over, and darkness prevails.
 "
 button_text = "Try again"
 
 [node name="Tutorial" parent="." instance=ExtResource("38_cbs6o")]
 unique_name_in_owner = true
+visible = false
 
 [node name="EventUI" parent="." instance=ExtResource("38_cbs6o")]
 unique_name_in_owner = true
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.474088, 0.880477, 0, -0.880477, 0.474088, 0, 1.7615, -0.16854)
-light_energy = 0.558
+transform = Transform3D(0.812736, 0.357611, 0.459973, -0.563029, 0.685127, 0.462169, -0.149863, -0.634599, 0.758172, 0, 8.55105, -0.16854)
+light_color = Color(0.948794, 0.973649, 0.841472, 1)
+light_energy = 0.65
+light_indirect_energy = 2.0
+shadow_enabled = true
+shadow_bias = 3.0
+shadow_normal_bias = 5.0
+shadow_opacity = 0.6
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rhb1v")
 
 [node name="MainCamera" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.993027, 0.117884, 0, -0.117884, 0.993027, 0, 3.63177, 14.6012)
+transform = Transform3D(1, 0, 0, 0, 0.928486, 0.371368, 0, -0.371368, 0.928486, -0.296919, 3.57703, 13.8053)
 script = ExtResource("1_3ogfs")
 
 [node name="Background" type="MeshInstance3D" parent="."]
@@ -1104,6 +1826,26 @@ skeleton = NodePath("")
 mesh = SubResource("ArrayMesh_px56j")
 skeleton = NodePath("")
 
+[node name="DevUI" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="GridContainer" type="GridContainer" parent="DevUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+columns = 16
+
+[node name="AddGold" type="Button" parent="DevUI/GridContainer"]
+layout_mode = 2
+text = "+ Gold"
+
+[node name="AddDefense" type="Button" parent="DevUI/GridContainer"]
+layout_mode = 2
+text = "+ Defense"
+
 [node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_m803d")
 
@@ -1114,11 +1856,11 @@ multimesh = SubResource("MultiMesh_k4xct")
 multimesh = SubResource("MultiMesh_rffy6")
 
 [node name="Clouds" type="MultiMeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.2736, 0)
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 20, 0)
 multimesh = SubResource("MultiMesh_kydtv")
 
 [node name="Clouds2" type="MultiMeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 37.4179, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 40, 0)
 multimesh = SubResource("MultiMesh_l2u1k")
 
 [node name="rock_single_A2" type="Node3D" parent="Ground"]
@@ -1174,14 +1916,27 @@ stream = ExtResource("41_s7s1y")
 volume_db = -20.0
 autoplay = true
 
+[node name="Clouds" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5kiht")
+}
+autoplay = "clouds"
+speed_scale = 0.05
+
+[node name="SunCicle" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_wdsb8")
+}
+
 [connection signal="building_created" from="BuildingManager" to="ResourceManager" method="register_building_for_tax_collection"]
 [connection signal="building_created" from="BuildingManager" to="TurnManager" method="_on_building_created"]
 [connection signal="turn_ended" from="TurnManager" to="ResourceManager" method="_on_turn_ended"]
 [connection signal="turn_started" from="TurnManager" to="EventManager" method="_on_turn_start"]
-[connection signal="pressed" from="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/NextTurn" to="TurnManager" method="next_turn"]
-[connection signal="pressed" from="DevUI/GridContainer/AddGold" to="ResourceManager" method="add_gold" binds= [10]]
-[connection signal="pressed" from="DevUI/GridContainer/AddDefense" to="ResourceManager" method="add_defense" binds= [10]]
+[connection signal="pressed" from="BuildUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/NextTurn" to="TurnManager" method="_on_TurnButton_pressed"]
 [connection signal="submit_event" from="VictoryUI" to="GameManager" method="_on_restart_pressed"]
 [connection signal="submit_event" from="GameOverUI" to="GameManager" method="_on_restart_pressed"]
 [connection signal="submit_event" from="Tutorial" to="GameManager" method="_on_tutorial_finished"]
 [connection signal="submit_event" from="EventUI" to="EventManager" method="_on_crucial_event_continue"]
+[connection signal="pressed" from="DevUI/GridContainer/AddGold" to="ResourceManager" method="add_gold" binds= [10]]
+[connection signal="pressed" from="DevUI/GridContainer/AddDefense" to="ResourceManager" method="add_defense" binds= [1000]]

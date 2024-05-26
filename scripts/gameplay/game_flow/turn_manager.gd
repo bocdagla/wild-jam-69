@@ -1,6 +1,7 @@
 class_name TurnManager;
 extends Node
 
+@onready var sun_cicle: AnimationPlayer = %SunCicle
 @export var turn_label : Label
 var current_turn := 1
 
@@ -20,7 +21,13 @@ func next_turn():
 
 # Puedes conectar esta función a un botón en tu interfaz de usuario
 func _on_TurnButton_pressed():
-	next_turn()
+	sun_cicle.stop();
+	sun_cicle.play("sun");
+	sun_cicle.animation_finished.connect(_on_suncicle_finished);
+
+func _on_suncicle_finished(_anim_name: String):
+	sun_cicle.animation_finished.disconnect(_on_suncicle_finished);
+	next_turn();
 
 func _on_building_created(building: Building):
 	turn_started.connect(building.advance_turn);
