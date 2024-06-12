@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://3cf6sbwbc76g"]
+[gd_scene load_steps=26 format=3 uid="uid://3cf6sbwbc76g"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_5nb7s"]
 [ext_resource type="Resource" uid="uid://bea7qsrf3vpn5" path="res://resources/buildings/mage_tower.tres" id="2_fxkpc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_71wio"]
 [ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_urgf4"]
 [ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_jdr0f"]
+[ext_resource type="Shader" path="res://art/shaders/dirt.gdshader" id="7_p1t24"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5j6en"]
 resource_name = "hexagons_medieval"
@@ -83,7 +84,6 @@ shadow_mesh = SubResource("ArrayMesh_3vpe5")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyxq6"]
 transparency = 1
 albedo_color = Color(0.470588, 1, 1, 0.372549)
-emission_enabled = true
 emission = Color(0, 0.941176, 0.823529, 1)
 emission_energy_multiplier = 2.0
 
@@ -97,7 +97,6 @@ ring_segments = 8
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygs1w"]
 transparency = 1
 albedo_color = Color(0.992157, 0.898039, 0, 0.65098)
-emission_enabled = true
 emission = Color(1, 0.807843, 0, 1)
 emission_energy_multiplier = 2.0
 
@@ -107,6 +106,57 @@ inner_radius = 0.2
 outer_radius = 0.15
 rings = 18
 ring_segments = 8
+
+[sub_resource type="Animation" id="Animation_1rhyl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("building_tower_B_blue2/building_tower_B_blue/building_tower_B_top_blue:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.03568, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("building_tower_B_blue2/building_tower_B_blue/building_tower_B_top_blue:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("building_tower_B_blue2/building_tower_B_blue/building_tower_B_top_blue/MeshInstance3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.0472)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("building_tower_B_blue2/building_tower_B_blue/building_tower_B_top_blue/MeshInstance3D2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -2.0944)]
+}
 
 [sub_resource type="Animation" id="Animation_e73rh"]
 resource_name = "mage"
@@ -161,62 +211,47 @@ tracks/3/keys = {
 "values": [Vector3(0, 0, -2.0944), Vector3(0, 1.5708, -2.0944), Vector3(0, -1.5708, 2.0944), Vector3(0, 1.5708, -2.0944), Vector3(0, 0, -2.0944)]
 }
 
-[sub_resource type="Animation" id="Animation_1rhyl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("building_tower_B_blue2/building_tower_B_blue/building_tower_B_top_blue:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.03568, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("building_tower_B_blue2/building_tower_B_blue/building_tower_B_top_blue:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("building_tower_B_blue2/building_tower_B_blue/building_tower_B_top_blue/MeshInstance3D:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, -1.0472)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("building_tower_B_blue2/building_tower_B_blue/building_tower_B_top_blue/MeshInstance3D2:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, -2.0944)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pogcn"]
 _data = {
 "RESET": SubResource("Animation_1rhyl"),
 "mage": SubResource("Animation_e73rh")
 }
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1w5vr"]
+noise_type = 2
+frequency = 0.1137
+fractal_type = 0
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 2.43
+cellular_distance_function = 1
+cellular_return_type = 0
+domain_warp_amplitude = 30.16
+domain_warp_fractal_type = 0
+domain_warp_fractal_octaves = 10
+domain_warp_fractal_lacunarity = 8.16
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sxy1q"]
+seamless = true
+noise = SubResource("FastNoiseLite_1w5vr")
+
+[sub_resource type="Gradient" id="Gradient_ah3wm"]
+colors = PackedColorArray(0.42, 0.42, 0.42, 1, 1, 0.616667, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ckbui"]
+gradient = SubResource("Gradient_ah3wm")
+fill = 1
+fill_from = Vector2(0.512821, 0.508547)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kyrrn"]
+render_priority = 0
+shader = ExtResource("7_p1t24")
+shader_parameter/tex = SubResource("GradientTexture2D_ckbui")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_sxy1q")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xayjl"]
+material = SubResource("ShaderMaterial_kyrrn")
+size = Vector2(5, 5)
 
 [node name="MageTower" type="Node3D" node_paths=PackedStringArray("_main_structure")]
 script = ExtResource("1_5nb7s")
@@ -235,7 +270,7 @@ mesh = SubResource("ArrayMesh_jma67")
 skeleton = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="building_tower_B_blue2/building_tower_B_blue/building_tower_B_top_blue"]
-transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 0, 1.61212, 0)
+transform = Transform3D(0.499998, 0.866026, 0, -0.866026, 0.499998, 0, 0, 0, 1, 0, 1.61212, 0)
 mesh = SubResource("TorusMesh_f6hni")
 skeleton = NodePath("../..")
 
@@ -260,7 +295,7 @@ mesh = SubResource("TorusMesh_ryt6n")
 skeleton = NodePath("../../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="building_tower_B_blue2/building_tower_B_blue/building_tower_B_top_blue"]
-transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, 0, 1.61212, 0)
+transform = Transform3D(-0.500004, 0.866023, 0, -0.866023, -0.500004, 0, 0, 0, 1, 0, 1.61212, 0)
 mesh = SubResource("TorusMesh_f6hni")
 skeleton = NodePath("../..")
 
@@ -301,3 +336,6 @@ libraries = {
 "": SubResource("AnimationLibrary_pogcn")
 }
 autoplay = "mage"
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_xayjl")

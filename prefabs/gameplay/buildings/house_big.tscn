@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://di7n2lihwau80"]
+[gd_scene load_steps=14 format=3 uid="uid://di7n2lihwau80"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_0hg83"]
 [ext_resource type="PackedScene" uid="uid://o18tsqs0souf" path="res://art/models/blue/building_home_B_blue.gltf" id="1_prmu2"]
@@ -6,6 +6,43 @@
 [ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_g4b0x"]
 [ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_mstvo"]
 [ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_lbqlb"]
+[ext_resource type="Shader" path="res://art/shaders/dirt.gdshader" id="7_33gp1"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hcv4o"]
+noise_type = 2
+frequency = 0.1137
+fractal_type = 0
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 2.43
+cellular_distance_function = 1
+cellular_return_type = 0
+domain_warp_amplitude = 30.16
+domain_warp_fractal_type = 0
+domain_warp_fractal_octaves = 10
+domain_warp_fractal_lacunarity = 8.16
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fdki0"]
+seamless = true
+noise = SubResource("FastNoiseLite_hcv4o")
+
+[sub_resource type="Gradient" id="Gradient_urrx2"]
+colors = PackedColorArray(0.42, 0.42, 0.42, 1, 1, 0.616667, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s368u"]
+gradient = SubResource("Gradient_urrx2")
+fill = 1
+fill_from = Vector2(0.512821, 0.508547)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dumyr"]
+render_priority = 0
+shader = ExtResource("7_33gp1")
+shader_parameter/tex = SubResource("GradientTexture2D_s368u")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_fdki0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tifxg"]
+material = SubResource("ShaderMaterial_dumyr")
+size = Vector2(5, 5)
 
 [node name="HouseBig" type="Node3D" node_paths=PackedStringArray("_main_structure")]
 script = ExtResource("1_0hg83")
@@ -22,3 +59,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="building_stage_C2" parent="." instance=ExtResource("6_lbqlb")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_tifxg")

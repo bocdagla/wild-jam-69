@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://b223mik75c4am"]
+
+[ext_resource type="Texture2D" uid="uid://gcok0a225isw" path="res://art/textures/borders/fantasy-ui-borders.svg" id="1_oevhx"]
+
+[resource]
+texture = ExtResource("1_oevhx")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+region_rect = Rect2(350, 40, 48, 48)
+modulate_color = Color(0.720486, 0.72046, 0.720467, 0.227451)

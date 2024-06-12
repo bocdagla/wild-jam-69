@@ -48,6 +48,7 @@ text = "====== Main Devs =====
 Font: [url=\"https://tinyworlds.itch.io/free-pixel-font-thaleah\"]tinyworlds[/url]
 UI Icons: [url=\"https://ravenmore.itch.io/fantasy-icon-pack\"] ravenmore [/url]
 Music: [url=\"https://hzsoundcreator.itch.io/fantasy-world-music\"] hzsoundcreator [/url]
+Skybox: [url=\"https://sketchfab.com/paul_paul_paul\"] Paul [/url]
 "
 
 [node name="Close" type="Button" parent="CreditsMargin/CreditsPadding/Content" groups=["MenuButtons"]]

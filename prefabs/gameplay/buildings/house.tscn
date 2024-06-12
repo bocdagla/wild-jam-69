@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy7axcwyek60f"]
+[gd_scene load_steps=14 format=3 uid="uid://cy7axcwyek60f"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_67ac7"]
 [ext_resource type="PackedScene" uid="uid://vd7b6xbqif25" path="res://art/models/blue/building_home_A_blue.gltf" id="1_tnnqp"]
@@ -6,6 +6,43 @@
 [ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_vtii2"]
 [ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_gdu4p"]
 [ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_x0641"]
+[ext_resource type="Shader" path="res://art/shaders/dirt.gdshader" id="7_3grfe"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ic4fp"]
+noise_type = 2
+frequency = 0.1137
+fractal_type = 0
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 2.43
+cellular_distance_function = 1
+cellular_return_type = 0
+domain_warp_amplitude = 30.16
+domain_warp_fractal_type = 0
+domain_warp_fractal_octaves = 10
+domain_warp_fractal_lacunarity = 8.16
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6dt3w"]
+seamless = true
+noise = SubResource("FastNoiseLite_ic4fp")
+
+[sub_resource type="Gradient" id="Gradient_58oci"]
+colors = PackedColorArray(0.42, 0.42, 0.42, 1, 1, 0.616667, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7eggw"]
+gradient = SubResource("Gradient_58oci")
+fill = 1
+fill_from = Vector2(0.512821, 0.508547)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iajki"]
+render_priority = 0
+shader = ExtResource("7_3grfe")
+shader_parameter/tex = SubResource("GradientTexture2D_7eggw")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_6dt3w")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cnhyh"]
+material = SubResource("ShaderMaterial_iajki")
+size = Vector2(5, 5)
 
 [node name="House" type="Node3D" node_paths=PackedStringArray("_main_structure")]
 script = ExtResource("1_67ac7")
@@ -19,3 +56,6 @@ _main_structure = NodePath("building_home_A_blue2")
 [node name="building_stage_B2" parent="." instance=ExtResource("5_gdu4p")]
 
 [node name="building_stage_C2" parent="." instance=ExtResource("6_x0641")]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_cnhyh")

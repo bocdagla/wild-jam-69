@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnvtatport8s7"]
+[gd_scene load_steps=24 format=3 uid="uid://cnvtatport8s7"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_rhv0o"]
 [ext_resource type="Texture2D" uid="uid://k245hj4x0q82" path="res://art/models/blue/hexagons_medieval.png" id="1_y5tu0"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="6_ney24"]
 [ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="7_v35qo"]
 [ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="8_53yrt"]
+[ext_resource type="Shader" path="res://art/shaders/dirt.gdshader" id="9_3urv8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyusq"]
 resource_name = "hexagons_medieval"
@@ -49,6 +50,62 @@ shadow_mesh = SubResource("ArrayMesh_s3hfa")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ll8tr"]
 albedo_texture = ExtResource("2_3jmks")
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vfl1s"]
+noise_type = 2
+frequency = 0.031
+fractal_type = 0
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 2.43
+cellular_distance_function = 1
+cellular_return_type = 0
+domain_warp_amplitude = 30.16
+domain_warp_fractal_type = 0
+domain_warp_fractal_octaves = 10
+domain_warp_fractal_lacunarity = 8.16
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qo8xp"]
+noise = SubResource("FastNoiseLite_vfl1s")
+
+[sub_resource type="Gradient" id="Gradient_lqira"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.46, 0.377583, 0.2622, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0my2w"]
+gradient = SubResource("Gradient_lqira")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_10x7i"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.84, 0.6972, 0.6972, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nujgj"]
+gradient = SubResource("Gradient_10x7i")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_wafnb"]
+offsets = PackedFloat32Array(0, 0.496386, 0.706024, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.690196, 0.690196, 0.690196, 1, 0.741176, 0.741176, 0.741176, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xxjfw"]
+gradient = SubResource("Gradient_wafnb")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cv4pw"]
+render_priority = 0
+shader = ExtResource("9_3urv8")
+shader_parameter/tex = SubResource("GradientTexture2D_0my2w")
+shader_parameter/tex2 = SubResource("GradientTexture2D_nujgj")
+shader_parameter/transparency = SubResource("GradientTexture2D_xxjfw")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_qo8xp")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_37em6"]
+material = SubResource("ShaderMaterial_cv4pw")
+size = Vector2(5, 5)
+
 [node name="Townhall" type="Node3D" node_paths=PackedStringArray("_main_structure")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_rhv0o")
@@ -73,3 +130,6 @@ skeleton = NodePath("../..")
 [node name="building_stage_B2" parent="." instance=ExtResource("7_v35qo")]
 
 [node name="building_stage_C2" parent="." instance=ExtResource("8_53yrt")]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_37em6")

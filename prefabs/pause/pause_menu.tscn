@@ -68,6 +68,7 @@ visible = false
 unique_name_in_owner = true
 visible = false
 
+[connection signal="pressed" from="MainPauseMargin/PanelContainer/MainPausePadding/SettingsLayout/Resume" to="." method="close"]
 [connection signal="pressed" from="MainPauseMargin/PanelContainer/MainPausePadding/SettingsLayout/Settings" to="." method="open_settings"]
 [connection signal="pressed" from="MainPauseMargin/PanelContainer/MainPausePadding/SettingsLayout/MainMenu" to="." method="open_main_confirmation"]
 [connection signal="pressed" from="MainPauseMargin/PanelContainer/MainPausePadding/SettingsLayout/ExitGame" to="." method="open_exit_confirmation"]

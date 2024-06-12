@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bum0b4pciql3y"]
+[gd_scene load_steps=14 format=3 uid="uid://bum0b4pciql3y"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_sniek"]
 [ext_resource type="PackedScene" uid="uid://bc6t6j75uocvp" path="res://art/models/blue/building_market_blue.gltf" id="1_y5w7s"]
@@ -6,6 +6,43 @@
 [ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_5fbi1"]
 [ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_a6vwv"]
 [ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_juf3x"]
+[ext_resource type="Shader" path="res://art/shaders/dirt.gdshader" id="7_pqyrr"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r8u4g"]
+noise_type = 2
+frequency = 0.1137
+fractal_type = 0
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 2.43
+cellular_distance_function = 1
+cellular_return_type = 0
+domain_warp_amplitude = 30.16
+domain_warp_fractal_type = 0
+domain_warp_fractal_octaves = 10
+domain_warp_fractal_lacunarity = 8.16
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d2mrn"]
+seamless = true
+noise = SubResource("FastNoiseLite_r8u4g")
+
+[sub_resource type="Gradient" id="Gradient_24yd2"]
+colors = PackedColorArray(0.42, 0.42, 0.42, 1, 1, 0.616667, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q6itv"]
+gradient = SubResource("Gradient_24yd2")
+fill = 1
+fill_from = Vector2(0.512821, 0.508547)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f1hq1"]
+render_priority = 0
+shader = ExtResource("7_pqyrr")
+shader_parameter/tex = SubResource("GradientTexture2D_q6itv")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_d2mrn")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5wj8s"]
+material = SubResource("ShaderMaterial_f1hq1")
+size = Vector2(5, 5)
 
 [node name="Market" type="Node3D" node_paths=PackedStringArray("_main_structure")]
 script = ExtResource("1_sniek")
@@ -22,3 +59,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="building_stage_C2" parent="." instance=ExtResource("6_juf3x")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_5wj8s")

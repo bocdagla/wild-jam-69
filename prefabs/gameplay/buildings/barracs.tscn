@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6ljbsnnantaq"]
+[gd_scene load_steps=14 format=3 uid="uid://b6ljbsnnantaq"]
 
 [ext_resource type="PackedScene" uid="uid://byufjubre7rl2" path="res://art/models/blue/building_barracks_blue.gltf" id="1_ij810"]
 [ext_resource type="Script" path="res://scripts/gameplay/building/building.gd" id="1_ybseh"]
@@ -6,6 +6,43 @@
 [ext_resource type="PackedScene" uid="uid://dkhwym6d6kpln" path="res://art/models/neutral/building_stage_A.gltf" id="4_mgo4b"]
 [ext_resource type="PackedScene" uid="uid://driwwbxdms2ir" path="res://art/models/neutral/building_stage_B.gltf" id="5_k647t"]
 [ext_resource type="PackedScene" uid="uid://dxdj7npvbnhco" path="res://art/models/neutral/building_stage_C.gltf" id="6_kf0l2"]
+[ext_resource type="Shader" path="res://art/shaders/dirt.gdshader" id="7_1mcsk"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k5enm"]
+noise_type = 2
+frequency = 0.1137
+fractal_type = 0
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 2.43
+cellular_distance_function = 1
+cellular_return_type = 0
+domain_warp_amplitude = 30.16
+domain_warp_fractal_type = 0
+domain_warp_fractal_octaves = 10
+domain_warp_fractal_lacunarity = 8.16
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ta70m"]
+seamless = true
+noise = SubResource("FastNoiseLite_k5enm")
+
+[sub_resource type="Gradient" id="Gradient_mctn1"]
+colors = PackedColorArray(0.42, 0.42, 0.42, 1, 1, 0.616667, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lvgbt"]
+gradient = SubResource("Gradient_mctn1")
+fill = 1
+fill_from = Vector2(0.512821, 0.508547)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nf6ak"]
+render_priority = 0
+shader = ExtResource("7_1mcsk")
+shader_parameter/tex = SubResource("GradientTexture2D_lvgbt")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_ta70m")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tk82g"]
+material = SubResource("ShaderMaterial_nf6ak")
+size = Vector2(5, 5)
 
 [node name="Barracs" type="Node3D" node_paths=PackedStringArray("_main_structure")]
 script = ExtResource("1_ybseh")
@@ -22,3 +59,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="building_stage_C2" parent="." instance=ExtResource("6_kf0l2")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_tk82g")

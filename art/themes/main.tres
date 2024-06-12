@@ -1,75 +1,11 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://c1obi8v6viwa8"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://c1obi8v6viwa8"]
 
 [ext_resource type="FontFile" uid="uid://dnl4i40phkxk2" path="res://art/fonts/ThaleahFat.ttf" id="1_h8u1n"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwyg0"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l08mj"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clw0q"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.225, 0.225, 0.225, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5wxt"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bc3ka"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[ext_resource type="StyleBox" uid="uid://b033fi11pcjg6" path="res://art/themes/button_disabled.tres" id="2_87kmw"]
+[ext_resource type="Texture2D" uid="uid://gcok0a225isw" path="res://art/textures/borders/fantasy-ui-borders.svg" id="2_s7k22"]
+[ext_resource type="StyleBox" uid="uid://n8vpwi7mfblg" path="res://art/themes/button_hover.tres" id="3_actgh"]
+[ext_resource type="StyleBox" uid="uid://b223mik75c4am" path="res://art/themes/button_normal.tres" id="4_eq0f6"]
+[ext_resource type="StyleBox" uid="uid://eddl1jsompjq" path="res://art/themes/button_pressed.tres" id="5_4lxhc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vyam1"]
 content_margin_left = 4.0
@@ -90,6 +26,15 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a0dgf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cb5ra"]
+texture = ExtResource("2_s7k22")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+region_rect = Rect2(102, 362, 48, 48)
+modulate_color = Color(0, 0, 0, 1)
 
 [resource]
 default_font = ExtResource("1_h8u1n")
@@ -112,11 +57,11 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("1_h8u1n")
-Button/styles/disabled = SubResource("StyleBoxFlat_gwyg0")
-Button/styles/focus = SubResource("StyleBoxFlat_l08mj")
-Button/styles/hover = SubResource("StyleBoxFlat_clw0q")
-Button/styles/normal = SubResource("StyleBoxFlat_e5wxt")
-Button/styles/pressed = SubResource("StyleBoxFlat_bc3ka")
+Button/styles/disabled = ExtResource("2_87kmw")
+Button/styles/focus = ExtResource("3_actgh")
+Button/styles/hover = ExtResource("3_actgh")
+Button/styles/normal = ExtResource("4_eq0f6")
+Button/styles/pressed = ExtResource("5_4lxhc")
 FlatMenuButton/styles/disabled = SubResource("StyleBoxEmpty_vyam1")
 FlatMenuButton/styles/hover = SubResource("StyleBoxEmpty_vyam1")
 FlatMenuButton/styles/normal = SubResource("StyleBoxEmpty_vyam1")
@@ -134,3 +79,4 @@ Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 22
 Label/styles/normal = SubResource("StyleBoxEmpty_a0dgf")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_cb5ra")
